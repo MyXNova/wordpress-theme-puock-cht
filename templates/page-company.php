@@ -3,7 +3,7 @@
     <div id="index-company" class="puock-bg pt20">
 
         <div class="container mt50" id="prod-items">
-            <h3 class="text-center"><?php echo pk_get_option('company_product_title', '产品概览') ?></h3>
+            <h3 class="text-center"><?php echo pk_get_option('company_product_title', '產品概覽') ?></h3>
             <div class="row">
                 <?php $products = pk_get_option('company_products', []);
                 foreach ($products as $product): ?>
@@ -46,13 +46,13 @@
         </div>
 
         <?php if (pk_is_checked('company_news_open')): ?>
-            <!--   新闻     -->
+            <!--   新聞     -->
             <div class="mt50 container t-md">
                 <?php get_template_part('templates/post', 'news') ?>
             </div>
         <?php endif; ?>
         <?php if (pk_is_checked('company_show_2box')): ?>
-            <!--   两栏分类     -->
+            <!--   兩欄分類     -->
             <div class="mt50 container t-md">
                 <?php get_template_part('templates/module', 'cms') ?>
             </div>

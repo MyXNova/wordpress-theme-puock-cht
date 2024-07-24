@@ -54,7 +54,7 @@ $gc_ai_chat_models = pk_get_option('ai_chat_models', []);
                     </div>
                     <div class="mt-20 p-block puock-text">
                         <textarea class="form-control fs14 chat-input" rows="3"
-                                  placeholder="请在此处描述您的问题"></textarea>
+                                  placeholder="請在此處描述您的問題"></textarea>
                         <div class="chat-btn-init d-flex justify-content-end mt10">
                             <div class="spinner-grow text-primary" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -71,13 +71,13 @@ $gc_ai_chat_models = pk_get_option('ai_chat_models', []);
                                     <?php if (pk_is_checked('ai_draw_dall_e')): ?>
                                         <input class="form-check-input" name="remember" type="checkbox" role="switch"
                                                id="chat-use-img-mode">
-                                        <label class="form-check-label fs14" for="chat-use-img-mode">AI绘画</label>
+                                        <label class="form-check-label fs14" for="chat-use-img-mode">AI繪畫</label>
                                     <?php endif; ?>
                                 </div>
                             </div>
                             <div>
                                 <button class="btn btn-primary btn-sm mr-2 chat-submit"><i
-                                            class="fa-regular fa-paper-plane me-1"></i>立即提问
+                                            class="fa-regular fa-paper-plane me-1"></i>立即提問
                                 </button>
                                 <button class="btn btn-dark btn-sm chat-clear-history"><i
                                             class="fa-solid fa-broom me-1"></i>清屏

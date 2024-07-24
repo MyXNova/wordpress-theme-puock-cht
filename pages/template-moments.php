@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 时光圈
+Template Name: 時光圈
 */
 
 get_header();

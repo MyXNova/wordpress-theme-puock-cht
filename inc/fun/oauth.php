@@ -52,7 +52,7 @@ function pk_oauth_list($user = null)
             'system' => true,
         ],
         'gitee' => [
-            'label' => '码云',
+            'label' => '碼雲',
             'openid' => $user ? get_the_author_meta('gitee_oauth', $user->ID) : null,
             'class' => \Yurun\OAuthLogin\Gitee\OAuth2::class,
             'icon'=>'fa-solid fa-globe',
@@ -68,7 +68,7 @@ function pk_extra_user_profile_oauth($user)
 {
     $oauth_list = pk_oauth_list($user)
     ?>
-    <h3>第三方账号绑定</h3>
+    <h3>第三方帳號繫結</h3>
     <table class="form-table">
         <?php foreach ($oauth_list as $item_key => $item_val):
             if (!pk_is_checked('oauth_' . $item_key)) {
@@ -81,11 +81,11 @@ function pk_extra_user_profile_oauth($user)
                         <a href="<?php echo pk_oauth_url_page_ajax($item_key, get_edit_profile_url()) ?>"
                            target="_blank"
                            class="button"
-                           id="<?php echo $item_key ?>_oauth">立即绑定</a>
+                           id="<?php echo $item_key ?>_oauth">立即繫結</a>
                     <?php else: ?>
                         <a id="<?php echo $item_key ?>_oauth"
                            href="<?php echo pk_oauth_clear_bind_url($item_key, get_edit_profile_url()) ?>"
-                           class="button">解除绑定<?php echo $item_val['label'] ?></a>
+                           class="button">解除繫結<?php echo $item_val['label'] ?></a>
                     <?php endif; ?>
                 </td>
             </tr>
@@ -118,7 +118,7 @@ function pk_oauth_clear_bind()
 
 pk_ajax_register('pk_oauth_clear_bind', 'pk_oauth_clear_bind');
 
-//授权返回页面回调
+//授權返回頁面回撥
 function oauth_redirect_page($success = true, $info = '', $from_redirect = '')
 {
     if ($success) {
@@ -161,14 +161,14 @@ function pk_oauth_get_base($type, $redirect = '')
     return null;
 }
 
-// 第三方授权登录开始跳转
+// 第三方授權登入開始跳轉
 function pk_oauth_start_redirect()
 {
     $type = $_GET['type'];
     $redirect = $_GET['redirect'];
     $oauth = pk_oauth_get_base($type, $redirect);
     if (!$oauth) {
-        oauth_redirect_page(false, '不支持的第三方授权请求', $redirect);
+        oauth_redirect_page(false, '不支援的第三方授權請求', $redirect);
         exit;
     }
     $url = $oauth->base->getAuthUrl();
@@ -192,7 +192,7 @@ function pk_oauth_callback()
     }
     $oauth = pk_oauth_get_base($type, $redirect);
     if (!$oauth) {
-        oauth_redirect_page(false, '无效授权请求', $redirect);
+        oauth_redirect_page(false, '無效授權請求', $redirect);
         exit;
     }
     $oauth_state = null;
@@ -200,7 +200,7 @@ function pk_oauth_callback()
         $oauth_state = $_SESSION['oauth_state_' . $type];
     });
     if (empty($oauth_state)) {
-        oauth_redirect_page(false, '无效的授权状态', $redirect);
+        oauth_redirect_page(false, '無效的授權狀態', $redirect);
         exit;
     }
     $oauthBase = $oauth->base;
@@ -208,17 +208,17 @@ function pk_oauth_callback()
         $oauthBase->getAccessToken($oauth_state);
         $userInfo = $oauthBase->getUserInfo();
     } catch (Exception $e) {
-        oauth_redirect_page(false, '授权失败：' . $e->getMessage(), $redirect);
+        oauth_redirect_page(false, '授權失敗：' . $e->getMessage(), $redirect);
         exit;
     }
     if (is_user_logged_in()) {
         $bind_users = get_users(array('meta_key' => $type . '_oauth', 'meta_value' => $oauthBase->openid, 'exclude' => get_current_user_id()));
         if ($bind_users && count($bind_users) > 0) {
-            oauth_redirect_page(false, '绑定失败：此授权' . $oauth->oauth['label'] . '账户已被其他账户使用', $redirect);
+            oauth_redirect_page(false, '繫結失敗：此授權' . $oauth->oauth['label'] . '帳戶已被其他帳戶使用', $redirect);
             exit;
         }
         if (!empty(get_user_meta(get_current_user_id(), $type . "_oauth"))) {
-            oauth_redirect_page(false, '绑定失败：此账户已绑定其他' . $oauth->oauth['label'] . '授权账户', $redirect);
+            oauth_redirect_page(false, '繫結失敗：此帳戶已繫結其他' . $oauth->oauth['label'] . '授權帳戶', $redirect);
             exit;
         }
         $user = wp_get_current_user();
@@ -228,9 +228,9 @@ function pk_oauth_callback()
     } else {
         $users = get_users(array('meta_key' => $type . '_oauth', 'meta_value' => $oauthBase->openid));
         if (!$users || count($users) <= 0) {
-            //不存在用户，先自动注册再登录
+            //不存在使用者，先自動註冊再登入
             if (pk_is_checked('oauth_close_register')) {
-                oauth_redirect_page(false, '您的' . $oauth->oauth['label'] . '账号未绑定本站账户，当前已关闭自动注册，请手动注册后再进入个人资料中进行绑定', $redirect);
+                oauth_redirect_page(false, '您的' . $oauth->oauth['label'] . '帳號未繫結本站帳戶，目前已關閉自動註冊，請手動註冊後再進入個人資料中進行繫結', $redirect);
                 exit;
             }
             $wp_create_nonce = wp_create_nonce($oauthBase->openid);
@@ -256,14 +256,14 @@ function pk_oauth_callback()
 
 pk_ajax_register('pk_oauth_callback', 'pk_oauth_callback', true);
 
-//登录页快捷按钮
+//登入頁快捷按鈕
 function pk_oauth_form()
 {
     $out = "<div>";
     $oauth_list = pk_oauth_list();
     foreach ($oauth_list as $key => $val) {
         if (pk_is_checked('oauth_' . $key)) {
-            $out .= '<a style="margin-right:5px;margin-bottom:10px" href="' . pk_oauth_url_page_ajax($key, admin_url()) . '" class="button button-large">' . $val['label'] . '登录</a>';
+            $out .= '<a style="margin-right:5px;margin-bottom:10px" href="' . pk_oauth_url_page_ajax($key, admin_url()) . '" class="button button-large">' . $val['label'] . '登入</a>';
         }
     }
     $out .= "</div>";

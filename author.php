@@ -25,7 +25,7 @@
                             文章 <span class="c-sub fs12"><?php echo count_user_posts(get_the_author_meta('ID')) ?></span>
                         </div>
 <!--                        <div class="item">-->
-<!--                            评论 <span class="c-sub fs12">--><?php //echo count_user_posts(get_the_author_meta('ID')) ?><!--</span>-->
+<!--                            評論 <span class="c-sub fs12">--><?php //echo count_user_posts(get_the_author_meta('ID')) ?><!--</span>-->
 <!--                        </div>-->
                     </div>
                     <div class="data-content">

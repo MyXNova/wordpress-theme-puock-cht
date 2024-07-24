@@ -8,7 +8,7 @@
 class ChineseTypesetting
 {
     /**
-     * cjk 是中日韩统一表意文字缩写
+     * cjk 是中日韓統一表意文字縮寫
      * cjk is short for Chinese, Japanese and Korean.
      *
      * @link http://unicode-table.com/en/
@@ -27,7 +27,7 @@ class ChineseTypesetting
     '\x{f900}-\x{faff}';
 
     /**
-     * ln 是英文字母、希腊字母（用于数学、科学与工程）和阿拉伯数字的缩写
+     * ln 是英文字母、希臘字母（用於數學、科學與工程）和阿拉伯數字的縮寫
      * ln is short of alphabetical letters, greek letters and numerical digits and symbols.
      *
      * @link https://en.wikipedia.org/wiki/Greek_letters_used_in_mathematics,_science,_and_engineering
@@ -40,11 +40,11 @@ class ChineseTypesetting
     '0-9';
 
     /**
-     * 保留的全角标点符号.
+     * 保留的全形標點符號.
      *
      * @var string
      */
-    private $fullwidthPunctuation = '！？。，；：、“”‘’『』「」〖〗【】《》（）';
+    private $fullwidthPunctuation = '！？。，；：、「」『』『』「」〖〗【】《》（）';
 
     /**
      * 空格
@@ -54,7 +54,7 @@ class ChineseTypesetting
     private $space = '\s|&nbsp;|　';
 
     /**
-     * 使用全部或指定的方法来纠正排版
+     * 使用全部或指定的方法來糾正排版
      * Correct typesetting error.
      *
      * @param string $text
@@ -76,12 +76,12 @@ class ChineseTypesetting
 
         $methods = array_unique($methods);
 
-        // removeEmptyTag 方法包含了 removeEmptyParagraph 方法的功能，如果这两个函数都存在，则需去除 removeEmptyParagraph 方法
+        // removeEmptyTag 方法包含了 removeEmptyParagraph 方法的功能，如果這兩個函式都存在，則需去除 removeEmptyParagraph 方法
         if (in_array('removeEmptyTag', $methods)) {
             $methods = array_diff($methods, ['removeEmptyParagraph']);
         }
 
-        // insertSpace 方法应该是数组的最后一个元素
+        // insertSpace 方法應該是陣列的最後一個元素
         // the method insertSpace should be the end of array
         if (in_array('insertSpace', $methods)) {
             $methods = array_diff($methods, ['insertSpace']);
@@ -99,7 +99,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 修复错误的标点符号
+     * 修復錯誤的標點符號
      * Fix incorrect punctuations.
      *
      * update base on @link https://github.com/ricoa/copywriting-correct/blob/master/src/Correctors/CharacterCorrector.php
@@ -110,12 +110,12 @@ class ChineseTypesetting
      */
     public function fixPunctuation($text)
     {
-        // 正确使用省略号
+        // 正確使用省略號
         $text = preg_replace('/([。\.]){3,}|(…){1}/iu', '……', $text);
         $text = preg_replace('/(……){2,}/iu', '……', $text);
 
-        // 中文以及中文标点符号）》后使用全角中文标点符号（包括！？。，（）：；）
-        $text = preg_replace_callback('/(['.$this->cjk.'）》”])([!?\.,\(\):;])/iu', function ($matches) {
+        // 中文以及中文標點符號）》后使用全形中文標點符號（包括！？。，（）：；）
+        $text = preg_replace_callback('/(['.$this->cjk.'）》」])([!?\.,\(\):;])/iu', function ($matches) {
             $replace = [
                 '!' => '！',
                 '?' => '？',
@@ -130,17 +130,17 @@ class ChineseTypesetting
             return $matches[1].$replace[$matches[2]];
         }, $text);
 
-        // 不重复使用中文标点符号，重复时只保留第一个
+        // 不重複使用中文標點符號，重複時只保留第一個
         $text = preg_replace('/(['.$this->fullwidthPunctuation.'])\1{1,}/iu', '\1', $text);
 
         return $text;
     }
 
     /**
-     * 有限度的全角转半角（英文、数字、空格以及某些特殊字符等使用半角字符）
+     * 有限度的全形轉半形（英文、數字、空格以及某些特殊字元等使用半形字元）
      * Limited full-width to half-width transformer.
      *
-     * @link https://github.com/mzlogin/chinese-copywriting-guidelines#全角和半角
+     * @link https://github.com/mzlogin/chinese-copywriting-guidelines#全形和半形
      *
      * @param string $text
      *
@@ -171,7 +171,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 在中文与英文字母/用于数学、科学和工程的希腊字母/数字之间添加空格
+     * 在中文與英文字母/用於數學、科學和工程的希臘字母/數字之間新增空格
      * Insert a space between Chinese character and English/Greek/Number character.
      *
      * update base on @link https://github.com/Rakume/pangu.php/blob/master/pangu.php
@@ -261,7 +261,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 全角标点符号与其他字符之间无需添加空格；.
+     * 全形標點符號與其他字元之間無需新增空格；.
      *
      * @param string $text
      *
@@ -288,7 +288,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除 Class 属性
+     * 清除 Class 屬性
      * Remove specific class of HTML tags.
      *
      * @param string $text
@@ -301,7 +301,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除 ID 属性
+     * 清除 ID 屬性
      * Remove specific id of HTML tags.
      *
      * @param string $text
@@ -314,7 +314,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除 Style 属性
+     * 清除 Style 屬性
      * Remove specific style of HTML tags.
      *
      * @param string $text
@@ -327,7 +327,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除空段落标签
+     * 清除空段落標籤
      * Remove empty Paragraph tags.
      *
      * @param string $text
@@ -350,7 +350,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除所有空标签
+     * 清除所有空標籤
      * Remote all empty HTML tags.
      *
      * @param string $text
@@ -373,7 +373,7 @@ class ChineseTypesetting
     }
 
     /**
-     * 清除段首缩进.
+     * 清除段首縮排.
      * Remove indent.
      *
      * @param string $text

@@ -8,18 +8,18 @@ class OptionResource extends BaseOptionItem{
     {
         return [
             'key' => 'resource',
-            'label' => __('资源与更新', PUOCK),
+            'label' => __('資源與更新', PUOCK),
             'icon'=>'dashicons-cloud-saved',
             'fields' => [
                 [
                     'id' => 'static_load_origin',
-                    'label' => __('主题静态资源加载源', PUOCK),
+                    'label' => __('主題靜態資源載入源', PUOCK),
                     'type' => 'radio',
                     'sdt' => 'self',
                     'options' => [
                         [
                             'value' => 'self',
-                            'label' => __('本地', PUOCK),
+                            'label' => __('本機', PUOCK),
                         ],
                         [
                             'value' => 'jsdelivr',
@@ -39,19 +39,19 @@ class OptionResource extends BaseOptionItem{
                         ],
                         [
                             'value' => 'custom',
-                            'label' => __('自定义（在下方一栏中填入）', PUOCK),
+                            'label' => __('自定義（在下方一欄中填入）', PUOCK),
                         ],
                     ],
                 ],
                 [
                     'id' => 'custom_static_load_origin',
-                    'label' => __('自定义静态资源加载URI', PUOCK),
+                    'label' => __('自定義靜態資源載入URI', PUOCK),
                     'sdt' => '',
-                    'tips'=>__('需填写完整地址，如<code>https://example.com/puock</code>，路径需要指向到可以访问主题根目录为准', PUOCK)
+                    'tips'=>__('需填寫完整地址，如<code>https://example.com/puock</code>，路徑需要指向到可以瀏覽主題根目錄為準', PUOCK)
                 ],
                 [
                     'id' => 'update_server',
-                    'label' => __('主题在线更新源', PUOCK),
+                    'label' => __('主題線上更新源', PUOCK),
                     'type' => 'radio',
                     'sdt' => 'worker',
                     'options' => [
@@ -71,10 +71,10 @@ class OptionResource extends BaseOptionItem{
                 ],
                 [
                     'id' => 'update_server_check_period',
-                    'label' => __('主题更新检测频率', PUOCK),
+                    'label' => __('主題更新檢測頻率', PUOCK),
                     'type' => 'number',
                     'sdt' => 6,
-                    'tips'=>__('单位为小时', PUOCK),
+                    'tips'=>__('單位為小時', PUOCK),
                 ],
             ],
         ];

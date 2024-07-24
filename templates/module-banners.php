@@ -1,4 +1,4 @@
-<!--轮播图-->
+<!--輪播圖-->
 <?php
 
 use Puock\Theme\setting\options\OptionCarousel;

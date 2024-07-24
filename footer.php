@@ -1,5 +1,5 @@
 <?php if (pk_is_checked('use_post_menu')) get_template_part('templates/module', 'menus') ?>
-<!--返回顶部和底部-->
+<!--返回頂部和底部-->
 <div id="rb-float-actions">
     <?php echo apply_filters('pk_rb_float_actions','') ?>
     <div data-to="top" class="p-block"><i class="fa fa-arrow-up puock-text"></i></div>

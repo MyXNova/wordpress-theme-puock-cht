@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -62,11 +62,11 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                     <div class="search-layout">
                         <div class="search-input">
                             <input required type="text" name="s" class="form-control"
-                                   placeholder="<?php _e('请输入搜索关键字', PUOCK) ?>">
+                                   placeholder="<?php _e('請輸入搜尋關鍵字', PUOCK) ?>">
                         </div>
                         <div class="search-start">
                             <button type="submit" class="btn-dark btn"><i
-                                        class="fa fa-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
+                                        class="fa fa-search mr-1"></i><?php _e('搜尋', PUOCK) ?></button>
                         </div>
                         <div class="search-close-btn">
                             <button type="button" class="btn-danger btn ml-1 search-modal-btn"><i

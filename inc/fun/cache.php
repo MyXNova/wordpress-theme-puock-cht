@@ -20,32 +20,32 @@ function pk_cache_key_load($key){
     return "wp:puock:".$key;
 }
 
-// 缓存获取
+// 快取獲取
 function pk_cache_get($key, $force = false, &$found = null)
 {
     return wp_cache_get($key, PUOCK, $force, $found);
 }
 
-// 缓存设置
+// 快取設定
 function pk_cache_set($key, $value, $expiration = null)
 {
     $expiration = $expiration == null ? pk_get_option('cache_expire_second', 0) : $expiration;
     return wp_cache_set($key, $value, PUOCK, $expiration);
 }
 
-// 缓存删除
+// 快取刪除
 function pk_cache_delete($key, $time = 0)
 {
     return wp_cache_delete($key, PUOCK, $time);
 }
 
-// 缓存删除
+// 快取刪除
 function pk_cache_delete_multiple($keys)
 {
     return wp_cache_delete_multiple($keys, PUOCK);
 }
 
-// 缓存删除
+// 快取刪除
 function pk_cache_delete_find_keys($find_key){
     pk_cache_roc_call(function($redis) use($find_key){
         $keys = $redis->keys($find_key);
@@ -57,7 +57,7 @@ function pk_cache_delete_find_keys($find_key){
     });
 }
 
-// 清除缓存注册
+// 清除快取註冊
 function pk_cache_del_register()
 {
     add_action('comment_post', 'pk_cache_del_comments_post', 10, 3);

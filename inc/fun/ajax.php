@@ -48,7 +48,7 @@ function pk_ajax_get_theme_options()
             'settings' => get_option(PUOCK_OPT),
         ]);
     } else {
-        wp_send_json_error('权限不足');
+        wp_send_json_error('許可權不足');
     }
 }
 
@@ -63,7 +63,7 @@ function pk_ajax_update_theme_options()
         flush_rewrite_rules();
         wp_send_json_success();
     } else {
-        wp_send_json_error('权限不足');
+        wp_send_json_error('許可權不足');
     }
 }
 

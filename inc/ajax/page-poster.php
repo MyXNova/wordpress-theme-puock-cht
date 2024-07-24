@@ -7,11 +7,11 @@ function pk_poster_page_callback()
 {
     $id = $_REQUEST['id'];
     if (empty($id)) {
-        wp_die('无效的文章ID: ' . $id);
+        wp_die('無效的文章ID: ' . $id);
     }
     $post = get_post($id);
     if (empty($post)) {
-        wp_die('无效的文章ID: ' . $id);
+        wp_die('無效的文章ID: ' . $id);
     }
     setup_postdata($post);
     $title = get_the_title($post);
@@ -35,12 +35,12 @@ function pk_poster_page_callback()
                         <p class="tip c-sub fs14">@<?php echo pk_get_web_title() ?></p>
                     <?php endif; ?>
                 </div>
-                <p class="tip c-sub fs12 mt20 p-flex-center"><i class="fa-solid fa-qrcode"></i>&nbsp;长按识别二维码查看文章内容</p>
+                <p class="tip c-sub fs12 mt20 p-flex-center"><i class="fa-solid fa-qrcode"></i>&nbsp;長按識別二維碼檢視文章內容</p>
             </div>
         </div>
     </div>
     <!--    <div class="mt20 d-flex justify-content-center">-->
-    <!--        <div class="btn btn-primary btn-sm"><i class="fa fa-download"></i> 下载海报</div>-->
+    <!--        <div class="btn btn-primary btn-sm"><i class="fa fa-download"></i> 下載海報</div>-->
     <!--    </div>-->
     <script>
         $(function () {
@@ -56,7 +56,7 @@ function pk_poster_page_callback()
                 window.Puock.stopLoading(i);
             }).catch(err => {
                 console.error(err)
-                window.Puock.toast("生成海报失败，请到Console查看错误信息", TYPE_DANGER);
+                window.Puock.toast("產生海報失敗，請到Console檢視錯誤資訊", TYPE_DANGER);
             });
         })
     </script>

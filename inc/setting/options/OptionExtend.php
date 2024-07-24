@@ -9,39 +9,39 @@ class OptionExtend extends BaseOptionItem
     {
         return [
             'key' => 'extend',
-            'label' => __('扩展及兼容', PUOCK),
+            'label' => __('擴充套件及相容', PUOCK),
             'icon' => 'dashicons-admin-plugins',
             'fields' => [
                 [
                     'id' => 'office_mp_support',
-                    'label' => __('Puock官方小程序支持', PUOCK),
+                    'label' => __('Puock官方小程式支援', PUOCK),
                     'type' => 'switch',
                     'value' => defined('PUOCK_MP_VERSION'),
-                    'tips' => __('Puock官方小程序支持，此选项安装小程序插件后会自动开启，如需关闭请在小程序插件中关闭', PUOCK) . " （<a target='_blank' href='https://licoy.cn/puock-mp.html'>" . __('了解小程序?', PUOCK) . "</a>）",
+                    'tips' => __('Puock官方小程式支援，此選項安裝小程式外掛後會自動開啟，如需關閉請在小程式外掛中關閉', PUOCK) . " （<a target='_blank' href='https://licoy.cn/puock-mp.html'>" . __('瞭解小程式?', PUOCK) . "</a>）",
                     'disabled' => true,
-                    'badge' => ['value' => '🔥 ' . __('热门 & 推荐', PUOCK)]
+                    'badge' => ['value' => '🔥 ' . __('熱門 & 推薦', PUOCK)]
                 ],
                 [
                     'id' => 'user_center',
-                    'label' => __('用户中心', PUOCK),
+                    'label' => __('使用者中心', PUOCK),
                     'type' => 'switch',
                     'sdt' => false,
                     'badge' => ['value' => 'New'],
-                    'tips' => __('使用前请先配置wordpress伪静态规则：<code>try_files $uri $uri/ /index.php?$args</code>', PUOCK)
+                    'tips' => __('使用前請先配置wordpress偽靜態規則：<code>try_files $uri $uri/ /index.php?$args</code>', PUOCK)
                 ],
                 [
                     'id' => 'strawberry_icon',
-                    'label' => __('Strawberry图标库', PUOCK),
+                    'label' => __('Strawberry圖示庫', PUOCK),
                     'type' => 'switch',
                     'sdt' => false,
-                    'tips' => __('开启之后会在前台加载Strawberry图标库支持', PUOCK)
+                    'tips' => __('開啟之後會在前臺載入Strawberry圖示庫支援', PUOCK)
                 ],
                 [
                     'id' => 'dplayer',
-                    'label' => 'DPlayer' . ' ' . __('支持', PUOCK),
+                    'label' => 'DPlayer' . ' ' . __('支援', PUOCK),
                     'type' => 'switch',
                     'sdt' => false,
-                    'tips' => __('开启之后会在前台加载DPlayer支持', PUOCK)
+                    'tips' => __('開啟之後會在前臺載入DPlayer支援', PUOCK)
                 ],
             ],
         ];

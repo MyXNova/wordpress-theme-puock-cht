@@ -8,15 +8,15 @@ class OptionCache extends BaseOptionItem{
     {
         return [
             'key' => 'cache',
-            'label' => __('缓存与性能', PUOCK),
+            'label' => __('快取與效能', PUOCK),
             'icon'=>'dashicons-superhero',
             'fields' => [
                 [
                     'id' => 'cache_expire_second',
-                    'label' => __('缓存过期秒数', PUOCK),
+                    'label' => __('快取過期秒數', PUOCK),
                     'type' => 'number',
                     'sdt' => 0,
-                    'tips'=>__('0为不过期', PUOCK),
+                    'tips'=>__('0為不過期', PUOCK),
                 ],
             ],
         ];

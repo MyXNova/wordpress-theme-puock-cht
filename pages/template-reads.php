@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 读者墙
+Template Name: 讀者墻
 */
 
 $year = 2;

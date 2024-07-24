@@ -1,11 +1,11 @@
 <?php
 /**
- * 其他外部引用函数方法
+ * 其他外部引用函式方法
  * ==================
  */
 
 /**
- * 给外链加上nofollow及新窗口打开
+ * 給外鏈加上nofollow及新視窗打開
  * from: https://cn.wordpress.org/plugins/nofollow-for-external-link/
  * license: GPL-2.0
  */

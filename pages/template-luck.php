@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 试试手气
+Template Name: 試試手氣
 */
 $posts = get_posts('numberposts=1&orderby=rand');
 foreach($posts as $post){

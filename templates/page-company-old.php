@@ -5,7 +5,7 @@
             <h4><?php echo pk_get_option('company_about_t') ?></h4>
             <p class="tin2 mt30 t-md"><?php echo pk_get_option('company_about_c') ?></p>
             <?php if(!empty(pk_get_option('company_about_a',''))): ?><a
-                href="<?php echo pk_get_option('company_about_a') ?>" class="btn btn-outline-secondary">查看更多</a><?php endif; ?>
+                href="<?php echo pk_get_option('company_about_a') ?>" class="btn btn-outline-secondary">檢視更多</a><?php endif; ?>
         </div>
         <div class="mt50 container t-md">
             <h4 class="text-center"><?php echo pk_get_option('company_product_title') ?></h4>
@@ -20,7 +20,7 @@
                             <?php echo pk_get_option('company_product_c_'.$i) ?>
                         </div>
                         <?php if(!empty(pk_get_option('company_product_a_'.$i,''))): ?><a
-                            href="<?php echo pk_get_option('company_product_a_'.$i) ?>" class="btn btn-ssm btn-outline-secondary">立即查看</a><?php endif; ?>
+                            href="<?php echo pk_get_option('company_product_a_'.$i) ?>" class="btn btn-ssm btn-outline-secondary">立即檢視</a><?php endif; ?>
                     </div>
                 </div>
                 <?php endif;endfor; ?>
@@ -38,7 +38,7 @@
                     <p><?php echo pk_get_option('company_soul_c_'.$i) ?></p>
                     <p><?php if(!empty(pk_get_option('company_soul_a_'.$i,''))): ?><a
                             href="<?php echo pk_get_option('company_soul_a_'.$i) ?>"
-                            class="btn btn-ssm btn-outline-secondary">立即查看</a><?php endif; ?></p>
+                            class="btn btn-ssm btn-outline-secondary">立即檢視</a><?php endif; ?></p>
                 </div>
                 <?php endif;endfor; ?>
             </div>
@@ -57,13 +57,13 @@
         </div>
         <?php endif;endforeach; ?>
         <?php if(pk_is_checked('company_news_open')): ?>
-        <!--   新闻     -->
+        <!--   新聞     -->
         <div class="mt50 container t-md">
             <?php get_template_part('templates/post','news') ?>
         </div>
         <?php endif; ?>
         <?php if(pk_is_checked('company_show_2box')): ?>
-        <!--   两栏分类     -->
+        <!--   兩欄分類     -->
         <div class="mt50 container t-md">
             <?php get_template_part('templates/module','cms') ?>
         </div>

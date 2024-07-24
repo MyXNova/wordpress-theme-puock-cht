@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: 站点地图
+ Template Name: 網站地圖
 */
 $posts = get_posts('numberposts=-1&orderby=post_date&order=DESC');
 
@@ -30,7 +30,7 @@ get_header();
                     </div>
                 </div>
                 <div class="p-block" id="sitemap-cats">
-                    <h2 class="t-lg puock-text">分类目录</h2>
+                    <h2 class="t-lg puock-text">分類目錄</h2>
                     <div class="pd-links t-md no-style li-style-line mt20">
                         <ul>
                             <?php wp_list_categories('title_li='); ?>
@@ -38,7 +38,7 @@ get_header();
                     </div>
                 </div>
                 <div class="p-block" id="sitemap-pages">
-                    <h2 class="t-lg puock-text">所有单页</h2>
+                    <h2 class="t-lg puock-text">所有單頁</h2>
                     <div class="pd-links t-md no-style li-style-line mt20">
                         <ul class="pl-0">
                             <?php wp_page_menu( array() ); ?>

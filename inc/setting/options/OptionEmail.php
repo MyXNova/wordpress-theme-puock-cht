@@ -8,54 +8,54 @@ class OptionEmail extends BaseOptionItem{
     {
         return [
             'key' => 'email',
-            'label' => __('SMTP邮件', PUOCK),
+            'label' => __('SMTP 伺服器', PUOCK),
             'icon'=>'dashicons-email-alt',
             'fields' => [
                 [
                     'id' => 'smtp_open',
-                    'label' => __('开启SMTP', PUOCK),
+                    'label' => __('開啟 SMTP', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
-                    'tips'=>__('开启会覆盖WordPress默认配置', PUOCK),
+                    'tips'=>__('開啟會覆蓋 WordPress 預設配置', PUOCK),
                 ],
                 [
                     'id' => 'smtp_ssl',
-                    'label' => __('SMTP加密', PUOCK),
+                    'label' => __('SMTP 加密', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                     'showRefId' => 'smtp_open',
                 ],
                 [
                     'id' => 'smtp_form',
-                    'label' => __('发件人邮箱', PUOCK),
+                    'label' => __('發件人 E-mail', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'smtp_open',
                 ],
                 [
                     'id' => 'smtp_host',
-                    'label' => __('SMTP服务器', PUOCK),
+                    'label' => __('SMTP 伺服器', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'smtp_open',
-                    'tips'=>'如163邮箱的为：smtp.163.com'
+                    'tips'=>'如163 E-mail 的為：smtp.163.com'
                 ],
                 [
                     'id' => 'smtp_port',
-                    'label' => __('SMTP端口', PUOCK),
+                    'label' => __('SMTP 埠', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'smtp_open',
                 ],
                 [
                     'id' => 'smtp_u',
-                    'label' => __('SMTP账户', PUOCK),
+                    'label' => __('SMTP 帳戶', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'smtp_open',
                 ],
                 [
                     'id' => 'smtp_p',
-                    'label' => __('SMTP密码', PUOCK),
+                    'label' => __('SMTP 密碼', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'smtp_open',
-                    'tips'=>__('一般非邮箱账号直接密码，而是对应的平台的POP3/SMTP授权码', PUOCK),
+                    'tips'=>__('一般非 E-mail 帳號直接密碼，而是對應的平臺的 POP3/SMTP 授權碼', PUOCK),
                 ],
             ],
         ];

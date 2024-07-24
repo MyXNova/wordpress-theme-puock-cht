@@ -5,7 +5,7 @@ if (!empty($link_cid)):
     <div class="p-block index-links">
         <div>
         <span class="t-lg puock-text pb-2 d-inline-block border-bottom border-primary">
-            <i class="fa fa-link"></i>友情链接
+            <i class="fa fa-link"></i>友情連結
         </span>
         </div>
         <div class="mt20 t-md index-links-box">
@@ -31,7 +31,7 @@ if (!empty($link_cid)):
             }
             $link_page_id = pk_get_option('link_page', '');
             if (!empty($link_page_id)) {
-                echo '<a target="_blank" class="badge links-item" href="' . get_page_link($link_page_id) . '">' . __('更多链接', PUOCK) . '</a>';
+                echo '<a target="_blank" class="badge links-item" href="' . get_page_link($link_page_id) . '">' . __('更多連結', PUOCK) . '</a>';
             }
             ?>
         </div>

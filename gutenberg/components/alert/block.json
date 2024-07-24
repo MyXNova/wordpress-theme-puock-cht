@@ -6,7 +6,7 @@
   "title": "Puock提示框",
   "category": "widgets",
   "icon": "smiley",
-  "description": "一个提示框",
+  "description": "一個提示框",
   "supports": {
     "html": false
   },

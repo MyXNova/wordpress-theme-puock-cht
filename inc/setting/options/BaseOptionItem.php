@@ -28,7 +28,7 @@ abstract class BaseOptionItem
     {
         if(!self::$_link_category){
             self::$_link_category = get_all_category_id_row('link_category');
-            array_unshift(self::$_link_category, ['label' => '无', 'value' => '']);
+            array_unshift(self::$_link_category, ['label' => '無', 'value' => '']);
         }
         return self::$_link_category;
     }
@@ -37,7 +37,7 @@ abstract class BaseOptionItem
     {
         if(!self::$_pages){
             $pages = array();
-            $pages[] = ['label' => '无', 'value' => ''];
+            $pages[] = ['label' => '無', 'value' => ''];
             $pageObjects = get_pages('sort_column=post_parent,menu_order');
             foreach ($pageObjects as $page) {
                 $pages[] = ['label' => $page->post_title, 'value' => $page->ID];

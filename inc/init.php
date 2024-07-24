@@ -3,30 +3,30 @@
 add_action('after_setup_theme', 'deel_setup');
 function deel_setup()
 {
-    //去除头部冗余代码
+    //去除頭部冗餘程式碼
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'feed_links', 2, 1);
-    remove_action('wp_head', 'rsd_link');//移除离线编辑器开放接口
-    remove_action('wp_head', 'wlwmanifest_link');//移除离线编辑器开放接口
-    remove_action('wp_head', 'index_rel_link');//本页链接
-    remove_action('wp_head', 'parent_post_rel_link');//清除前后文信息
-    remove_action('wp_head', 'start_post_rel_link');//清除前后文信息
+    remove_action('wp_head', 'rsd_link');//移除離線編輯器開放介面
+    remove_action('wp_head', 'wlwmanifest_link');//移除離線編輯器開放介面
+    remove_action('wp_head', 'index_rel_link');//本頁連結
+    remove_action('wp_head', 'parent_post_rel_link');//清除前後文資訊
+    remove_action('wp_head', 'start_post_rel_link');//清除前後文資訊
     remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
-    remove_action('wp_head', 'rel_canonical');//本页链接
-    remove_action('wp_head', 'wp_generator');//移除WordPress版本号
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);//本页短链接
+    remove_action('wp_head', 'rel_canonical');//本頁連結
+    remove_action('wp_head', 'wp_generator');//移除WordPress版本號
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);//本頁短連結
 
     add_filter('embed_oembed_discover', '__return_false');
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
     remove_action('wp_head', 'wp_oembed_add_host_js');
     remove_filter('pre_oembed_result', 'wp_filter_pre_oembed_result', 10);
 
-    // 屏蔽 REST API
+    // 遮蔽 REST API
     if (pk_is_checked('close_rest_api')) {
         add_filter('rest_enabled', '__return_false');
         add_filter('rest_jsonp_enabled', '__return_false');
         add_filter('rest_authentication_errors', function ($access) {
-            return new WP_Error('rest_cannot_access', 'REST API已经被关闭，请打开后再进行尝试', array('status' => 403));
+            return new WP_Error('rest_cannot_access', 'REST API已經被關閉，請打開后再進行嘗試', array('status' => 403));
         });
     }
 
@@ -34,11 +34,11 @@ function deel_setup()
         add_filter('xmlrpc_enabled', '__return_false');
     }
 
-    // 移除头部 wp-json 标签和 HTTP header 中的 link
+    // 移除頭部 wp-json 標籤和 HTTP header 中的 link
     remove_action('wp_head', 'rest_output_link_wp_head', 10);
     remove_action('template_redirect', 'rest_output_link_header', 11);
 
-    //清除wp_footer带入的embed.min.js
+    //清除wp_footer帶入的embed.min.js
     function git_deregister_embed_script()
     {
         wp_deregister_script('wp-embed');
@@ -57,7 +57,7 @@ function deel_setup()
 
     add_filter('wp_resource_hints', 'git_remove_dns_prefetch', 10, 2);
 
-    //去除部分默认小工具
+    //去除部分預設小工具
     function unregister_d_widget()
     {
         unregister_widget('WP_Widget_Search');
@@ -67,13 +67,13 @@ function deel_setup()
     }
 
     add_action('widgets_init', 'unregister_d_widget');
-    //分类，标签描述添加图片
+    //分類，標籤描述新增圖片
     remove_filter('pre_term_description', 'wp_filter_kses');
     remove_filter('pre_link_description', 'wp_filter_kses');
     remove_filter('pre_link_notes', 'wp_filter_kses');
     remove_filter('term_description', 'wp_kses_data');
-    //添加主题特性
-    add_theme_support('post-thumbnails');//缩略图设置
+    //新增主題特性
+    add_theme_support('post-thumbnails');//縮圖設定
     add_theme_support('post-formats', array('aside'));//增加文章形式
     add_theme_support('custom-background', array(
             'default-repeat' => 'repeat',
@@ -83,15 +83,15 @@ function deel_setup()
             'default-attachment' => 'fixed'
         )
     );
-    //屏蔽顶部工具栏
+    //遮蔽頂部工具欄
     add_filter('show_admin_bar', '__return_false');
-    // 友情链接扩展
+    // 友情連結擴充套件
     add_filter('pre_option_link_manager_enabled', '__return_true');
-    //评论回复邮件通知
+    //評論回覆郵件通知
 //    add_action('comment_post', 'comment_mail_notify');
-    //自动勾选评论回复邮件通知，不勾选则注释掉
+    //自動勾選評論回覆郵件通知，不勾選則註釋掉
 //    add_action('comment_form', 'deel_add_checkbox');
-    //移除自动保存和修订版本
+    //移除自動儲存和修訂版本
     add_action('wp_print_scripts', 'disable_autosave');
     function disable_autosave()
     {
@@ -133,7 +133,7 @@ function pk_disable_emojis_tinymce($plugins)
     }
 }
 
-//开启支持
+//開啟支援
 add_theme_support('custom-background');
 
 add_action('init', array(\Puock\Theme\classes\meta\PuockAbsMeta::class, 'load'));
@@ -146,7 +146,7 @@ function pk_env_check()
     $last_version = '7.4';
     $content = [];
     if (version_compare($php_version, $last_version, '<')) {
-        $content[] = '<p>您正在使用过时的PHP版本<code>' . $php_version . '</code>，Puock主题需要PHP版本大于<code>' . $last_version . '</code>才能完整使用全部功能，请升级PHP版本。</p>';
+        $content[] = '<p>您正在使用過時的PHP版本<code>' . $php_version . '</code>，Puock主題需要PHP版本大於<code>' . $last_version . '</code>才能完整使用全部功能，請升級PHP版本。</p>';
     }
     $need_ext = ['gd'];
     $not_ext = [];
@@ -156,7 +156,7 @@ function pk_env_check()
         }
     }
     if (count($not_ext) > 0) {
-        $content[] = '<p>您的PHP缺少扩展' . implode(', ', $not_ext) . '，缺少这些扩展可能导致部分功能无法使用，请及时安装这些扩展。</p>';
+        $content[] = '<p>您的PHP缺少擴充套件' . implode(', ', $not_ext) . '，缺少這些擴充套件可能導致部分功能無法使用，請及時安裝這些擴充套件。</p>';
     }
     if (!empty($content)) {
         echo '<div class="error">' . (join('', $content)) . '</div>';
@@ -193,7 +193,7 @@ function pk_init_register_assets()
         }
         wp_enqueue_script('puock', pk_get_static_url() . '/assets/dist/js/puock.min.js', array('puock-libs'), PUOCK_CUR_VER_STR, true);
 
-        //加载全站黑白样式
+        //載入全站黑白樣式
         if (pk_is_checked('grey')) {
             wp_add_inline_style('puock', 'html {
                 filter: grayscale(100%);
@@ -203,15 +203,15 @@ function pk_init_register_assets()
             }');
         }
 
-        //加载自定义主题色
+        //載入自定義主題色
         if (!empty(pk_get_option('style_color_primary'))) {
             wp_add_inline_style('puock', 'body{--pk-c-primary:' . pk_get_option('style_color_primary') . '}');
         }
 
-        //加载头部样式
+        //載入頭部樣式
         wp_add_inline_style('puock', pk_head_style_var());
 
-        //加载自定义样式
+        //載入自定義樣式
         if (!empty(pk_get_option('css_code_header', ''))) {
             wp_add_inline_style('puock', pk_get_option('css_code_header', ''));
         }

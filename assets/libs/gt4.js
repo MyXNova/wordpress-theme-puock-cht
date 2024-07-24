@@ -99,7 +99,7 @@ var random = function () {
     return parseInt(Math.random() * 10000) + (new Date()).valueOf();
 };
 
-// bind 函数polify, 不带new功能的bind
+// bind 函式polify, 不帶new功能的bind
 
 var bind = function(target,context){
     if(typeof target !== 'function'){
@@ -174,14 +174,14 @@ var loadScript = function (url, cb, timeout) {
     script.charset = "UTF-8";
     script.async = true;
 
-    // 对geetest的静态资源添加 crossOrigin
+    // 對geetest的靜態資源新增 crossOrigin
     if ( /static\.geetest\.com/g.test(url)) {
         script.crossOrigin = "anonymous";
     }
 
     script.onerror = function () {
         cb(true);
-        // 错误触发了，超时逻辑就不用了
+        // 錯誤觸發了，逾時邏輯就不用了
         loaded = true;
     };
     var loaded = false;
@@ -250,17 +250,17 @@ var makeURL = function (protocol, domain, path, query) {
 var load = function (config, protocol, domains, path, query, cb, handleCb) {
     var tryRequest = function (at) {
 
-        // 处理jsonp回调，这里为了保证每个不同jsonp都有唯一的回调函数
+        // 處理jsonp回撥，這裡爲了保證每個不同jsonp都有唯一的回撥函式
         if(handleCb){
             var cbName = "geetest_" + random();
-            // 需要与预先定义好cbname参数，删除对象
+            // 需要與預先定義好cbname參數，刪除對像
             window[cbName] = bind(handleCb, null, cbName);
             query.callback = cbName;
         }
         var url = makeURL(protocol, domains[at], path, query);
         loadScript(url, function (err) {
             if (err) {
-                // 超时或者出错的时候 移除回调
+                // 逾時或者出錯的時候 移除回撥
                 if(cbName){
                   try {
                      window[cbName] = function(){
@@ -288,14 +288,14 @@ var jsonp = function (domains, path, config, callback) {
 
     var handleCb = function (cbName, data) {
 
-        // 保证只执行一次，全部超时的情况下不会再触发;
+        // 保證只執行一次，全部逾時的情況下不會再觸發;
 
         if (data.status == 'success') {
             callback(data.data);
         } else if (!data.status) {
             callback(data);
         } else {
-            //接口有返回，但是返回了错误状态，进入报错逻辑
+            //介面有返回，但是返回了錯誤狀態，進入報錯邏輯
             callback(data);
         }
         window[cbName] = undefined;
@@ -313,10 +313,10 @@ var jsonp = function (domains, path, config, callback) {
         call_type: config.callType,
         lang: config.language? config.language : navigator.appName === 'Netscape' ? navigator.language.toLowerCase() : navigator.userLanguage.toLowerCase()
     }, function (err) {
-        // 网络问题接口没有返回，直接使用本地验证码，走宕机模式
-        // 这里可以添加用户的逻辑
+        // 網路問題介面沒有返回，直接使用本機驗證碼，走宕機模式
+        // 這裡可以新增使用者的邏輯
             if(err && typeof config.offlineCb === 'function'){
-                // 执行自己的宕机
+                // 執行自己的宕機
                 config.offlineCb();
                 return;
             }
@@ -339,8 +339,8 @@ var reportError = function (config, url) {
 
 var throwError = function (errorType, config, errObj) {
     var errors = {
-        networkError: '网络错误',
-        gtTypeError: 'gt字段不是字符串类型'
+        networkError: '網路錯誤',
+        gtTypeError: 'gt欄位不是字串型別'
     };
     if (typeof config.onError === 'function') {
         config.onError({
@@ -391,7 +391,7 @@ window.initGeetest4 = function (userConfig,callback) {
 
     jsonp(config.apiServers , config.typePath, config, function (newConfig) {
             
-            //错误捕获，第一个load请求可能直接报错
+            //錯誤捕獲，第一個load請求可能直接報錯
             var newConfig = camelizeKeys(newConfig);
 
             if(newConfig.status === 'error'){
@@ -454,7 +454,7 @@ window.initGeetest4 = function (userConfig,callback) {
                     }
                 });
             } else if (s === "loaded") {
-                // 判断gct是否需要重新加载
+                // 判斷gct是否需要重新載入
                 if(!GeetestIsLoad(newConfig.gctPath)){
                   load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
                       if(err){

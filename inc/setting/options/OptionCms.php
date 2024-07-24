@@ -8,41 +8,41 @@ class OptionCms extends BaseOptionItem{
     {
         return [
             'key' => 'cms',
-            'label' => __('CMS布局', PUOCK),
+            'label' => __('CMS佈局', PUOCK),
             'icon'=>'czs-layers',
             'fields' => [
                 [
                     'id' => 'cms_show_new',
-                    'label' => __('显示最新文章', PUOCK),
+                    'label' => __('顯示最新文章', PUOCK),
                     'type' => 'switch',
                     'sdt' => true,
                 ],
                 [
                     'id' => 'cms_new_sort',
-                    'label' => __('最新文章排序规则', PUOCK),
+                    'label' => __('最新文章排序規則', PUOCK),
                     'type' => 'radio',
                     'options'=>[
-                        ['label'=>__('发布时间', PUOCK),'value'=>'published'],
-                        ['label'=>__('更新时间', PUOCK),'value'=>'updated'],
+                        ['label'=>__('發佈時間', PUOCK),'value'=>'published'],
+                        ['label'=>__('更新時間', PUOCK),'value'=>'updated'],
                     ],
                     'sdt' => 'published',
                 ],
                 [
                     'id' => 'cms_show_new_num',
-                    'label' => __('最新文章数量', PUOCK),
+                    'label' => __('最新文章數量', PUOCK),
                     'type' => 'number',
                     'sdt' => 6,
                     'showRefId' => 'cms_show_new',
                 ],
                 [
                     'id' => 'cms_show_2box',
-                    'label' => __('显示CMS两栏布局', PUOCK),
+                    'label' => __('顯示CMS兩欄佈局', PUOCK),
                     'type' => 'switch',
                     'sdt' => true,
                 ],
                 [
                     'id' => 'cms_show_2box_id',
-                    'label' => __('CMS两栏布局分类ID', PUOCK),
+                    'label' => __('CMS兩欄佈局分類ID', PUOCK),
                     'type' => 'select',
                     'sdt' => '',
                     'multiple' => true,
@@ -51,7 +51,7 @@ class OptionCms extends BaseOptionItem{
                 ],
                 [
                     'id' => 'cms_show_2box_num',
-                    'label' => __('CMS两栏布局每栏数量', PUOCK),
+                    'label' => __('CMS兩欄佈局每欄數量', PUOCK),
                     'type' => 'number',
                     'sdt' => 6,
                     'showRefId' => 'cms_show_2box',

@@ -1,32 +1,32 @@
 <?php
 
-// 分类添加字段
+// 分類新增欄位
 function category_seo_field()
 {
     echo '<div class="form-field">  
-            <label for="seo-cat-keywords">SEO关键字</label>  
+            <label for="seo-cat-keywords">SEO關鍵字</label>  
             <input name="seo-cat-keywords" id="seo-cat-keywords" type="text" value="" size="40">  
-            <p>SEO关键字，多个关键字之间使用","分隔，默认显示该分类名称</p>  
+            <p>SEO關鍵字，多個關鍵字之間使用","分隔，預設顯示該分類名稱</p>  
           </div>';
     echo '<div class="form-field">  
             <label for="seo-cat-desc">SEO描述</label>  
             <input name="seo-cat-desc" id="seo-cat-desc" type="text" value="" size="40">  
-            <p>SEO描述，默认显示该分类名称</p>
+            <p>SEO描述，預設顯示該分類名稱</p>
           </div>';
 
 }
 
 add_action('category_add_form_fields', 'category_seo_field', 10, 2);
 
-// 分类编辑字段
+// 分類編輯欄位
 function edit_category_seo_field($tag)
 {
     echo '<tr class="form-field">  
-            <th scope="row"><label for="seo-cat-keywords">SEO关键字</label></th>  
+            <th scope="row"><label for="seo-cat-keywords">SEO關鍵字</label></th>  
             <td>  
                 <input name="seo-cat-keywords" id="seo-cat-keywords" type="text" value="';
     echo get_option('seo-cat-keywords-' . $tag->term_id) . '" size="40"/><br>  
-                <span class="seo-cat-keywords">SEO关键字，多个关键字之间使用","分隔，默认显示该分类名称</span>  
+                <span class="seo-cat-keywords">SEO關鍵字，多個關鍵字之間使用","分隔，預設顯示該分類名稱</span>  
             </td>  
         </tr>';
     echo '<tr class="form-field">  
@@ -34,14 +34,14 @@ function edit_category_seo_field($tag)
             <td>  
                 <input name="seo-cat-desc" id="seo-cat-desc" type="text" value="';
     echo get_option('seo-cat-desc-' . $tag->term_id) . '" size="40"/><br>  
-                <span class="seo-cat-desc">SEO描述，默认显示该分类名称</span>  
+                <span class="seo-cat-desc">SEO描述，預設顯示該分類名稱</span>  
             </td>  
         </tr>';
 }
 
 add_action('category_edit_form_fields', 'edit_category_seo_field', 10, 2);
 
-// 保存数据
+// 儲存數據
 function cat_seo_taxonomy_save_data($term_id)
 {
     if (isset($_POST['seo-cat-keywords']) && isset($_POST['seo-cat-desc'])) {

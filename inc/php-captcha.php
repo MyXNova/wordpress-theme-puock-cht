@@ -8,37 +8,37 @@
 class CaptchaBuilder
 {
     /**
-     * @var resource 验证码图片
+     * @var resource 驗證碼圖片
      */
     protected $image;
     /**
-     * @var string 验证码文字
+     * @var string 驗證碼文字
      */
     protected $text ;
     /**
-     * @var string 随机字符
+     * @var string 隨機字元
      */
     protected $characters = '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ';
     /**
-     * @var int 图片宽度
+     * @var int 圖片寬度
      */
     protected $width = 150;
     /**
-     * @var int 图片高度
+     * @var int 圖片高度
      */
     protected $height = 40;
 
     private $fonts = [];
     /**
-     * @var int 验证码字符的个数
+     * @var int 驗證碼字元的個數
      */
     private $number = 4;
     /**
-     * @var int 字体大小
+     * @var int 字型大小
      */
     private $fontSize = 24;
     /**
-     * @var string 验证码字体
+     * @var string 驗證碼字型
      */
     private $textFont;
 
@@ -46,22 +46,22 @@ class CaptchaBuilder
 
     private $backColor;
     /**
-     * @var bool 是否添加干扰线
+     * @var bool 是否新增干擾線
      */
     private $isDrawLine = false;
     /**
-     * @var bool 是否启用曲线
+     * @var bool 是否啟用曲線
      */
     private $isDrawCurve = true;
     /**
-     * @var bool 是否启用背景噪音
+     * @var bool 是否啟用背景噪音
      */
     private $isDrawNoise = true;
 
 
     public function __construct()
     {
-        setlocale(LC_ALL, 'zh_CN.UTF-8');
+        setlocale(LC_ALL, 'zh_TW.UTF-8');
 
         $this->initialize([]);
     }
@@ -106,7 +106,7 @@ class CaptchaBuilder
 
         imagefill($this->image,0,0,$this->backColor);
         if (empty($this->fonts)) {
-            throw new \Exception('字体不存在');
+            throw new \Exception('字型不存在');
         }
 
         $this->textFont = $this->fonts[array_rand($this->fonts)];
@@ -122,7 +122,7 @@ class CaptchaBuilder
         }
         $this->isDrawCurve && $this->drawSineLine();
 
-        $codeNX = 0; // 验证码第N个字符的左边距
+        $codeNX = 0; // 驗證碼第N個字元的左邊距
         $code = [];
 
         for ($i = 0; $i < $this->number; $i++) {
@@ -176,20 +176,20 @@ class CaptchaBuilder
         return imagecolorallocate($this->image, $red, $green, $blue);
     }
     /**
-     *  画曲线
+     *  畫曲線
      */
     protected function drawSineLine() {
         $px = $py = 0;
 
-        // 曲线前部分
+        // 曲線前部分
         $A = mt_rand(1, $this->height/2);                  // 振幅
-        $b = mt_rand(-$this->height/4, $this->height/4);   // Y轴方向偏移量
-        $f = mt_rand(-$this->height/4, $this->height/4);   // X轴方向偏移量
-        $T = mt_rand($this->height, $this->width*2);  // 周期
+        $b = mt_rand(-$this->height/4, $this->height/4);   // Y軸方向偏移量
+        $f = mt_rand(-$this->height/4, $this->height/4);   // X軸方向偏移量
+        $T = mt_rand($this->height, $this->width*2);  // 週期
         $w = (2* M_PI)/$T;
 
-        $px1 = 0;  // 曲线横坐标起始位置
-        $px2 = mt_rand($this->width/2, $this->width * 0.8);  // 曲线横坐标结束位置
+        $px1 = 0;  // 曲線橫座標起始位置
+        $px2 = mt_rand($this->width/2, $this->width * 0.8);  // 曲線橫座標結束位置
 
         $color = imagecolorallocate($this->image, mt_rand(1, 150), mt_rand(1, 150), mt_rand(1, 150));
 
@@ -198,16 +198,16 @@ class CaptchaBuilder
                 $py = $A * sin($w*$px + $f)+ $b + $this->height/2;  // y = Asin(ωx+φ) + b
                 $i = (int) ($this->fontSize/5);
                 while ($i > 0) {
-                    imagesetpixel($this->image, $px + $i , $py + $i, $color);  // 这里(while)循环画像素点比imagettftext和imagestring用字体大小一次画出（不用这while循环）性能要好很多
+                    imagesetpixel($this->image, $px + $i , $py + $i, $color);  // 這裡(while)循環畫畫素點比imagettftext和imagestring用字型大小一次畫出（不用這while循環）效能要好很多
                     $i--;
                 }
             }
         }
 
-        // 曲线后部分
+        // 曲線後部分
         $A = mt_rand(1, $this->height/2);                  // 振幅
-        $f = mt_rand(-$this->height/4, $this->height/4);   // X轴方向偏移量
-        $T = mt_rand($this->height, $this->width*2);  // 周期
+        $f = mt_rand(-$this->height/4, $this->height/4);   // X軸方向偏移量
+        $T = mt_rand($this->height, $this->width*2);  // 週期
         $w = (2* M_PI)/$T;
         $b = $py - $A * sin($w*$px + $f) - $this->height/2;
         $px1 = $px2;
@@ -249,8 +249,8 @@ class CaptchaBuilder
     }
 
     /**
-     * 画杂点
-     * 往图片上写不同颜色的字母或数字
+     * 畫雜點
+     * 往圖片上寫不同顏色的字母或數字
      */
     private function drawNoise() {
 
@@ -258,17 +258,17 @@ class CaptchaBuilder
         for($i = 0; $i < $this->noiseLevel; $i++){
             list($red,$green,$blue) = $this->getLightColor();
 
-            //杂点颜色
+            //雜點顏色
             $noiseColor = imagecolorallocate($this->image, $red,$green,$blue);
             for($j = 0; $j < 5; $j++) {
-                // 绘杂点
+                // 繪雜點
                 imagestring($this->image, 5, mt_rand(-10, $this->width),  mt_rand(-10, $this->height), $codeSet[mt_rand(0, 29)], $noiseColor);
             }
         }
     }
 
     /**
-     * 获取随机浅色
+     * 獲取隨機淺色
      * @return array
      */
     private function getLightColor()
@@ -281,7 +281,7 @@ class CaptchaBuilder
     }
 
     /**
-     * 获取随机颜色
+     * 獲取隨機顏色
      * @return array
      */
     private function getRandColor()
@@ -298,7 +298,7 @@ class CaptchaBuilder
     }
 
     /**
-     * 获取随机深色
+     * 獲取隨機深色
      * @return array
      */
     private function getDeepColor()

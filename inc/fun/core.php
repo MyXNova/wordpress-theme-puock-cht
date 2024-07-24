@@ -53,7 +53,7 @@ $puock_class_load = new PuockClassLoad();
 
 /*Auth-Domains*/
 
-//钩子添加集合
+//鉤子新增集合
 if (pk_is_checked('html_page_permalink')) {
     add_action('init', 'html_page_permalink', -1);
 }
@@ -86,7 +86,7 @@ function pk_get_theme_option_url($to = '')
 }
 
 
-// 顶部添加自定义菜单
+// 頂部新增自定義選單
 function pk_toolbar_link(WP_Admin_Bar $bar)
 {
     $menu_id = 'theme-quick-start';
@@ -98,13 +98,13 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-setting',
         'parent' => $menu_id,
-        'title' => '<i class="czs-setting" style="color:#9627e3"></i>&nbsp;主题设置',
+        'title' => '<i class="czs-setting" style="color:#9627e3"></i>&nbsp;主題設定',
         'href' => pk_get_theme_option_url()
     ));
     $bar->add_node(array(
         'id' => 'theme-docs',
         'parent' => $menu_id,
-        'title' => '<i class="czs-doc-file" style="color:#496cf9"></i>&nbsp;主题文档',
+        'title' => '<i class="czs-doc-file" style="color:#496cf9"></i>&nbsp;主題文件',
         'href' => 'https://licoy.cn/puock-doc.html',
         'meta' => array(
             'target' => 'blank'
@@ -113,7 +113,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-sponsor',
         'parent' => $menu_id,
-        'title' => '<i class="czs-heart" style="color:#f54747"></i>&nbsp;赞助主题',
+        'title' => '<i class="czs-heart" style="color:#f54747"></i>&nbsp;贊助主題',
         'href' => 'https://licoy.cn/puock-theme-sponsor.html',
         'meta' => array(
             'target' => 'blank'
@@ -122,7 +122,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-group',
         'parent' => $menu_id,
-        'title' => '<i class="czs-weixin" style="color:#177b17"></i>&nbsp;主题交流群',
+        'title' => '<i class="czs-weixin" style="color:#177b17"></i>&nbsp;主題交流群',
         'href' => 'https://licoy.cn/go/puock-update.php?r=qq_qun',
         'meta' => array(
             'target' => 'blank'
@@ -131,7 +131,7 @@ function pk_toolbar_link(WP_Admin_Bar $bar)
     $bar->add_node(array(
         'id' => 'theme-github',
         'parent' => $menu_id,
-        'title' => '<i class="czs-github-logo"></i>&nbsp;Github 开源主页',
+        'title' => '<i class="czs-github-logo"></i>&nbsp;Github 開源主頁',
         'href' => 'https://github.com/Licoy/wordpress-theme-puock',
         'meta' => array(
             'target' => 'blank'
@@ -168,7 +168,7 @@ function pk_is_pjax()
     return pk_is_checked('page_ajax_load', false);
 }
 
-//判断阅读数量是否需要增加并进行操作
+//判斷閱讀數量是否需要增加並進行操作
 if (!function_exists('the_views_add')) {
     function the_views_add($post_ID, $count, $key, $ajax = false)
     {
@@ -184,7 +184,7 @@ if (!function_exists('the_views_add')) {
     }
 }
 
-//获取当前的阅读数量与自增
+//獲取目前的閱讀數量與自增
 if (!function_exists('the_views')) {
     function the_views($post_id = null, $echo = true, $ajax = false)
     {
@@ -205,7 +205,7 @@ if (!function_exists('the_views')) {
         echo $count_view;
     }
 }
-//异步请求浏览量
+//非同步請求瀏覽量
 function async_pk_views()
 {
     $postId = $_POST['id'];
@@ -220,7 +220,7 @@ function async_pk_views()
 add_action('wp_ajax_nopriv_async_pk_views', 'async_pk_views');
 add_action('wp_ajax_async_pk_views', 'async_pk_views');
 
-//设置文章发布的时候进行字段添加
+//設定文章發佈的時候進行欄位新增
 function set_views($post_ID)
 {
     $key = 'views';
@@ -256,9 +256,9 @@ add_action('init', 'pk_check_right_md5');
 
 
 /**
- * 获取查看最多的文章
- * @param $days N天内
- * @param $nums 数量
+ * 獲取檢視最多的文章
+ * @param $days N天內
+ * @param $nums 數量
  * @return array|object|null
  */
 function get_views_most_post($days, $nums)
@@ -274,7 +274,7 @@ function get_views_most_post($days, $nums)
     return $wpdb->get_results($sql);
 }
 
-//是否隐藏侧边栏
+//是否隱藏側邊欄
 function pk_hide_sidebar($post_id = null)
 {
     global $post;
@@ -290,7 +290,7 @@ function pk_hide_sidebar($post_id = null)
     return false;
 }
 
-//隐藏/显示侧边栏的输出字符
+//隱藏/顯示側邊欄的輸出字元
 function pk_hide_sidebar_out($hide = '', $show = '', $post_id = null, $echo = true)
 {
     $out = $show;
@@ -303,7 +303,7 @@ function pk_hide_sidebar_out($hide = '', $show = '', $post_id = null, $echo = tr
     echo $out;
 }
 
-//侧边栏检测数据
+//側邊欄檢測數據
 function pk_sidebar_check_has($name)
 {
     if (!dynamic_sidebar($name)) {
@@ -311,7 +311,7 @@ function pk_sidebar_check_has($name)
     }
 }
 
-//获取链接对象，用于书籍推荐及其他页面使用
+//獲取連結對象，用於書籍推薦及其他頁面使用
 function pk_get_wp_links($link_cats = '')
 {
     global $wpdb;
@@ -328,7 +328,7 @@ function pk_get_wp_links($link_cats = '')
     return $wpdb->get_results($sql);
 }
 
-//获取懒加载图片信息
+//獲取懶載入圖片資訊
 function pk_get_lazy_pl_img()
 {
     return pk_get_static_url() . "/assets/img/z/load.svg";
@@ -364,7 +364,7 @@ function pk_content_img_lazy($content)
 if (pk_is_checked('basic_img_lazy_z')) {
     add_filter('the_content', 'pk_content_img_lazy');
 }
-//获取图片缩略图链接
+//獲取圖片縮圖連結
 function pk_get_img_thumbnail_src($src, $width, $height, $args = array())
 {
     if ($width == null || $height == null) {
@@ -376,17 +376,17 @@ function pk_get_img_thumbnail_src($src, $width, $height, $args = array())
     return PUOCK_ABS_URI . "/timthumb.php?w={$width}&h={$height}&a=c&zc=1&q=90&src=" . $src;
 }
 
-//获取文章样式是否是卡片式
+//獲取文章樣式是否是卡片式
 function pk_post_style_list()
 {
     return pk_get_option('post_style', 'list') == 'list';
 }
 
-//评论添加@功能
+//評論新增@功能
 if (pk_is_checked('comment_has_at')) {
     add_filter('comment_text', 'pk_comment_add_at', 10, 2);
 }
-//GrAvatar头像源切换
+//GrAvatar頭像源切換
 if (pk_get_option('gravatar_url', 'wp') != 'wp') {
     $type = pk_get_option('gravatar_url', 'wp');
     if ($type == 'cravatar') {
@@ -412,7 +412,7 @@ if (pk_get_option('gravatar_url', 'wp') != 'wp') {
         add_filter('get_avatar_url', 'pk_custom_avatar');
     }
 }
-//评论者链接
+//評論者連結
 function pk_comment_author_url($comment_ID = 0)
 {
     global $comment;
@@ -427,12 +427,12 @@ function pk_comment_author_url($comment_ID = 0)
     echo empty($url) ? $author : "<a " . $attr . " href='" . pk_go_link($url) . "' class='url'>$author</a>";
 }
 
-//评论回复通知
+//評論回覆通知
 if (pk_is_checked('comment_mail_notify')) {
     add_action('comment_unapproved_to_approved', 'comment_mail_notify');
     add_action('comment_post', 'comment_mail_notify');
 }
-//覆盖邮件配置
+//覆蓋 E-mail 配置
 if (pk_is_checked('smtp_open')) {
     function mail_smtp_set($phpmailer)
     {
@@ -449,7 +449,7 @@ if (pk_is_checked('smtp_open')) {
 
     add_action('phpmailer_init', 'mail_smtp_set');
 }
-//检测是否默认的第三方生成邮箱
+//檢測是否預設的第三方產生 E-mail
 function pk_email_change_email($email_change_email, $user = null, $userdata = null)
 {
     if (pk_check_email_is_sysgen($email_change_email['to'])) {
@@ -459,13 +459,13 @@ function pk_email_change_email($email_change_email, $user = null, $userdata = nu
 }
 
 add_filter('email_change_email', 'pk_email_change_email');
-//检测邮箱是否系统生成
+//檢測 E-mail 是否系統產生
 function pk_check_email_is_sysgen($email)
 {
     return preg_match("/^_p_[\w].+@null.null/", $email);
 }
 
-//后台登录保护
+//後臺登入保護
 function login_protection()
 {
     if (!is_user_logged_in()) {
@@ -481,7 +481,7 @@ if (pk_is_checked('login_protection')) {
 if (pk_is_checked('compress_html')) {
     add_action('get_header', 'wp_compress_html');
 }
-//百度主动推送
+//百度主動推送
 function pk_baidu_submit($post_ID)
 {
     if (get_post_meta($post_ID, 'baidu_submit_url_status', true) == 1) return;
@@ -497,7 +497,7 @@ function pk_baidu_submit($post_ID)
 if (pk_is_checked('open_baidu_submit')) {
     add_action('publish_post', 'pk_baidu_submit', 0);
 }
-//对pre里面的内容进行转义
+//對pre裡面的內容進行轉義
 function pk_tag_pre_encode($content)
 {
     preg_match_all("/<pre.*?>(.+?)<\/pre>/is", $content, $matches);
@@ -528,22 +528,22 @@ function pk_htmlspecialchars($content)
 
 function create_taxs($tax_slug, $hook_type, $tax_name)
 {
-    //自定义分类法标签
+    //自定義分類法標籤
     $labels_tax = array(
         'name' => $tax_name,
         'singular_name' => $tax_name,
-        'search_items' => '搜索' . $tax_name,
+        'search_items' => '搜尋' . $tax_name,
         'all_items' => '所有' . $tax_name,
-        'parent_item' => '父级' . $tax_name,
-        'parent_item_colon' => '父级' . $tax_name,
-        'edit_item' => '编辑' . $tax_name,
+        'parent_item' => '父級' . $tax_name,
+        'parent_item_colon' => '父級' . $tax_name,
+        'edit_item' => '編輯' . $tax_name,
         'update_item' => '更新' . $tax_name,
-        'add_new_item' => '添加新' . $tax_name,
-        'new_item_name' => '新' . $tax_name . '名称',
+        'add_new_item' => '新增新' . $tax_name,
+        'new_item_name' => '新' . $tax_name . '名稱',
         'menu_name' => $tax_name,
     );
 
-    //自定义分类法参数
+    //自定義分類法參數
     $args_tax = array(
         'hierarchical' => true,
         'labels' => $labels_tax,
@@ -557,12 +557,12 @@ function create_taxs($tax_slug, $hook_type, $tax_name)
 }
 
 
-//注册菜单
+//註冊選單
 register_nav_menus(array(
-    'primary' => '主要菜单',
+    'primary' => '主要選單',
 ));
 
-//获取主题配置
+//獲取主題配置
 function pk_get_option($name, $default = null)
 {
     $config = get_option(PUOCK_OPT);
@@ -572,7 +572,7 @@ function pk_get_option($name, $default = null)
     return $default;
 }
 
-//配置是否选择
+//配置是否選擇
 function pk_is_checked($name, $default = false)
 {
     $val = pk_get_option($name);
@@ -585,7 +585,7 @@ function pk_is_checked($name, $default = false)
     return false;
 }
 
-//配置选择输出
+//配置選擇輸出
 function pk_checked_out($name, $out = '', $default = 0)
 {
     if (pk_is_checked($name, $default)) {
@@ -593,7 +593,7 @@ function pk_checked_out($name, $out = '', $default = 0)
     }
 }
 
-//主题模式
+//主題模式
 function pk_theme_light()
 {
     if (isset($_COOKIE['mode'])) {
@@ -602,7 +602,7 @@ function pk_theme_light()
     return pk_get_option('theme_mode', 'light') == 'light';
 }
 
-//动画载入
+//動畫載入
 function pk_open_box_animated($class, $echo = true)
 {
     $open = pk_is_checked("page_animate") == 1;
@@ -615,7 +615,7 @@ function pk_open_box_animated($class, $echo = true)
 }
 
 
-//获取所有站点分类id
+//獲取所有網站分類id
 function get_all_category_id($type = null)
 {
     global $wpdb;
@@ -635,7 +635,7 @@ function get_all_category_id($type = null)
     return $out;
 }
 
-//获取所有站点分类id
+//獲取所有網站分類id
 function get_all_category_id_row($type = null)
 {
     global $wpdb;
@@ -652,7 +652,7 @@ function get_all_category_id_row($type = null)
 }
 
 
-//获取菜单数据
+//獲取選單數據
 function pk_get_main_menu($mobile = false)
 {
     global $wp;
@@ -664,7 +664,7 @@ function pk_get_main_menu($mobile = false)
     if (is_user_logged_in()) {
         $user = wp_get_current_user();
         $avatar = get_avatar_url($user->user_email);
-        $out .= '<li><a ' . (pk_is_checked('user_center') ? '' : 'data-no-instant') . ' data-bs-toggle="tooltip" title="用户中心" href="' . pk_user_center_url() . '"><img alt="用户中心" src="' . $avatar . '" class="min-avatar"></a></li>';
+        $out .= '<li><a ' . (pk_is_checked('user_center') ? '' : 'data-no-instant') . ' data-bs-toggle="tooltip" title="使用者中心" href="' . pk_user_center_url() . '"><img alt="使用者中心" src="' . $avatar . '" class="min-avatar"></a></li>';
     } else {
         if (pk_is_checked('open_quick_login')) {
             $url = pk_ajax_url('pk_font_login_page', ['redirect' => home_url($wp->request)]);
@@ -673,15 +673,15 @@ function pk_get_main_menu($mobile = false)
     }
     if (!$mobile) {
         if (pk_is_checked('theme_mode_s')) {
-            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切换" href="javascript:void(0)"><i class="fa-regular fa-' . (pk_theme_light() ? 'sun' : 'moon') . '"></i></a></li>';
+            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切換" href="javascript:void(0)"><i class="fa-regular fa-' . (pk_theme_light() ? 'sun' : 'moon') . '"></i></a></li>';
         }
-        $out .= '<li><a class="search-modal-btn" data-bs-toggle="tooltip" title="搜索" href="javascript:void(0)"><i class="fa fa-search"></i></a></li>';
+        $out .= '<li><a class="search-modal-btn" data-bs-toggle="tooltip" title="搜尋" href="javascript:void(0)"><i class="fa fa-search"></i></a></li>';
     }
     $out .= '</ul>';
     return $out;
 }
 
-//获取菜单对象数据
+//獲取選單對像數據
 function get_nav_menu_object($location)
 {
     $locations = get_nav_menu_locations();
@@ -719,7 +719,7 @@ function get_nav_menu_object($location)
     return $menus;
 }
 
-//将匹配的到的菜单数据转换为html
+//將匹配的到的選單數據轉換為html
 function pk_get_menu_obj_to_html($menus, &$out, $mobile = false, $dpath_cur = 1, $max_dpath = 2)
 {
     $child_class = $dpath_cur != 1 ? 'menu-item-child' : '';
@@ -754,7 +754,7 @@ function pk_get_menu_obj_to_html($menus, &$out, $mobile = false, $dpath_cur = 1,
     }
 }
 
-//获取分类的子集菜单
+//獲取分類的子集選單
 function get_category_child($parentId)
 {
     $child = get_categories("parent={$parentId}&hide_empty=0");
@@ -768,7 +768,7 @@ function get_category_child($parentId)
     return $list;
 }
 
-//主查询设置
+//主查詢設定
 function pk_pre_post_set($query)
 {
     if ($query->is_home() && $query->is_main_query()) {
@@ -788,7 +788,7 @@ function pk_pre_post_set($query)
 
 add_action('pre_get_posts', 'pk_pre_post_set');
 
-//静态资源加载源的链接
+//靜態資源載入源的連結
 function pk_get_static_url()
 {
     $type = pk_get_option('static_load_origin', 'self');
@@ -814,20 +814,20 @@ function pk_get_static_url()
     return $url_pre;
 }
 
-//是否打开讨论-显示头像
+//是否打開討論-顯示頭像
 function pk_open_show_comment_avatar()
 {
     return get_option('show_avatars') == "1";
 }
 
-//关闭区块小工具
+//關閉區塊小工具
 function pk_off_widgets_block()
 {
     add_filter('gutenberg_use_widgets_block_editor', '__return_false');
     add_filter('use_widgets_block_editor', '__return_false');
 }
 
-//获取中文格式化的实例
+//獲取中文格式化的實例
 function pk_chinese_format($content)
 {
     include_once dirname(__FILE__) . '/../lib/ChineseTypesetting.php';
@@ -841,7 +841,7 @@ if (pk_is_checked('chinese_format')) {
     add_filter('the_content', 'pk_chinese_format', 199);
 }
 
-//获取缩略图的白名单
+//獲取縮圖的白名單
 function pk_get_thumbnail_allow_sites()
 {
     $sites = [];
@@ -857,13 +857,13 @@ function pk_get_thumbnail_allow_sites()
     return $sites;
 }
 
-//生成缩略图白名单文件名称
+//產生縮圖白名單檔名稱
 function pk_get_thumbnail_allow_sites_filepath()
 {
     return PUOCK_ABS_DIR . '/.tas.php';
 }
 
-//生成缩略图白名单文件
+//產生縮圖白名單檔案
 function pk_generate_thumbnail_allow_sites_file()
 {
     $sites = pk_get_thumbnail_allow_sites();
@@ -887,7 +887,7 @@ function pk_get_req_data(array $model)
         $val = trim($_REQUEST[$key] ?? '');
         if (empty($val)) {
             if ($item['required']) {
-                return ($item['name'] ?? $key) . '不能为空';
+                return ($item['name'] ?? $key) . '不能為空';
             }
             if (isset($item['default'])) {
                 $data[$key] = $item['default'];
@@ -917,8 +917,8 @@ function pk_get_ip_region_str($ip)
     } catch (Exception $e) {
         return '未知';
     }
-    if (strpos($s['region'], '内网IP') !== false) {
-        return '内网IP';
+    if (strpos($s['region'], '內網IP') !== false) {
+        return '內網IP';
     }
     $region = explode('|', $s['region']);
     $res = '';
@@ -932,7 +932,7 @@ function pk_get_ip_region_str($ip)
 }
 
 /**
- * 极验验证码校验
+ * 極驗驗證碼校驗
  * @throws Exception
  */
 function pk_vd_gt_validate(array $args = null)
@@ -954,11 +954,11 @@ function pk_vd_gt_validate(array $args = null)
         'timeout' => 5
     ]);
     if (is_wp_error($result)) {
-        throw new Exception('验证行为失败');
+        throw new Exception('驗證行為失敗');
     }
     $result = json_decode($result['body'], true);
     if ($result['status'] != 'success' || $result['result'] != 'success') {
-        throw new Exception('验证行为失败: ' . $result['msg'] ?? $result['reason']);
+        throw new Exception('驗證行為失敗: ' . $result['msg'] ?? $result['reason']);
     }
     return true;
 }

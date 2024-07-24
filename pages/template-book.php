@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: 书籍推荐
+Template Name: 書籍推薦
 */
 
 $cats = get_post_meta($post->ID,'page_books_id',true);

@@ -104,7 +104,7 @@ function specs_show_tags() {
     echo $out;
 }
 
-//发布文章时清理标签缓存
+//發佈文章時清理標籤快取
 function clear_post_tags_cache() {
     update_option('specs_tags_list_cache', '');
 }

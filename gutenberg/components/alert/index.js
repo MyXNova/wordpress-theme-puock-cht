@@ -40,7 +40,7 @@ __webpack_require__.r(__webpack_exports__);
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, {
       key: "setting"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
-      title: '区块设置',
+      title: '區塊設定',
       icon: "more",
       initialOpen: true
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -158,7 +158,7 @@ module.exports = window["wp"]["element"];
   \******************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"puock/alert","version":"0.1.0","title":"Puock提示框","category":"widgets","icon":"smiley","description":"一个提示框","supports":{"html":false},"attributes":{"color":{"type":"string","default":"#007bff"},"text":{"type":"string","default":"Hello World"},"iconClass":{"type":"string","default":""},"position":{"type":"string","default":"left"}},"textdomain":"alert","editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"puock/alert","version":"0.1.0","title":"Puock提示框","category":"widgets","icon":"smiley","description":"一個提示框","supports":{"html":false},"attributes":{"color":{"type":"string","default":"#007bff"},"text":{"type":"string","default":"Hello World"},"iconClass":{"type":"string","default":""},"position":{"type":"string","default":"left"}},"textdomain":"alert","editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

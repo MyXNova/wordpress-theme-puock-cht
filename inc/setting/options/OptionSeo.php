@@ -8,67 +8,67 @@ class OptionSeo extends BaseOptionItem{
     {
         return [
             'key' => 'seo',
-            'label' => __('SEO搜索优化', PUOCK),
+            'label' => __('SEO搜尋優化', PUOCK),
             'icon'=>'dashicons-google',
             'fields' => [
                 [
                     'id' => 'seo_open',
-                    'label' => __('开启SEO', PUOCK),
+                    'label' => __('開啟SEO', PUOCK),
                     'type' => 'switch',
                     'sdt' => true,
-                    'tips'=>__('若您正在使用其它的SEO插件，请取消勾选', PUOCK),
+                    'tips'=>__('若您正在使用其它的SEO外掛，請取消勾選', PUOCK),
                 ],
                 [
                     'id' => 'web_title',
-                    'label' => __('网站标题', PUOCK),
+                    'label' => __('網站標題', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'seo_open',
                 ],
                 [
                     'id' => 'web_title_2',
-                    'label' => __('网站副标题', PUOCK),
+                    'label' => __('網站副標題', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'seo_open',
                 ],
                 [
                     'id' => 'title_conn',
-                    'label' => __('标题连接符', PUOCK),
+                    'label' => __('標題連線符', PUOCK),
                     'sdt' => '-',
                     'showRefId' => 'seo_open',
-                    'tips'=>__('Title连接符号，例如 "-"、"|"', PUOCK),
+                    'tips'=>__('Title連線符號，例如 "-"、"|"', PUOCK),
                 ],
                 [
                     'id' => 'description',
-                    'label' => __('网站描述', PUOCK),
+                    'label' => __('網站描述', PUOCK),
                     'type' => 'textarea',
                     'sdt' => '',
                     'showRefId' => 'seo_open',
                 ],
                 [
                     'id' => 'keyword',
-                    'label' => __('网站关键词', PUOCK),
+                    'label' => __('網站關鍵詞', PUOCK),
                     'type' => 'textarea',
                     'sdt' => '',
                     'showRefId' => 'seo_open',
                 ],
                 [
                     'id' => 'no_category',
-                    'label' => __('不显示分类链接中的<code>category</code>', PUOCK),
+                    'label' => __('不顯示分類連結中的<code>category</code>', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
                 [
                     'id' => 'open_baidu_submit',
-                    'label' => __('发布文章主动推送至百度', PUOCK),
+                    'label' => __('發佈文章主動推送至百度', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
                 [
                     'id' => 'baidu_submit_url',
-                    'label' => __('百度推送接口地址', PUOCK),
+                    'label' => __('百度推送介面地址', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'open_baidu_submit',
-                    'tips'=>__('百度推送接口地址，如：', PUOCK)."http://data.zz.baidu.com/urls?site=https://xxx.com&token=XXXXXX"
+                    'tips'=>__('百度推送介面地址，如：', PUOCK)."http://data.zz.baidu.com/urls?site=https://xxx.com&token=XXXXXX"
                 ],
             ],
         ];

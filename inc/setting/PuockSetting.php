@@ -60,8 +60,8 @@ class PuockSetting
     public function __wp_reg_menu()
     {
         add_menu_page(
-            __('Puock主题配置', PUOCK),
-            __('Puock主题配置', PUOCK),
+            __('Puock主題配置', PUOCK),
+            __('Puock主題配置', PUOCK),
             "manage_options",
             "puock-options",
             array($this, 'setting_page'),
@@ -73,7 +73,7 @@ class PuockSetting
     {
         $menus = $this->option_menus_register();
         if (!current_user_can('edit_theme_options')) {
-            wp_send_json_error(__('权限不足', PUOCK));
+            wp_send_json_error(__('許可權不足', PUOCK));
         }
         $fields = [];
         foreach ($menus as $menu) {

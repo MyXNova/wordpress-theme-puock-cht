@@ -22,7 +22,7 @@ msgstr ""
 # 您訪問的資源不存在
 #: 404.php:12
 msgid "你访问的资源不存在！"
-msgstr "你訪問的資源不存在！"
+msgstr "你瀏覽的資源不存在！"
 
 #: 404.php:13 error.php:23
 msgid "秒后即将跳转至首页"
@@ -54,7 +54,7 @@ msgstr "暱稱 (必填)"
 
 #: comments.php:33
 msgid "邮箱（必填）"
-msgstr "電子郵件 (必填)"
+msgstr "電子信箱 (必填)"
 
 #: comments.php:34
 msgid "网站"
@@ -134,7 +134,7 @@ msgstr "標籤"
 
 #: functions.php:364
 msgid "你访问的资源不存在"
-msgstr "你訪問的資源不存在"
+msgstr "你瀏覽的資源不存在"
 
 #: header.php:57
 msgid "请输入搜索关键字"
@@ -255,7 +255,7 @@ msgstr "https://www.licoy.cn"
 
 #. Description of the plugin/theme
 msgid "支持暗黑与白天模式的自适应多风格主题！"
-msgstr "支持暗黑與白天模式的自適應多風格主席！"
+msgstr "支持暗黑與白天模式的自適應多風格主題！"
 
 #. Author of the plugin/theme
 msgid "Licoy"

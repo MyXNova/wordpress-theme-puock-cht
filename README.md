@@ -4,13 +4,14 @@
 <img alt="logo" height="120" src="./assets/img/logo/puock.png" width="120"/>
 </div>
 
-## 介绍
+## 介紹
 
 ![cover](./screenshot.png)
 
 <div align="center">
     <h1>WordPress Theme - Puock</h1>
-    <p>一款基于WordPress开发的高颜值的自适应主题，支持白天与黑夜模式。</p>
+    <p>一款基於WordPress開發的高顏值的自適應主題，支援白天與黑夜模式。</p>
+    <p>本修改版僅有修改語言翻譯、圖片、CSS 字型為繁體中文，程式碼邏輯相關部份則未修改。</p>
       <a target="_blank" href="https://github.com/Licoy/wordpress-theme-puock/releases/latest">
         <img src="https://img.shields.io/github/v/release/Licoy/wordpress-theme-puock.svg?logo=git" alt="Release-Version">
       </a>
@@ -22,13 +23,13 @@
       </a>
     <br>
     <a target="_blank" href="https://licoy.cn/puock-theme-sponsor.html">
-        <img src="https://img.shields.io/badge/赞赏-开发不易-CC3333.svg?logo=Buy-Me-A-Coffee" alt="赞赏支持">
+        <img src="https://img.shields.io/badge/讚賞-開發不易-CC3333.svg?logo=Buy-Me-A-Coffee" alt="讚賞支援">
       </a>
     <a target="_blank" href="https://licoy.cn/puock-theme-sponsor.html">
-        <img src="https://img.shields.io/badge/捐赠-支付宝-00a2ef.svg?logo=AliPay" alt="支付宝捐赠">
+        <img src="https://img.shields.io/badge/捐贈-支付寶-00a2ef.svg?logo=AliPay" alt="支付寶捐贈">
       </a>
     <a target="_blank" href="https://licoy.cn/puock-theme-sponsor.html">
-        <img src="https://img.shields.io/badge/捐赠-微信-68b600.svg?logo=WeChat" alt="微信捐赠">
+        <img src="https://img.shields.io/badge/捐贈-微信-68b600.svg?logo=WeChat" alt="微信捐贈">
       </a>
     <br>
     <a target="_blank" href="https://licoy.cn/go/puock-update.php?r=qq_qun">
@@ -41,82 +42,82 @@
 
 </div>
 
-## 配置截图
+## 配置截圖
 
 ![theme-options.png](./.screenshot/options.png)
 
-## 安装
+## 安裝
 
-请到 [发行版本](https://github.com/Licoy/wordpress-theme-puock/releases)
-中进行下载最新版本，然后到WordPress管理后台中的「外观」-「主题」中点击「添加」，选择Puock的主题包进行上传安装并启用即可。
+請到 [發行版本](https://github.com/Licoy/wordpress-theme-puock/releases)
+中進行下載最新版本，然後到WordPress管理後臺中的「外觀」-「主題」中點選「新增」，選擇Puock的主題包進行上傳安裝並啟用即可。
 
-**提示：为了防止主题不兼容，请在安装主题前进行数据备份，防止数据字段重复覆盖等情况发生。**
+**提示：爲了防止主題不相容，請在安裝主題前進行資料備份，防止資料欄位重複覆蓋等情況發生。**
 
-**重要：请不要直接克隆或直接下载仓库进行使用，请到发行版中进行下载使用**
+**重要：請不要直接克隆或直接下載倉庫進行使用，請到發行版中進行下載使用**
 
-### 环境要求
+### 環境要求
 
 - WordPress `>=6.0`
 - PHP `>=7.4`
 
-## 主题特性
+## 主題特性
 
-- [x] 支持白天与暗黑模式
-- [x] 全局无刷新加载
-- [x] 支持博客、CMS、企业三种布局
-- [x] 内置WP优化策略
-- [x] 内置前台用户中心
-- [x] 支持QQ / Github / Gitee / 微博登录
-- [x] 支持缩略图伪静态
-- [x] 全局顶部滚动公告
-- [x] 图形及极验验证码支持
-- [x] 自定义SMTP支持
-- [x] 一键全站变灰
-- [x] 网页压缩成一行
-- [x] 后台防恶意登录
-- [x] 内置出色的SEO功能
-- [x] 评论ajax加载
-- [x] 文章点赞、打赏、海报生成、分享
-- [x] Twemoji集成
-- [x] 丰富的广告位
-- [x] 丰富的小工具
-- [x] 自动百度链接提交
-- [x] 众多页面模板（读者墙 / 归档 / 书籍推荐/ 站点导航 / 标签 / 站点地图等）
-- [x] 众多短代码支持（下载 / 评论后可见 / 登录后可见 / 登录且验证邮箱可见 / 多种提示框 / Github卡片等）
-- [x] 支持Dplayer播放器
-- [x] 仿MacOS的代码风格及拷贝代码
-- [x] Vue3+NaiveUI集成的高颜值后台配置
-- [x] 文章多级目录生成
-- [x] 侧边栏粘性滚动
-- [x] WP缓存支持
-- [x] 自定义主色调
-- [x] LOGO扫光动画
-- [x] ChatGPT及AI绘画支持
-- [x] 更多特性更新请查阅版本发布说明：[releases](https://github.com/Licoy/wordpress-theme-puock/releases)
-- [x] 更多功能等你的[提议](https://github.com/Licoy/wordpress-theme-puock/issues)
+- [x] 支援白天與暗黑模式
+- [x] 全域性無重新整理載入
+- [x] 支援部落格、CMS、企業三種佈局
+- [x] 內建WP優化策略
+- [x] 內建前臺使用者中心
+- [x] 支援QQ / Github / Gitee / 微博登入
+- [x] 支援縮圖偽靜態
+- [x] 全域性頂部滾動公告
+- [x] 圖形及極驗驗證碼支援
+- [x] 自定義SMTP支援
+- [x] 一鍵全站變灰
+- [x] 網頁壓縮成一行
+- [x] 後臺防惡意登入
+- [x] 內建出色的SEO功能
+- [x] 評論ajax載入
+- [x] 文章點贊、打賞、海報產生、分享
+- [x] Twemoji整合
+- [x] 豐富的廣告位
+- [x] 豐富的小工具
+- [x] 自動百度連結提交
+- [x] 眾多頁面模板（讀者墻 / 歸檔 / 書籍推薦/ 站點導航 / 標籤 / 站點地圖等）
+- [x] 眾多短程式碼支援（下載 / 評論後可見 / 登入後可見 / 登入且驗證 E-mail 可見 / 多種提示框 / Github卡片等）
+- [x] 支援Dplayer播放器
+- [x] 仿MacOS的程式碼風格及拷貝程式碼
+- [x] Vue3+NaiveUI整合的高顏值後臺配置
+- [x] 文章多級目錄產生
+- [x] 側邊欄粘性滾動
+- [x] WP快取支援
+- [x] 自定義主色調
+- [x] LOGO掃光動畫
+- [x] ChatGPT及AI繪畫支援
+- [x] 更多特性更新請查閱版本發佈說明：[releases](https://github.com/Licoy/wordpress-theme-puock/releases)
+- [x] 更多功能等你的[提議](https://github.com/Licoy/wordpress-theme-puock/issues)
 
-## 文档
+## 文件
 
-- 主题使用文档：[立即使用](https://www.licoy.cn/puock-doc.html)
-- 建议或BUG反馈：[立即进入](https://github.com/Licoy/wordpress-theme-puock/issues)
-- QQ/微信交流群：[点我加入](https://licoy.cn/go/puock-update.php?r=qq_qun) （此群皆为大家提供交流使用的地方，有BUG请直接提交ISSUE）
-- **若您有任何建议或BUG发现，并且您也有解决或实现的思路，欢迎直接提交PR！**
+- 主題使用文件：[立即使用](https://www.licoy.cn/puock-doc.html)
+- 建議或BUG反饋：[立即進入](https://github.com/Licoy/wordpress-theme-puock/issues)
+- QQ/微信交流群：[點我加入](https://licoy.cn/go/puock-update.php?r=qq_qun) （此群皆為大家提供交流使用的地方，有BUG請直接提交ISSUE）
+- **若您有任何建議或BUG發現，並且您也有解決或實現的思路，歡迎直接提交PR！**
 
-## 支持
+## 支援
 
-- 捐赠我们以支持更好的发展：[点我进入](https://licoy.cn/puock-theme-sponsor.html)
+- 捐贈我們以支援更好的發展：[點我進入](https://licoy.cn/puock-theme-sponsor.html)
 
-## 趋势
+## 趨勢
 
 [![Stargazers over time](https://starchart.cc/Licoy/wordpress-theme-puock.svg)](https://starchart.cc/Licoy/wordpress-theme-puock)
 
-## 鸣谢
+## 鳴謝
 
 - [Jetbrains](https://www.jetbrains.com/?from=wordpress-theme-puock)
 - [Cloudflare](https://www.cloudflare.com/?from=wordpress-theme-puock)
 - <a href="http://idc.daozhiyun.cn"><img src="https://sv.png.pub/imgs/2024/06/26/fd4efab4bfd2bb9e.png" width="100"></a>
 
-## 开源协议
+## 開源協議
 
 - [GPL V3.0](./LICENSE)
-- 请遵守开源协议，保留主题底部的署名
+- 請遵守開源協議，保留主題底部的署名

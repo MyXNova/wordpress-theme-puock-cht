@@ -1,5 +1,5 @@
 <?php
-// 点赞
+// 點讚
 function puock_post_like()
 {
     $id = $_POST["um_id"];
@@ -7,7 +7,7 @@ function puock_post_like()
     if ($action == 'like') {
         $cookie_key = 'puock_like_' . $id;
         if (!empty($_COOKIE[$cookie_key])) {
-            echo json_encode(array('e' => 1, 't' => '你已经点过赞了'));
+            echo json_encode(array('e' => 1, 't' => '你已經點過讚了'));
             die;
         }
         $like_num = get_post_meta($id, 'puock_like', true);
@@ -19,7 +19,7 @@ function puock_post_like()
         } else {
             update_post_meta($id, 'puock_like', ($like_num + 1));
         }
-        echo json_encode(array('e' => 0, 't' => '点赞成功', 'd' => get_post_meta($id, 'puock_like', true)));
+        echo json_encode(array('e' => 0, 't' => '點讚成功', 'd' => get_post_meta($id, 'puock_like', true)));
     }
     die;
 }
@@ -27,14 +27,14 @@ function puock_post_like()
 add_action('wp_ajax_nopriv_puock_like', 'puock_post_like');
 add_action('wp_ajax_puock_like', 'puock_post_like');
 
-// 获取当前访问cookie是否点赞
+// 獲取目前瀏覽cookie是否點讚
 function puock_post_is_like()
 {
     global $post;
     return !empty($_COOKIE['puock_like_' . $post->ID]);
 }
 
-// 点赞数显示
+// 點讚數顯示
 function puock_post_like_num(int $id)
 {
     $number = get_post_meta($id, 'puock_like', true) ?: 0;
@@ -42,15 +42,15 @@ function puock_post_like_num(int $id)
         $number = 0;
     }
     if ($number < 1000) {
-        return $number; // 小于1000直接返回
+        return $number; // 小於1000直接返回
     } elseif ($number < 1000000) {
-        return round($number / 1000, 0) . 'k'; // 1000到999999之间返回“k”格式
+        return round($number / 1000, 0) . 'k'; // 1000到999999之間返回「k」格式
     } else {
-        return round($number / 1000000, 0) . 'M'; // 大于等于1000000返回“M”格式
+        return round($number / 1000000, 0) . 'M'; // 大於等於1000000返回「M」格式
     }
 }
 
-//移除wp自带的widget
+//移除wp自帶的widget
 function init_unregister_widgets()
 {
     unregister_widget('WP_Widget_Recent_Comments');
@@ -73,7 +73,7 @@ function init_unregister_widgets()
 
 add_action('widgets_init', 'init_unregister_widgets');
 
-// 页面添加html后缀
+// 頁面新增html後綴
 function html_page_permalink()
 {
     global $wp_rewrite;
@@ -82,7 +82,7 @@ function html_page_permalink()
     }
 }
 
-// 添加斜杠
+// 新增斜槓
 function add_init_trailingslashit($string, $type_of_url)
 {
     if ($type_of_url != 'single' && $type_of_url != 'page')
@@ -90,7 +90,7 @@ function add_init_trailingslashit($string, $type_of_url)
     return $string;
 }
 
-//解析get参数
+//解析get參數
 function get_path_query($query)
 {
     $querys = explode('&', $query);
@@ -114,7 +114,7 @@ function pk_theme_footer_copyright($content)
 
 add_filter('pk_footer_info', 'pk_theme_footer_copyright', 10, 1);
 
-//GrAvatar头像源
+//GrAvatar頭像源
 $gravatar_urls = array('www.gravatar.com', '0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 'secure.gravatar.com', 'cn.gravatar.com');
 function cn_avatar($avatar)
 {
@@ -157,7 +157,7 @@ function pk_custom_avatar($avatar){
     return str_replace($gravatar_urls, pk_get_option('gravatar_custom_url'), $avatar);
 }
 
-//评论回复邮件通知
+//評論回覆 E-mail 通知
 function comment_mail_notify($comment_id)
 {
     $comment = get_comment($comment_id);
@@ -169,13 +169,13 @@ function comment_mail_notify($comment_id)
     if ($parent_id != '' && $spam_confirmed != 'spam') {
         $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
         $to = trim(get_comment($parent_id)->comment_author_email);
-        if (pk_check_email_is_sysgen($to)) { // 默认生成的第三方注册邮箱，未进行修改
+        if (pk_check_email_is_sysgen($to)) { // 預設產生的第三方註冊 E-mail，未進行修改
             return;
         }
         if ($to == $comment->comment_author_email) {
             return;
         }
-        $subject = '您在 [' . get_option("blogname") . '] 的文章评论有了新的回复';
+        $subject = '您在 [' . get_option("blogname") . '] 的文章評論有了新的回覆';
         $message = get_comment_notify_template($comment, $parent_id);
         $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
         $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
@@ -183,7 +183,7 @@ function comment_mail_notify($comment_id)
     }
 }
 
-//评论添加@
+//評論新增@
 function pk_comment_add_at($text, $comment = '')
 {
     if ($comment->comment_parent > 0) {
@@ -206,16 +206,16 @@ function pk_shortcode_box_init()
         $output .= "<a href='javascript:void(0)' class='add-shortcode button button-small' data-key='{$key}' {$attr} data-content='{$content}'>{$item['name']}</a>";
     }
     echo '<a id="insert-shortcode-button" style="position:relative" class="button" 
-        title="' . __('添加短代码', PUOCK) . '" data-editor="content" href="javascript:;">  
-        <span>' . __('添加短代码', PUOCK) . '</span>
+        title="' . __('新增短程式碼', PUOCK) . '" data-editor="content" href="javascript:;">  
+        <span>' . __('新增短程式碼', PUOCK) . '</span>
         </a><div id="insert-shortcode-wrap" class="pk-media-wrap" style="display: none">' . $output . '</div>';
 }
 
-//压缩HTML
+//壓縮HTML
 function wp_compress_html()
 {
 
-    //禁止pre标签压缩
+    //禁止pre標籤壓縮
     function pre_no_compress($content)
     {
         if (preg_match_all('/<\/pre>/i', $content, $matches)) {
@@ -253,14 +253,14 @@ function wp_compress_html()
         $final = strlen($out);
         $savings = ($initial - $final) / $initial * 100;
         $savings = round($savings, 2);
-        $info = "<!--压缩前为:{$initial}bytes;压缩后为:{$final}bytes;节约:{$savings}%-->";
+        $info = "<!--壓縮前為:{$initial}bytes;壓縮后為:{$final}bytes;節約:{$savings}%-->";
         return $out . $info;
     }
 
     ob_start("wp_compress_html_main");
 }
 
-//跳转链接
+//跳轉連結
 function pk_go_link($url, $name = '')
 {
     if (pk_is_cur_site($url)) {
@@ -273,18 +273,18 @@ function pk_go_link($url, $name = '')
     return $url;
 }
 
-//开启了内页链接跳转
+//開啟了內頁連結跳轉
 if (pk_is_checked('link_go_page')) {
     /**
-     * 内页跳转链接
+     * 內頁跳轉連結
      *
-     * @param string $content 修改前的内容
-     * @return string 修改后的内容
+     * @param string $content 修改前的內容
+     * @return string 修改後的內容
      * @author lvshujun
      * @date 2024-03-19
      */
     function pk_content_addlink($content) {
-        //匹配链接
+        //匹配連結
         preg_match_all('/<a(.*?)href="(.*?)"(.*?)>/',$content,$matches);
         if ($matches) {
             foreach ($matches[2] as $val) {
@@ -300,7 +300,7 @@ if (pk_is_checked('link_go_page')) {
     add_filter('the_content', 'pk_content_addlink');
 }
 
-//检测链接是否属于本站
+//檢測連結是否屬於本站
 function pk_is_cur_site($url)
 {
     if (str_starts_with($url, home_url()) === 0) {
@@ -310,7 +310,7 @@ function pk_is_cur_site($url)
 }
 
 if (pk_is_checked('use_post_menu')) {
-    //生成目录锚点
+    //產生目錄錨點
     function pk_post_menu_id($content)
     {
         if (preg_match_all("/<h[1234]>(.*?)<\/h[1234]>/im", $content, $ms)) {
@@ -326,7 +326,7 @@ if (pk_is_checked('use_post_menu')) {
 
     add_filter("the_content", "pk_post_menu_id");
 }
-//兼容处理
+//相容處理
 function pk_compatible()
 {
     wp_scripts()->remove("Editormd_Front");
@@ -391,7 +391,7 @@ function pk_get_comment_ua_os_icon($name)
     return $prefix . $res_class;
 }
 
-// 二维码生成
+// 二維碼產生
 function pk_post_qrcode($url, $base_dir = '/cache/qrcode')
 {
     $file = $base_dir . '/qr-' . md5($url) . '.png';
@@ -407,7 +407,7 @@ function pk_post_qrcode($url, $base_dir = '/cache/qrcode')
     return $file;
 }
 
-// 评论验证码
+// 評論驗證碼
 // request url: {host}/wp-admin/admin-ajax.php?action=puock_comment_captcha
 function pk_captcha()
 {
@@ -420,11 +420,11 @@ function pk_captcha()
     include_once PUOCK_ABS_DIR.'/inc/php-captcha.php';
     $captcha = new CaptchaBuilder();
     $captcha->initialize([
-        'width' => intval($width),     // 宽度
+        'width' => intval($width),     // 寬度
         'height' => intval($height),     // 高度
-        'curve' => true,   // 曲线
-        'noise' => 1,   // 噪点背景
-        'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字体
+        'curve' => true,   // 曲線
+        'noise' => 1,   // 噪點背景
+        'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字型
     ]);
     $result = $captcha->create();
     $text = $result->getText();
@@ -477,7 +477,7 @@ function pk_compatible_githuber_md_katex($good_protocol_url, $original_url, $_co
     return $good_protocol_url;
 }
 
-//获取网站标题
+//獲取網站標題
 function pk_get_web_title()
 {
     $title = pk_get_option('web_title');
@@ -487,7 +487,7 @@ function pk_get_web_title()
     return $title;
 }
 
-// 获取链接的target属性
+// 獲取連結的target屬性
 function pk_link_target($echo = true)
 {
     $target = "";
@@ -500,7 +500,7 @@ function pk_link_target($echo = true)
     return $target;
 }
 
-// 头部样式定义
+// 頭部樣式定義
 function pk_head_style_var()
 {
     $vars = [
@@ -509,7 +509,7 @@ function pk_head_style_var()
     return ":root{" . join(";", $vars) . "}";
 }
 
-// 加载文件媒体文件
+// 載入檔案媒體檔案
 function pk_load_media_files()
 {
     wp_enqueue_media();
@@ -525,7 +525,7 @@ function pk_debug_print_sql_list()
     $show_sql_detail = pk_get_option('debug_sql_detail');
     $out = "<script>";
     if ($show_sql_count) {
-        $out .= "console.log('共计查询SQL：" . get_num_queries() . "次，耗时：" . timer_stop() . "秒');";
+        $out .= "console.log('共計查詢SQL：" . get_num_queries() . "次，耗時：" . timer_stop() . "秒');";
     }
     if ($show_sql_detail) {
         $out .= "console.log(" . json_encode($wpdb->queries) . ");";
@@ -581,7 +581,7 @@ function get_entry_content_class($echo = true)
 function pk_disable_not_admin_user_profile()
 {
     if (is_admin() && !current_user_can('administrator')) {
-        wp_die('您无权访问');
+        wp_die('您無權瀏覽');
     }
 }
 
@@ -594,7 +594,7 @@ function pk_read_time_tip(): string
 {
     $words_count = count_words();
     $read_time = ceil($words_count / 400);
-    return sprintf(__('共计 %d 个字符，预计需要花费 %d 分钟才能阅读完成。'), $words_count, $read_time);
+    return sprintf(__('共計 %d 個字元，預計需要花費 %d 分鐘才能閱讀完成。'), $words_count, $read_time);
 }
 
 function pk_set_custom_seo($title, $keywords = '', $description = '')
@@ -627,7 +627,7 @@ function pk_safe_base64_decode($string){
 }
 
 
-//添加文章修改时间提示
+//新增文章修改時間提示
 function pk_post_expire_tips_open($content)
 {
     $u_time = get_the_time('U');

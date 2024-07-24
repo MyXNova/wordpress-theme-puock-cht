@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: 文章归档
+ Template Name: 文章歸檔
 */
 $posts = get_posts('numberposts=-1&orderby=post_date&order=DESC');
 

@@ -15,7 +15,7 @@
                             <?php if (!pk_is_checked('hide_post_views')): ?>
                                 <div class="option puock-bg ta3 t-sm mr-1"><i
                                             class="fa-regular fa-eye mr-1"></i>
-                                    <span id="post-views"><?php pk_get_post_views(); ?></span><span><?php _e('次阅读', PUOCK) ?></span>
+                                    <span id="post-views"><?php pk_get_post_views(); ?></span><span><?php _e('次閱讀', PUOCK) ?></span>
                                 </div>
                             <?php endif; ?>
                             <?php if (!pk_post_comment_is_closed()): ?>
@@ -27,7 +27,7 @@
                             <?php if (is_user_logged_in() && current_user_can('edit_post', $post->ID)): ?>
                                 <a target="_blank" href="<?php echo get_edit_post_link() ?>">
                                     <div class="option puock-bg ta3 t-sm mr-1"><i
-                                                class="fa-regular fa-pen-to-square mr-1"></i><?php _e('编辑', PUOCK) ?>
+                                                class="fa-regular fa-pen-to-square mr-1"></i><?php _e('編輯', PUOCK) ?>
                                     </div>
                                 </a>
                             <?php endif; ?>
@@ -70,7 +70,7 @@
                         <div class="t-separator c-sub t-sm mt30"><?php _e('正文完', PUOCK) ?></div>
                         <?php if (pk_is_checked('post_foot_qrcode_open')): ?>
                             <div class="post-foot-qrcode">
-                                <div class="title"><?php echo pk_get_option('post_foot_qrcode_title', '无说明') ?></div>
+                                <div class="title"><?php echo pk_get_option('post_foot_qrcode_title', '無說明') ?></div>
                                 <img src="<?php echo pk_get_option('post_foot_qrcode_img', '') ?>"
                                      alt="post-qrcode">
                             </div>
@@ -79,7 +79,7 @@
                             <?php echo get_post_tags('mt20 tags', 'mb10') ?>
                             <div class="p-flex-sbc mt20 t-sm">
                                 <div>
-                                    <span><?php _e('发表至：', PUOCK) ?></span><?php echo get_post_category_link_exec(true) ?>
+                                    <span><?php _e('發表至：', PUOCK) ?></span><?php echo get_post_category_link_exec(true) ?>
                                 </div>
                                 <div>
                                     <span class="c-sub"><i class="fa-regular fa-clock"></i> <?php pk_get_post_date() ?></span>
@@ -102,30 +102,30 @@
                             <?php $origin_author = get_post_meta(get_the_ID(), 'origin_author', true);
                             if (empty($origin_author)): ?>
                                 <div>
-                                    <span class="font-weight-bold"><?php _e('版权声明：', PUOCK) ?></span><span><?php _e('本站原创文章，由', PUOCK) ?></span>
+                                    <span class="font-weight-bold"><?php _e('版權聲明：', PUOCK) ?></span><span><?php _e('本站原創文章，由', PUOCK) ?></span>
                                     <a class="a-link"
                                        href="<?php global $authordata;
                                        if ($authordata) {
                                            echo get_author_posts_url($authordata->ID,
                                                $authordata->user_nicename);
-                                       } ?>"><?php the_author() ?> </a><?php _e('于', PUOCK) ?><?php the_date('Y-m-d') ?><?php
-                                    _e('发表，', PUOCK) ?><?php _e('共计', PUOCK) ?><?php echo count_words() ?><?php _e('字。', PUOCK) ?>
+                                       } ?>"><?php the_author() ?> </a><?php _e('於', PUOCK) ?><?php the_date('Y-m-d') ?><?php
+                                    _e('發表，', PUOCK) ?><?php _e('共計', PUOCK) ?><?php echo count_words() ?><?php _e('字。', PUOCK) ?>
                                 </div>
                                 <div class="mt-2">
-                                    <span class="font-weight-bold c-sub"><?php _e('转载说明：', PUOCK) ?></span><span
+                                    <span class="font-weight-bold c-sub"><?php _e('轉載說明：', PUOCK) ?></span><span
                                             class="c-sub"><?php echo pk_get_option('post_reprint_note', pk_get_option('footer_copyright')) ?></span>
                                 </div>
                             <?php else: ?>
                                 <div>
-                                    <span class="font-weight-bold"><?php _e('版权声明：', PUOCK) ?></span><?php _e('本文于', PUOCK) ?><?php the_date('Y-m-d')
-                                    ?><?php _e('转载自', PUOCK) ?><a target="_blank"
+                                    <span class="font-weight-bold"><?php _e('版權聲明：', PUOCK) ?></span><?php _e('本文於', PUOCK) ?><?php the_date('Y-m-d')
+                                    ?><?php _e('轉載自', PUOCK) ?><a target="_blank"
                                                                   href="<?php echo get_post_meta(get_the_ID(), 'origin_url', true) ?>"
                                                                   class="a-link" rel="nofollow"><?php
-                                        echo $origin_author ?></a><?php _e('，共计', PUOCK) ?><?php echo count_words('') ?><?php _e('字。', PUOCK) ?>
+                                        echo $origin_author ?></a><?php _e('，共計', PUOCK) ?><?php echo count_words('') ?><?php _e('字。', PUOCK) ?>
                                 </div>
                                 <div class="mt-2">
-                                    <span class="font-weight-bold c-sub"><?php _e('转载提示：', PUOCK) ?></span><span
-                                            class="c-sub"><?php _e('此文章非本站原创文章，若需转载请联系原作者获得转载授权。', PUOCK) ?></span>
+                                    <span class="font-weight-bold c-sub"><?php _e('轉載提示：', PUOCK) ?></span><span
+                                            class="c-sub"><?php _e('此文章非本站原創文章，若需轉載請聯繫原作者獲得轉載授權。', PUOCK) ?></span>
                                 </div>
                             <?php endif; ?>
                         </div>

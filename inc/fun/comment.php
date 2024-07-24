@@ -11,7 +11,7 @@ function pk_comment_author_view($text, $comment)
     }
     $is_author = apply_filters('pk_comment_author_view_is_author', $authordata->ID, $authordata->ID == get_current_user_id());
     if ($author_view && !$is_author) {
-        $text = apply_filters('pk_comment_author_view', '<div class="fs12 c-sub"><i class="fa fa-lock"></i> 评论仅对作者可见</div>');
+        $text = apply_filters('pk_comment_author_view', '<div class="fs12 c-sub"><i class="fa fa-lock"></i> 評論僅對作者可見</div>');
     }
     return $text;
 }
@@ -60,8 +60,8 @@ function pk_comment_callback($comment, $args, $depth)
                 <?php if ($comment->comment_approved == '1' && (!$author_cat_comment || $is_author)) : ?>
                     <a id="comment-reply-<?php comment_ID() ?>" data-id="<?php comment_ID() ?>"
                        class="hide-info animated bounceIn c-sub-a t-sm ml-1 comment-reply"
-                       href="javascript:void(0)" title="回复此评论"><i class="fa fa-share-from-square"></i>
-                        <span class="comment-reply-text">回复</span></a>
+                       href="javascript:void(0)" title="回覆此評論"><i class="fa fa-share-from-square"></i>
+                        <span class="comment-reply-text">回覆</span></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -72,7 +72,7 @@ function pk_comment_callback($comment, $args, $depth)
         } ?>>
             <?php comment_text() ?>
             <?php if ($comment->comment_approved == '0') : ?>
-                <p class="c-sub mt-1"><i class="fa fa-warning mr-1"></i>您的评论正在等待审核！</p>
+                <p class="c-sub mt-1"><i class="fa fa-warning mr-1"></i>您的評論正在等待審核！</p>
             <?php endif; ?>
 
             <div class="comment-os c-sub">

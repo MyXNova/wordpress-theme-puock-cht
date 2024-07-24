@@ -56,23 +56,23 @@ function get_comment_notify_template($comment,$parent_id)
     </style>
     <div id=\"p-mail-notify\">
         <div class=\"header\">
-            您在".get_option('blogname')."的<a href=\"".get_comment_link($parent_id,array("type" => "all"))."\" target=\"_blank\">《".get_the_title($comment->comment_post_ID)."》</a>文章中的评论有了新的回复：
+            您在".get_option('blogname')."的<a href=\"".get_comment_link($parent_id,array("type" => "all"))."\" target=\"_blank\">《".get_the_title($comment->comment_post_ID)."》</a>文章中的評論有了新的回覆：
         </div>
         <div class=\"main\">
-            你的评论内容为：
+            你的評論內容為：
             <div class=\"content-item me\">
                 ". trim(get_comment($parent_id)->comment_content) ."
             </div>
-            您收到\"".$comment->comment_author."\"对您的回复为：
+            您收到\"".$comment->comment_author."\"對您的回覆為：
             <div class=\"content-item\">
                 ". trim($comment->comment_content) ."
             </div>
             <div class=\"tips\">
-                您也可以<a target=\"_blank\" href=\"".get_comment_link($parent_id,array("type" => "all"))."\">直接点我进入原文章</a>以查看评论~
+                您也可以<a target=\"_blank\" href=\"".get_comment_link($parent_id,array("type" => "all"))."\">直接點我進入原文章</a>以檢視評論~
             </div>
         </div>
         <div class=\"footer\">
-            <span>此邮件由系统发出，请勿直接回复，谢谢合作！</span>
+            <span>此 E-mail 由系統發出，請勿直接回覆，謝謝合作！</span>
         </div>
     </div>";
     return $res;
