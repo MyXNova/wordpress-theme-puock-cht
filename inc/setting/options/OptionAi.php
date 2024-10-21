@@ -36,7 +36,7 @@ class OptionAi
                             'label' => __('自定義', PUOCK),
                         ],
                     ],
-                    'tips' => __('<a href="https://goapi.gptnb.me" target="_blank"><code>GPTNB（第三方中轉）<i class="fa-solid fa-arrow-up-right-from-square"></i></code></a> | <a href="https://platform.openai.com" target="_blank"><code>OpenAI（官方）<i class="fa-solid fa-arrow-up-right-from-square"></i></code></a>（注意：第三方中轉由第三方服務商提供，本程式不承諾任何擔保，若有任何疑問請諮詢對應的網站客服）', PUOCK),
+                    'tips' => __('<a href="https://goapi.gptnb.ai" target="_blank"><code>GPTNB（第三方中轉）<i class="fa-solid fa-arrow-up-right-from-square"></i></code></a> | <a href="https://platform.openai.com" target="_blank"><code>OpenAI（官方）<i class="fa-solid fa-arrow-up-right-from-square"></i></code></a>（注意：第三方中轉由第三方服務商提供，本程式不承諾任何擔保，若有任何疑問請諮詢對應的網站客服）', PUOCK),
                 ],
                 [
                     'id' => 'ai_chat_key',
