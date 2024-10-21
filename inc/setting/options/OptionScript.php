@@ -27,7 +27,7 @@ class OptionScript extends BaseOptionItem
                     'max' => 100,
                     'tips' => "func:(function(args){
                         return args.h('div',[
-                            args.h('span',null,'".__('小於100則會進行透明顯示，部分瀏覽器可能不相容', PUOCK)." '),
+                            args.h('span',null,'".__('小於 100 則會進行透明顯示，部分瀏覽器可能不相容', PUOCK)." '),
                             args.h(args.el.nTag,{type:'primary',size:'small',round:true},'".__("目前不透明度", PUOCK)."：'+args.data.block_not_tran+'%')
                         ])
                     })(args)"
@@ -41,11 +41,11 @@ class OptionScript extends BaseOptionItem
                 ],
                 [
                     'id' => 'css_code_header',
-                    'label' => __('頭部自定義全域性CSS樣式', PUOCK),
+                    'label' => __('頭部自定義全域性 CSS 樣式', PUOCK),
                     'type' => 'textarea',
                     'placeholder' => __('例如', PUOCK).'：#header{background-color:red !important}',
                     'sdt' => '',
-                    'tips' => __('用於在頁頭新增統自定義CSS樣式', PUOCK)
+                    'tips' => __('用於在頁頭新增統自定義 CSS 樣式', PUOCK)
                 ],
                 [
                     'id' => 'tj_code_footer',
@@ -79,7 +79,7 @@ class OptionScript extends BaseOptionItem
                         [
                             'id' => 'footer_about_me',
                             'label' => __('內容', PUOCK),
-                            'tips' => __('支援HTML程式碼', PUOCK),
+                            'tips' => __('支援 HTML 程式碼', PUOCK),
                             'type' => 'textarea',
                             'sdt' => __('<strong>底部關於我們</strong>', PUOCK),
                         ],
@@ -106,7 +106,7 @@ class OptionScript extends BaseOptionItem
                         [
                             'id' => 'footer_copyright',
                             'label' => __('內容', PUOCK),
-                            'tips' => __('支援HTML程式碼', PUOCK),
+                            'tips' => __('支援 HTML 程式碼', PUOCK),
                             'type' => 'textarea',
                             'sdt' => __('<strong>底部版權說明</strong>', PUOCK),
                         ],

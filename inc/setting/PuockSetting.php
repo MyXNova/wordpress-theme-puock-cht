@@ -60,8 +60,8 @@ class PuockSetting
     public function __wp_reg_menu()
     {
         add_menu_page(
-            __('Puock主題配置', PUOCK),
-            __('Puock主題配置', PUOCK),
+            __('Puock 主題配置', PUOCK),
+            __('Puock 主題配置', PUOCK),
             "manage_options",
             "puock-options",
             array($this, 'setting_page'),

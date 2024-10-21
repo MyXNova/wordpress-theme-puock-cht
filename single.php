@@ -15,7 +15,7 @@
                             <?php if (!pk_is_checked('hide_post_views')): ?>
                                 <div class="option puock-bg ta3 t-sm mr-1"><i
                                             class="fa-regular fa-eye mr-1"></i>
-                                    <span id="post-views"><?php pk_get_post_views(); ?></span><span><?php _e('次閱讀', PUOCK) ?></span>
+                                    <span id="post-views"><?php pk_get_post_views(); ?></span><span><?php _e(' 次閱讀', PUOCK) ?></span>
                                 </div>
                             <?php endif; ?>
                             <?php if (!pk_post_comment_is_closed()): ?>
@@ -108,8 +108,8 @@
                                        if ($authordata) {
                                            echo get_author_posts_url($authordata->ID,
                                                $authordata->user_nicename);
-                                       } ?>"><?php the_author() ?> </a><?php _e('於', PUOCK) ?><?php the_date('Y-m-d') ?><?php
-                                    _e('發表，', PUOCK) ?><?php _e('共計', PUOCK) ?><?php echo count_words() ?><?php _e('字。', PUOCK) ?>
+                                       } ?>"><?php the_author() ?> </a><?php _e('於 ', PUOCK) ?><?php the_date('Y-m-d') ?><?php
+                                    _e(' 發表，', PUOCK) ?><?php _e('共計 ', PUOCK) ?><?php echo count_words() ?><?php _e(' 字。', PUOCK) ?>
                                 </div>
                                 <div class="mt-2">
                                     <span class="font-weight-bold c-sub"><?php _e('轉載說明：', PUOCK) ?></span><span
@@ -117,11 +117,11 @@
                                 </div>
                             <?php else: ?>
                                 <div>
-                                    <span class="font-weight-bold"><?php _e('版權聲明：', PUOCK) ?></span><?php _e('本文於', PUOCK) ?><?php the_date('Y-m-d')
-                                    ?><?php _e('轉載自', PUOCK) ?><a target="_blank"
+                                    <span class="font-weight-bold"><?php _e('版權聲明：', PUOCK) ?></span><?php _e('本文於 ', PUOCK) ?><?php the_date('Y-m-d')
+                                    ?><?php _e(' 轉載自', PUOCK) ?><a target="_blank"
                                                                   href="<?php echo get_post_meta(get_the_ID(), 'origin_url', true) ?>"
                                                                   class="a-link" rel="nofollow"><?php
-                                        echo $origin_author ?></a><?php _e('，共計', PUOCK) ?><?php echo count_words('') ?><?php _e('字。', PUOCK) ?>
+                                        echo $origin_author ?></a><?php _e('，共計 ', PUOCK) ?><?php echo count_words('') ?><?php _e(' 字。', PUOCK) ?>
                                 </div>
                                 <div class="mt-2">
                                     <span class="font-weight-bold c-sub"><?php _e('轉載提示：', PUOCK) ?></span><span

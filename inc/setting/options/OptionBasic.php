@@ -69,7 +69,7 @@ class OptionBasic extends BaseOptionItem
                 ],
                 [
                     'id' => 'comment_ajax',
-                    'label' => __('評論ajax翻頁', PUOCK),
+                    'label' => __('評論 ajax 翻頁', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
@@ -113,14 +113,14 @@ class OptionBasic extends BaseOptionItem
                         ],
                         [
                             'id' => 'post_expire_tips_day',
-                            'label' => __('大於N天', PUOCK),
+                            'label' => __('大於 N 天', PUOCK),
                             'type' => 'number',
                             'sdt' => 100,
                         ],
                         [
                             'id' => 'post_expire_tips',
                             'label' => __('提示內容', PUOCK),
-                            'sdt' => __('<i class="fa fa-circle-exclamation me-1"></i>提醒：本文最後更新於{date}，文中所關聯的資訊可能已發生改變，請知悉！', PUOCK),
+                            'sdt' => __('<i class="fa fa-circle-exclamation me-1"></i>提醒：本文最後更新於 {date}，文中所關聯的資訊可能已發生改變，請知悉！', PUOCK),
                             'tips' => __('{date}：文章最後更新時間', PUOCK),
                         ],
                     ]
@@ -145,25 +145,25 @@ class OptionBasic extends BaseOptionItem
                         ],
                         [
                             'id' => 'comment_has_at',
-                            'label' => __('評論@功能', PUOCK),
+                            'label' => __('評論 @ 功能', PUOCK),
                             'type' => 'switch',
                             'sdt' => 'false',
                         ],
                         [
                             'id' => 'comment_show_ua',
-                            'label' => __('評論顯示使用者UA', PUOCK),
+                            'label' => __('評論顯示使用者 UA', PUOCK),
                             'type' => 'switch',
                             'sdt' => true,
                         ],
                         [
                             'id' => 'comment_show_ip',
-                            'label' => __('評論顯示IP歸屬地及營運商', PUOCK),
+                            'label' => __('評論顯示 IP 歸屬地及營運商', PUOCK),
                             'type' => 'switch',
                             'sdt' => true,
                         ],
                         [
                             'id' => 'comment_dont_show_owner_ip',
-                            'label' => __('不顯示站長IP歸屬地及營運商', PUOCK),
+                            'label' => __('不顯示站長 IP 歸屬地及營運商', PUOCK),
                             'type' => 'switch',
                             'sdt' => false,
                         ],
@@ -191,7 +191,7 @@ class OptionBasic extends BaseOptionItem
                 [
                     'id' => 'page_b_recommend_num',
                     'label' => __('正文底部相關推薦文章數量', PUOCK),
-                    'tips' => __('建議是4的倍數，不然會出現空缺位置', PUOCK),
+                    'tips' => __('建議是 4 的倍數，不然會出現空缺位置', PUOCK),
                     'type' => 'number',
                     'sdt' => 4,
                 ],
@@ -203,28 +203,28 @@ class OptionBasic extends BaseOptionItem
                 ],
                 [
                     'id' => 'index_link_id',
-                    'label' => __('首頁友情連結目錄ID', PUOCK),
+                    'label' => __('首頁友情連結目錄 ID', PUOCK),
                     'type' => 'select',
                     'options' => self::get_link_category(),
                 ],
                 [
                     'id' => 'gravatar_url',
-                    'label' => __('Gravatar頭像源', PUOCK),
+                    'label' => __('Gravatar 頭像來源', PUOCK),
                     'type' => 'radio',
                     'sdt' => 'cravatar',
                     'radioType' => 'radio',
                     'options' => [
                         [
                             'value' => 'wp',
-                            'label' => __('WordPress預設', PUOCK),
+                            'label' => __('WordPress 預設', PUOCK),
                         ],
                         [
                             'value' => 'cn',
-                            'label' => __('WordPress國內預設', PUOCK),
+                            'label' => __('WordPress 國內預設', PUOCK),
                         ],
                         [
                             'value' => 'cn_ssl',
-                            'label' => __('WordPress國內預設SSL', PUOCK),
+                            'label' => __('WordPress 國內預設 SSL', PUOCK),
                         ],
                         [
                             'value' => 'cravatar',
@@ -246,7 +246,7 @@ class OptionBasic extends BaseOptionItem
                 ],
                 [
                     'id'=>'gravatar_custom_url',
-                    'label'=>__('自定義Gravatar源', PUOCK),
+                    'label'=>__('自定義 Gravatar 來源', PUOCK),
                     'tips'=>__('例如：',PUOCK).'<code>gravatar.example.com</code>',
                     'showRefId'=>'func:(function(args){return args.data.gravatar_url==="custom"})(args)'
                 ],
@@ -261,21 +261,21 @@ class OptionBasic extends BaseOptionItem
                     'label' => __('文章讚賞支付寶二維碼', PUOCK),
                     'type' => 'img',
                     'showRefId' => 'post_reward',
-                    'tips' => __('請選擇寬高比例為1:1的圖片', PUOCK)
+                    'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_reward_wx',
                     'label' => __('文章讚賞微信二維碼', PUOCK),
                     'type' => 'img',
                     'showRefId' => 'post_reward',
-                    'tips' => __('請選擇寬高比例為1:1的圖片', PUOCK)
+                    'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_foot_qrcode_open',
                     'label' => __('文章正文底部二維碼', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
-                    'tips' => __('請選擇寬高比例為1:1的圖片', PUOCK)
+                    'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_foot_qrcode_title',
@@ -293,7 +293,7 @@ class OptionBasic extends BaseOptionItem
                     'id' => 'post_reprint_note',
                     'label' => __('文章轉載說明', PUOCK),
                     'type' => 'textarea',
-                    'sdt' => __('除特殊說明外本站文章皆由CC-4.0協議發佈，轉載請註明出處。', PUOCK),
+                    'sdt' => __('除特殊說明外本站文章皆由 CC-4.0 協議發佈，轉載請註明出處。', PUOCK),
                 ],
                 [
                     'id' => 'post_read_time',

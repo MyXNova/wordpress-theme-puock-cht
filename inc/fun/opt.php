@@ -253,7 +253,7 @@ function wp_compress_html()
         $final = strlen($out);
         $savings = ($initial - $final) / $initial * 100;
         $savings = round($savings, 2);
-        $info = "<!--壓縮前為:{$initial}bytes;壓縮后為:{$final}bytes;節約:{$savings}%-->";
+        $info = "<!--壓縮前為:{$initial}bytes;壓縮後為:{$final}bytes;節約:{$savings}%-->";
         return $out . $info;
     }
 
@@ -522,7 +522,7 @@ function pk_debug_print_sql_list()
     $show_sql_detail = pk_get_option('debug_sql_detail');
     $out = "<script>";
     if ($show_sql_count) {
-        $out .= "console.log('共計查詢SQL：" . get_num_queries() . "次，耗時：" . timer_stop() . "秒');";
+        $out .= "console.log('共計查詢 SQL：" . get_num_queries() . "次，耗時：" . timer_stop() . "秒');";
     }
     if ($show_sql_detail) {
         $out .= "console.log(" . json_encode($wpdb->queries) . ");";

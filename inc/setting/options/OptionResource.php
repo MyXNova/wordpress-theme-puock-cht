@@ -13,7 +13,7 @@ class OptionResource extends BaseOptionItem{
             'fields' => [
                 [
                     'id' => 'static_load_origin',
-                    'label' => __('主題靜態資源載入源', PUOCK),
+                    'label' => __('主題靜態資源載入來源', PUOCK),
                     'type' => 'radio',
                     'sdt' => 'self',
                     'options' => [
@@ -45,13 +45,13 @@ class OptionResource extends BaseOptionItem{
                 ],
                 [
                     'id' => 'custom_static_load_origin',
-                    'label' => __('自定義靜態資源載入URI', PUOCK),
+                    'label' => __('自定義靜態資源載入 URI', PUOCK),
                     'sdt' => '',
                     'tips'=>__('需填寫完整地址，如<code>https://example.com/puock</code>，路徑需要指向到可以瀏覽主題根目錄為準', PUOCK)
                 ],
                 [
                     'id' => 'update_server',
-                    'label' => __('主題線上更新源', PUOCK),
+                    'label' => __('主題線上更新來源', PUOCK),
                     'type' => 'radio',
                     'sdt' => 'worker',
                     'options' => [

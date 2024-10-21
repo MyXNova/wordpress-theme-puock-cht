@@ -8,14 +8,14 @@ class OptionAi
     {
         return [
             'key' => 'ai',
-            'label' => __('智慧AI助手', PUOCK),
+            'label' => __('智慧 AI 助手', PUOCK),
             'icon' => 'czs-robot',
             'fields' => [
                 [
                     'id' => 'ai_chat_enable',
-                    'label' => __('啟用AI助手', PUOCK),
+                    'label' => __('啟用 AI 助手', PUOCK),
                     'type' => 'switch',
-                    'tips' => __('啟用後去<a href="/wp-admin/post-new.php?post_type=page">建立頁面</a>選擇<code>AI助手</code>模板即可使用', PUOCK)
+                    'tips' => __('啟用後去<a href="/wp-admin/post-new.php?post_type=page">建立頁面</a>選擇<code>AI 助手</code>模板即可使用', PUOCK)
                 ],
                 [
                     'id' => 'ai_chat_platform',
@@ -43,7 +43,7 @@ class OptionAi
                     'label' => __('API KEY', PUOCK),
                     'type' => 'text',
                     'sdt' => pk_get_option('openai_api_key'),
-                    'tips' => __('請在上方選擇的對應的服務商申請獲取API Key，然後在此填入', PUOCK),
+                    'tips' => __('請在上方選擇的對應的服務商申請獲取 API Key，然後在此填入', PUOCK),
                 ],
                 [
                     'id' => 'ai_chat_agent',
@@ -51,7 +51,7 @@ class OptionAi
                     'type' => 'text',
                     'sdt' => '',
                     'showRefId'=>'func:(function(args){return args.data.ai_chat_platform==="custom"})(args)',
-                    'tips' => __('如果您要使用其他平臺請自行配置代理域名，例如您自己的反向代理等，其API規範必須符合OpenAI API', PUOCK),
+                    'tips' => __('如果您要使用其他平臺請自行配置代理域名，例如您自己的反向代理等，其 API 規範必須符合 OpenAI API', PUOCK),
                 ],
                 [
                     'id' => 'ai_chat_models',
@@ -67,7 +67,7 @@ class OptionAi
                     'dynamicModel' => [
                         ['id' => 'name', 'label' => __('模型名稱', PUOCK), 'std' => '','tips' => __('用於傳遞給平臺的模型名稱', PUOCK)],
                         ['id' => 'alias', 'label' => __('模型別名', PUOCK), 'std' => '','tips' => __('用於展示給使用者的名稱', PUOCK)],
-                        ['id' => 'max_tokens', 'label' => __('模型最大Tokens', PUOCK), 'std' => 0, 'tips' => __('為0則無限制', PUOCK), 'type'=>'number'],
+                        ['id' => 'max_tokens', 'label' => __('模型最大 Tokens', PUOCK), 'std' => 0, 'tips' => __('為 0 則無限制', PUOCK), 'type'=>'number'],
                         ['id' => 'enable', 'label' => __('啟用', PUOCK), 'type' => 'switch'],
                     ],
                 ],
@@ -76,32 +76,32 @@ class OptionAi
                     'label' => __('模型系統預設', PUOCK),
                     'type' => 'textarea',
                     'sdt' => pk_get_option('openai_model_sys_content'),
-                    'tips' => __('模型系統預設，可讓AI主動進行一些違規話題的遮蔽，不懂勿輕易填充', PUOCK),
+                    'tips' => __('模型系統預設，可讓 AI 主動進行一些違規話題的遮蔽，不懂勿輕易填充', PUOCK),
                 ],
                 [
                     'id' => 'ai_chat_stream',
-                    'label' => __('使用Stream(實時輸出)模式', PUOCK),
+                    'label' => __('使用 Stream（實時輸出）模式', PUOCK),
                     'type' => 'switch',
                     'sdt' => pk_is_checked('openai_stream'),
-                    'tips' => __('啟用後請關閉nginx的<code>gzip</code>模式', PUOCK),
+                    'tips' => __('啟用後請關閉 nginx 的<code>gzip</code>模式', PUOCK),
                 ],
                 [
                     'id' => 'ai_chat_welcome',
                     'label' => __('預設歡迎對話', PUOCK),
                     'type' => 'textarea',
-                    'sdt' => pk_get_option('openai_default_welcome_chat', '您好，歡迎使用智慧AI助理'),
-                    'tips' => '支援HTML程式碼',
+                    'sdt' => pk_get_option('openai_default_welcome_chat', '您好，歡迎使用智慧 AI 助理'),
+                    'tips' => '支援 HTML 程式碼',
                 ],
                 [
                     'id' => 'ai_draw_dall_e',
-                    'label' => __('AI繪畫支援', PUOCK),
+                    'label' => __('AI 繪畫支援', PUOCK),
                     'type' => 'switch',
                     'sdt' => pk_is_checked('openai_dall_e'),
                     'tips' => __('啟用後前端界面<code>勾選繪畫模式</code>即可繪畫', PUOCK),
                 ],
                 [
                     'id' => 'ai_draw_dall_e_model',
-                    'label' => __('AI繪畫模型', PUOCK),
+                    'label' => __('AI 繪畫模型', PUOCK),
                     'type' => 'select',
                     'sdt' => pk_get_option('ai_draw_dall_e_model', 'dall-e-2'),
                     'options' => [
@@ -111,15 +111,15 @@ class OptionAi
                 ],
                 [
                     'id' => 'ai_draw_dall_e_size',
-                    'label' => __('AI繪畫圖片大小', PUOCK),
+                    'label' => __('AI 繪畫圖片大小', PUOCK),
                     'type' => 'select',
                     'sdt' => pk_get_option('openai_dall_e_size', '512x512'),
                     'options' => [
                         ['label' => '256x256', 'value' => '256x256'],
                         ['label' => '512x512', 'value' => '512x512'],
                         ['label' => '1024x1024', 'value' => '1024x1024'],
-                        ['label' => '1792x1024（僅DallE-3支援）', 'value' => '1792x1024'],
-                        ['label' => '1024x1792（僅DallE-3支援）', 'value' => '1024x1792'],
+                        ['label' => '1792x1024（僅 DallE-3 支援）', 'value' => '1792x1024'],
+                        ['label' => '1024x1792（僅 DallE-3 支援）', 'value' => '1024x1792'],
                     ],
                 ],
                 [

@@ -25,7 +25,7 @@ class OptionGlobal extends BaseOptionItem
                         ],
                         [
                             'value' => 'cms',
-                            'label' => __('CMS風格', PUOCK),
+                            'label' => __('CMS 風格', PUOCK),
                         ],
                         [
                             'value' => 'company',
@@ -81,7 +81,7 @@ class OptionGlobal extends BaseOptionItem
                 ],
                 [
                     'id' => 'html_page_permalink',
-                    'label' => __('頁面使用.html後綴', PUOCK),
+                    'label' => __('頁面使用 .html 後綴', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                     'tips' => __('更改後需要重新儲存<strong>固定連結</strong>', PUOCK),
@@ -95,27 +95,27 @@ class OptionGlobal extends BaseOptionItem
                 ],
                 [
                     'id' => 'on_txt_logo',
-                    'label' => __('使用文字LOGO', PUOCK),
+                    'label' => __('使用文字 LOGO', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
                 [
                     'id' => 'light_logo',
-                    'label' => __('日光模式LOGO', PUOCK),
+                    'label' => __('日光模式 LOGO', PUOCK),
                     'type' => 'img',
                     'sdt' => '',
-                    'tips' => __('若不上傳則顯示文字LOGO，比例：500*125，請儘量選擇png無底色圖片', PUOCK),
+                    'tips' => __('若不上傳則顯示文字 LOGO，比例：500*125，請儘量選擇 png 無底色圖片', PUOCK),
                 ],
                 [
                     'id' => 'dark_logo',
-                    'label' => __('暗黑模式LOGO', PUOCK),
+                    'label' => __('暗黑模式 LOGO', PUOCK),
                     'type' => 'img',
                     'sdt' => '',
-                    'tips' => __('若不上傳則顯示文字LOGO，比例：500*125，請儘量選擇png無底色圖片', PUOCK),
+                    'tips' => __('若不上傳則顯示文字 LOGO，比例：500*125，請儘量選擇 png 無底色圖片', PUOCK),
                 ],
                 [
                     'id' => 'logo_loop_light',
-                    'label' => __('LOGO掃光動畫', PUOCK),
+                    'label' => __('LOGO 掃光動畫', PUOCK),
                     'type' => 'switch',
                     'badge' => ['value' => 'New'],
                     'sdt' => false,
@@ -125,11 +125,11 @@ class OptionGlobal extends BaseOptionItem
                     'label' => __('網站圖示', PUOCK),
                     'type' => 'img',
                     'sdt' => '',
-                    'tips' => __('比例：32*32，請儘量選擇png無底色圖片', PUOCK),
+                    'tips' => __('比例：32*32，請儘量選擇 png 無底色圖片', PUOCK),
                 ],
                 [
                     'id' => 'stop5x_editor',
-                    'label' => __('禁用Gutenberg編輯器', PUOCK),
+                    'label' => __('禁用 Gutenberg 編輯器', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
@@ -141,7 +141,7 @@ class OptionGlobal extends BaseOptionItem
                 ],
                 [
                     'id' => 'upload_webp',
-                    'label' => __('允許上傳webp', PUOCK),
+                    'label' => __('允許上傳 webp', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
@@ -159,7 +159,7 @@ class OptionGlobal extends BaseOptionItem
                 ],
                 [
                     'id' => 'hide_footer_wp_t',
-                    'label' => __('隱藏底部<code>感謝使用WordPress進行創作</code>和左上角標識', PUOCK),
+                    'label' => __('隱藏底部<code>感謝使用 WordPress 進行創作</code>和左上角標識', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
@@ -178,7 +178,7 @@ class OptionGlobal extends BaseOptionItem
                 ],
                 [
                     'id' => 'compress_html',
-                    'label' => __('將HTML壓縮成一行', PUOCK),
+                    'label' => __('將 HTML 壓縮成一行', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
@@ -208,7 +208,7 @@ class OptionGlobal extends BaseOptionItem
                     'type' => 'switch',
                     'badge' => ['value' => 'New'],
                     'sdt' => false,
-                    'tips' => "⚠️".__('若開啟此選項，請自行手動在Nginx配置中新增偽靜態規則', PUOCK)."：<code>rewrite ^/timthumb/w_([0-9]+)/h_([0-9]+)/q_([0-9]+)/zc_([0-9])/a_([a-z]+)/([0-9A-Za-z_\-]+)\.([0-9a-z]+)$ /wp-content/themes/" . get_template() . "/timthumb.php?w=$1&h=$2&q=$3&zc=$4&a=$5&src=$6;</code>"
+                    'tips' => "⚠️".__('若開啟此選項，請自行手動在 Nginx 配置中新增偽靜態規則', PUOCK)."：<code>rewrite ^/timthumb/w_([0-9]+)/h_([0-9]+)/q_([0-9]+)/zc_([0-9])/a_([a-z]+)/([0-9A-Za-z_\-]+)\.([0-9a-z]+)$ /wp-content/themes/" . get_template() . "/timthumb.php?w=$1&h=$2&q=$3&zc=$4&a=$5&src=$6;</code>"
                 ],
                 [
                     'id' => 'thumbnail_allows',

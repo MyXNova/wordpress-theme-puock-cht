@@ -8,15 +8,15 @@ class OptionSeo extends BaseOptionItem{
     {
         return [
             'key' => 'seo',
-            'label' => __('SEO搜尋優化', PUOCK),
+            'label' => __('SEO 搜尋優化', PUOCK),
             'icon'=>'dashicons-google',
             'fields' => [
                 [
                     'id' => 'seo_open',
-                    'label' => __('開啟SEO', PUOCK),
+                    'label' => __('開啟 SEO', PUOCK),
                     'type' => 'switch',
                     'sdt' => true,
-                    'tips'=>__('若您正在使用其它的SEO外掛，請取消勾選', PUOCK),
+                    'tips'=>__('若您正在使用其它的 SEO 外掛，請取消勾選', PUOCK),
                 ],
                 [
                     'id' => 'web_title',
@@ -35,7 +35,7 @@ class OptionSeo extends BaseOptionItem{
                     'label' => __('標題連線符', PUOCK),
                     'sdt' => '-',
                     'showRefId' => 'seo_open',
-                    'tips'=>__('Title連線符號，例如 "-"、"|"', PUOCK),
+                    'tips'=>__('Title 連線符號，例如 "-"、"|"', PUOCK),
                 ],
                 [
                     'id' => 'description',

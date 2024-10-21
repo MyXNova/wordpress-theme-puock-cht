@@ -83,13 +83,13 @@ class OptionCompany extends BaseOptionItem
                 ],
                 [
                     'id' => 'company_show_2box',
-                    'label' => __('企業兩欄CMS分類', PUOCK),
+                    'label' => __('企業兩欄 CMS 分類', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
                 [
                     'id' => 'company_show_2box_id',
-                    'label' => __('企業兩欄CMS分類項', PUOCK),
+                    'label' => __('企業兩欄 CMS 分類項', PUOCK),
                     'type' => 'select',
                     'sdt' => '',
                     'multiple' => true,
@@ -98,7 +98,7 @@ class OptionCompany extends BaseOptionItem
                 ],
                 [
                     'id' => 'company_show_2box_num',
-                    'label' => __('企業兩欄CMS分類每欄顯示數量', PUOCK),
+                    'label' => __('企業兩欄 CMS 分類每欄顯示數量', PUOCK),
                     'type' => 'number',
                     'sdt' => 6,
                     'showRefId' => 'company_show_2box',

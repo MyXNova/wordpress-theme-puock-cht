@@ -16,7 +16,7 @@ class OptionCache extends BaseOptionItem{
                     'label' => __('快取過期秒數', PUOCK),
                     'type' => 'number',
                     'sdt' => 0,
-                    'tips'=>__('0為不過期', PUOCK),
+                    'tips'=>__('0 為不過期', PUOCK),
                 ],
             ],
         ];

@@ -917,7 +917,7 @@ class Puock {
         $(document).on("click", "#post-like", (e) => {
             const currentTime = new Date().getTime();
             if (currentTime - lastSendTime < throttleTimeMs) {
-                this.toast("操作过于频繁", TYPE_WARNING);
+                this.toast("操作過於頻繁", TYPE_WARNING);
                 return
             }
             lastSendTime = currentTime

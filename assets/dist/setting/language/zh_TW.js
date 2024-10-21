@@ -31,7 +31,7 @@ window.puockSettingLangMessage = {
         'i have saved':'我已儲存',
         'please enter configuration data here':'請在此處輸入配置數據',
         'confirm import':'確認匯入',
-        'tip: long press the drag icon after each column option to drag up and down to change the order':'提示：長按每列選項后的拖拽圖示可以上下拖動改變順序',
+        'tip: long press the drag icon after each column option to drag up and down to change the order':'提示：長按每列選項後的拖拽圖示可以上下拖動改變順序',
         'drag and drop to change the order':'拖拽改變順序',
         'add {msg}':'新增{msg}',
         'add a line {msg}':'新增一行{msg}',

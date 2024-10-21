@@ -50,7 +50,7 @@ class OptionCarousel extends BaseOptionItem
                         [
                             'id' => '-',
                             'type' => 'info',
-                            'tips' => __('說明：幻燈片尺寸建議統一為2:1的比例，例如800*400，另外所有的幻燈片尺寸必須完全一致，否則會出現高度不一的情況！', PUOCK),
+                            'tips' => __('說明：幻燈片尺寸建議統一為 2:1 的比例，例如 800*400，另外所有的幻燈片尺寸必須完全一致，否則會出現高度不一的情況！', PUOCK),
                         ],
                         [
                             'id' => 'index_carousel',
@@ -79,7 +79,7 @@ class OptionCarousel extends BaseOptionItem
                         [
                             'id' => 'index_carousel_autoplay_speed',
                             'label' => __('自動播放速度（毫秒）', PUOCK),
-                            'tips' => __('0為不自動播放', PUOCK),
+                            'tips' => __('0 為不自動播放', PUOCK),
                             'type' => 'number',
                             'sdt' => 3000,
                         ],
@@ -105,7 +105,7 @@ class OptionCarousel extends BaseOptionItem
                             'draggable' => true,
                             'dynamicModel' => [
                                 ['id' => 'title', 'label' => __('幻燈標題', PUOCK), 'std' => ''],
-                                ['id' => 'img', 'label' => __('幻燈圖片', PUOCK), 'std' => '', 'type' => 'img', 'tips' => __('建議尺寸2:1，所有圖片大小必須一致', PUOCK)],
+                                ['id' => 'img', 'label' => __('幻燈圖片', PUOCK), 'std' => '', 'type' => 'img', 'tips' => __('建議尺寸 2:1，所有圖片大小必須一致', PUOCK)],
                                 ['id' => 'link', 'label' => __('指向連結', PUOCK), 'std' => ''],
                                 ['id' => 'blank', 'label' => __('新標籤打開', PUOCK), 'std' => false, 'type' => 'switch'],
                                 ['id' => 'hide', 'label' => __('隱藏', PUOCK), 'type' => 'switch', 'sdt' => false, 'tips' => __('隱藏後將不會顯示', PUOCK)],
@@ -128,7 +128,7 @@ class OptionCarousel extends BaseOptionItem
                         [
                             'id' => 'global_notice_autoplay_speed',
                             'label' => __('自動播放速度（毫秒）', PUOCK),
-                            'tips' => __('0為不自動播放', PUOCK),
+                            'tips' => __('0 為不自動播放', PUOCK),
                             'type' => 'number',
                             'sdt' => 3000,
                         ],
@@ -139,9 +139,9 @@ class OptionCarousel extends BaseOptionItem
                             'sdt' => [],
                             'draggable' => true,
                             'dynamicModel' => [
-                                ['id' => 'title', 'label' => __('公告標題(支援HTML)', PUOCK), 'type' => 'textarea', 'std' => ''],
-                                ['id' => 'link', 'label' => __('指向連結(可空)', PUOCK), 'std' => ''],
-                                ['id' => 'icon', 'label' => __('圖示class(可空)', PUOCK), 'std' => ''],
+                                ['id' => 'title', 'label' => __('公告標題（支援 HTML）', PUOCK), 'type' => 'textarea', 'std' => ''],
+                                ['id' => 'link', 'label' => __('指向連結（可空）', PUOCK), 'std' => ''],
+                                ['id' => 'icon', 'label' => __('圖示 class（可空）', PUOCK), 'std' => ''],
                                 ['id' => 'hide', 'label' => __('隱藏', PUOCK), 'type' => 'switch', 'sdt' => false, 'tips' => __('隱藏後將不會顯示', PUOCK)],
                             ],
                         ],

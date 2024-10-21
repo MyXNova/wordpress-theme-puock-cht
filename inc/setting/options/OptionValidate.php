@@ -43,12 +43,12 @@ class OptionValidate extends BaseOptionItem
                     'children' => [
                         [
                             'id' => 'vd_gt_id',
-                            'label' => __('極驗驗證ID', PUOCK),
+                            'label' => __('極驗驗證 ID', PUOCK),
                             'sdt' => ''
                         ],
                         [
                             'id' => 'vd_gt_key',
-                            'label' => __('極驗驗證Key', PUOCK),
+                            'label' => __('極驗驗證 Key', PUOCK),
                             'sdt' => ''
                         ]
                     ]
@@ -57,14 +57,14 @@ class OptionValidate extends BaseOptionItem
                     'id' => 'vd_comment_need_chinese',
                     'label' => __('評論內容中必須含有中文字元', PUOCK),
                     'type' => 'switch',
-                    'tips' => __('開啟后，評論中必須含有至少1箇中文字元，否則將會被攔截', PUOCK),
+                    'tips' => __('開啟後，評論中必須含有至少 1 個中文字元，否則將會被攔截', PUOCK),
                     'sdt' => false,
                 ],
                 [
                     'id' => 'vd_kwd_access_reject',
                     'label' => __('惡意統計關鍵字瀏覽遮蔽', PUOCK),
                     'type' => 'switch',
-                    'tips' => __('開啟后，將會使含有指定關鍵字的query參數請求得到403拒絕瀏覽，防止網站統計的惡意刷量', PUOCK),
+                    'tips' => __('開啟後，將會使含有指定關鍵字的 query 參數請求得到 403 拒絕瀏覽，防止網站統計的惡意刷量', PUOCK),
                     'sdt' => false,
                 ],
                 [

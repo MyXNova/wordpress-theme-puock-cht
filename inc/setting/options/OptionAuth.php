@@ -33,7 +33,7 @@ class OptionAuth extends BaseOptionItem
                         [
                             'id' => 'quick_login_try_max_open',
                             'label' => __('啟用登入最大嘗試次數限制', PUOCK),
-                            'tips' => __('超過此次數後，對應的IP將會被禁止登入', PUOCK),
+                            'tips' => __('超過此次數後，對應的 IP 將會被禁止登入', PUOCK),
                             'type' => 'switch',
                             'sdt' => false,
                         ],
@@ -92,7 +92,7 @@ class OptionAuth extends BaseOptionItem
                     'label' => __('第三方登入回撥地址提示', PUOCK),
                     'type' => 'info',
                     'infoType' => 'info',
-                    'tips' => '通用回撥地址（callback url）為: <code>' . home_url() . '/wp-admin/admin-ajax.php</code>'
+                    'tips' => '通用回撥地址（callback url）為：<code>' . home_url() . '/wp-admin/admin-ajax.php</code>'
                 ],
                 [
                     'id' => 'oauth_close_register',
@@ -116,13 +116,13 @@ class OptionAuth extends BaseOptionItem
                         ],
                         [
                             'id' => 'oauth_qq_id',
-                            'label' => __('QQ互聯', PUOCK) . ' APP ID',
+                            'label' => __('QQ 互聯', PUOCK) . ' APP ID',
                             'sdt' => '',
                             'showRefId' => 'oauth_qq',
                         ],
                         [
                             'id' => 'oauth_qq_key',
-                            'label' => __('QQ互聯', PUOCK) . ' APP KEY',
+                            'label' => __('QQ 互聯', PUOCK) . ' APP KEY',
                             'sdt' => '',
                             'showRefId' => 'oauth_qq',
                         ],

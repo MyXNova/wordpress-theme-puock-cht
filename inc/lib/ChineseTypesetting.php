@@ -114,7 +114,7 @@ class ChineseTypesetting
         $text = preg_replace('/([。\.]){3,}|(…){1}/iu', '……', $text);
         $text = preg_replace('/(……){2,}/iu', '……', $text);
 
-        // 中文以及中文標點符號）》后使用全形中文標點符號（包括！？。，（）：；）
+        // 中文以及中文標點符號）》後使用全形中文標點符號（包括！？。，（）：；）
         $text = preg_replace_callback('/(['.$this->cjk.'）》」])([!?\.,\(\):;])/iu', function ($matches) {
             $replace = [
                 '!' => '！',

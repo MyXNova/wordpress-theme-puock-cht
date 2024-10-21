@@ -26,7 +26,7 @@ function deel_setup()
         add_filter('rest_enabled', '__return_false');
         add_filter('rest_jsonp_enabled', '__return_false');
         add_filter('rest_authentication_errors', function ($access) {
-            return new WP_Error('rest_cannot_access', 'REST API已經被關閉，請打開后再進行嘗試', array('status' => 403));
+            return new WP_Error('rest_cannot_access', 'REST API已經被關閉，請打開後再進行嘗試', array('status' => 403));
         });
     }
 
