@@ -488,7 +488,7 @@ function pk_baidu_submit($post_ID)
     $post_url = get_permalink($post_ID);
     $api_url = pk_get_option('baidu_submit_url');
     $resp = wp_remote_post($api_url, array('body' => $post_url, 'headers' => 'Content-Type: text/plain'));
-    $res = json_decode($resp['body'], true);
+    $res = @json_decode($resp['body'], true);
     if (isset($res['success'])) {
         add_post_meta($post_ID, 'baidu_submit_url_status', 1, true);
     }
@@ -597,9 +597,17 @@ function pk_checked_out($name, $out = '', $default = 0)
 function pk_theme_light()
 {
     if (isset($_COOKIE['mode'])) {
-        return $_COOKIE['mode'] == 'light';
+        return ($_COOKIE['mode'] == 'light') || $_COOKIE['mode'] == 'auto';
     }
     return pk_get_option('theme_mode', 'light') == 'light';
+}
+
+function pk_theme_mode()
+{
+    if (isset($_COOKIE['mode'])) {
+        return $_COOKIE['mode'];
+    }
+    return 'auto';
 }
 
 //動畫載入
@@ -673,7 +681,7 @@ function pk_get_main_menu($mobile = false)
     }
     if (!$mobile) {
         if (pk_is_checked('theme_mode_s')) {
-            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切換" href="javascript:void(0)"><i class="fa-regular fa-' . (pk_theme_light() ? 'sun' : 'moon') . '"></i></a></li>';
+            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切換" href="javascript:void(0)"><i class="fa fa-' . ((pk_theme_mode() === 'auto' ? 'circle-half-stroke' : (pk_theme_light() ? 'sun' : 'moon'))) . '"></i></a></li>';
         }
         $out .= '<li><a class="search-modal-btn" data-bs-toggle="tooltip" title="搜尋" href="javascript:void(0)"><i class="fa fa-search"></i></a></li>';
     }
