@@ -257,7 +257,7 @@ add_action('init', 'pk_check_right_md5');
 
 /**
  * 獲取檢視最多的文章
- * @param $days N天內
+ * @param $days N 天內
  * @param $nums 數量
  * @return array|object|null
  */
@@ -382,11 +382,11 @@ function pk_post_style_list()
     return pk_get_option('post_style', 'list') == 'list';
 }
 
-//評論新增@功能
+//評論新增 @ 功能
 if (pk_is_checked('comment_has_at')) {
     add_filter('comment_text', 'pk_comment_add_at', 10, 2);
 }
-//GrAvatar頭像源切換
+//GrAvatar 頭像源切換
 if (pk_get_option('gravatar_url', 'wp') != 'wp') {
     $type = pk_get_option('gravatar_url', 'wp');
     if ($type == 'cravatar') {
@@ -497,7 +497,7 @@ function pk_baidu_submit($post_ID)
 if (pk_is_checked('open_baidu_submit')) {
     add_action('publish_post', 'pk_baidu_submit', 0);
 }
-//對pre裡面的內容進行轉義
+//對 pre 裡面的內容進行轉義
 function pk_tag_pre_encode($content)
 {
     preg_match_all("/<pre.*?>(.+?)<\/pre>/is", $content, $matches);
@@ -623,7 +623,7 @@ function pk_open_box_animated($class, $echo = true)
 }
 
 
-//獲取所有網站分類id
+//獲取所有網站分類 id
 function get_all_category_id($type = null)
 {
     global $wpdb;
@@ -643,7 +643,7 @@ function get_all_category_id($type = null)
     return $out;
 }
 
-//獲取所有網站分類id
+//獲取所有網站分類 id
 function get_all_category_id_row($type = null)
 {
     global $wpdb;
@@ -727,7 +727,7 @@ function get_nav_menu_object($location)
     return $menus;
 }
 
-//將匹配的到的選單數據轉換為html
+//將匹配的到的選單數據轉換為 html
 function pk_get_menu_obj_to_html($menus, &$out, $mobile = false, $dpath_cur = 1, $max_dpath = 2)
 {
     $child_class = $dpath_cur != 1 ? 'menu-item-child' : '';
@@ -925,8 +925,8 @@ function pk_get_ip_region_str($ip)
     } catch (Exception $e) {
         return '未知';
     }
-    if (strpos($s['region'], '內網IP') !== false) {
-        return '內網IP';
+    if (strpos($s['region'], '內網 IP') !== false) {
+        return '內網 IP';
     }
     $region = explode('|', $s['region']);
     $res = '';
@@ -966,7 +966,7 @@ function pk_vd_gt_validate(array $args = null)
     }
     $result = json_decode($result['body'], true);
     if ($result['status'] != 'success' || $result['result'] != 'success') {
-        throw new Exception('驗證行為失敗: ' . $result['msg'] ?? $result['reason']);
+        throw new Exception('驗證行為失敗：' . $result['msg'] ?? $result['reason']);
     }
     return true;
 }

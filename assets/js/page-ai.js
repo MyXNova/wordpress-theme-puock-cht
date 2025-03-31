@@ -464,7 +464,7 @@ jQuery(function () {
                                         <div class="fs14 content-box ${data.ai ? 'cursor-blink-after' : ''}">${this.parseContent(data.content)}</div>
                                         <div class="d-flex align-items-center mt-2 text-muted fs12">
                                             <div class="mr-1">
-                                                <i class="fa fa-${data.imgMode ? 'palette' : 'robot'} mr-1"></i>${data.imgMode ? 'AI繪畫' : 'AI問答'}
+                                                <i class="fa fa-${data.imgMode ? 'palette' : 'robot'} mr-1"></i>${data.imgMode ? 'AI 繪畫' : 'AI 問答'}
                                             </div>
                                             <div class="primary-text-hover pk-copy" data-cp-title="對話資訊" data-cp-func="puockAiChatCopy" data-id="${id}">
                                                 <span><i class="fa-regular fa-copy mr-1"></i>複製</span>

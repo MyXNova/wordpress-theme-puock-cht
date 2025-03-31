@@ -7,11 +7,11 @@ function pk_poster_page_callback()
 {
     $id = $_REQUEST['id'];
     if (empty($id)) {
-        wp_die('無效的文章ID: ' . $id);
+        wp_die('無效的文章 ID：' . $id);
     }
     $post = get_post($id);
     if (empty($post)) {
-        wp_die('無效的文章ID: ' . $id);
+        wp_die('無效的文章 ID：' . $id);
     }
     setup_postdata($post);
     $title = get_the_title($post);
@@ -35,7 +35,7 @@ function pk_poster_page_callback()
                         <p class="tip c-sub fs14">@<?php echo pk_get_web_title() ?></p>
                     <?php endif; ?>
                 </div>
-                <p class="tip c-sub fs12 mt20 p-flex-center"><i class="fa-solid fa-qrcode"></i>&nbsp;長按識別二維碼檢視文章內容</p>
+                <p class="tip c-sub fs12 mt20 p-flex-center"><i class="fa-solid fa-qrcode"></i>&nbsp;長按識別 QRCode 檢視文章內容</p>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@ function pk_poster_page_callback()
                 window.Puock.stopLoading(i);
             }).catch(err => {
                 console.error(err)
-                window.Puock.toast("產生海報失敗，請到Console檢視錯誤資訊", TYPE_DANGER);
+                window.Puock.toast("產生海報失敗，請到 Console 檢視錯誤資訊", TYPE_DANGER);
             });
         })
     </script>

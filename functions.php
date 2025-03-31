@@ -14,7 +14,7 @@ include_once('gutenberg/index.php');
 
 
 
-//去除感謝使用wordpress創作
+//去除感謝使用 wordpress 創作
 if (pk_is_checked('hide_footer_wp_t')) {
     function my_admin_footer_text()
     {
@@ -37,7 +37,7 @@ if (pk_is_checked('hide_footer_wp_t')) {
     add_filter('update_footer', 'my_update_footer', 50);
 }
 
-//禁用5.0古登堡編輯器
+//禁用 5.0 古登堡編輯器
 if (pk_is_checked('stop5x_editor')) {
     add_filter('use_block_editor_for_post', '__return_false');
     remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
@@ -114,7 +114,7 @@ function pk_the_author_class($echo = true, $in_comment = null)
     echo $res;
 }
 
-//獲取Gravatar頭像
+//獲取 Gravatar 頭像
 function pk_get_gravatar($email, $echo = true)
 {
     $link = get_avatar_url($email);
@@ -209,7 +209,7 @@ function pk_get_post_date()
     echo $res;
 }
 
-//獲取隨機的bootstrap的顏色表示
+//獲取隨機的 bootstrap 的顏色表示
 function pk_get_color_tag($ex = array())
 {
     global $puock_colors_name;
@@ -425,7 +425,7 @@ function pk_breadcrumbs()
  * @date 2024-03-19
  */
 function pk_icon_mate() {
-    //獲取icon地址
+    //獲取 icon 地址
     $pk_icon = pk_get_option('favicon');
     //未設定返回空
     if ($pk_icon === '') return '';
@@ -438,14 +438,14 @@ function pk_icon_mate() {
 }
 
 /**
- * 輸出SEO標題
+ * 輸出 SEO 標題
  *
- * @return string SEO標題
+ * @return string SEO 標題
  * @author lvshujun
  * @date 2024-03-19
  */
 function pk_get_seo_title() {
-    // 未啟用SEO返回空
+    // 未啟用 SEO 返回空
     if (!pk_is_checked('seo_open',true)) {
         return '';
     }
@@ -458,7 +458,7 @@ function pk_get_seo_title() {
     if (get_query_var('paged')) {
         $pk_paged_title = $pk_title_conn . '第' . get_query_var('paged') . '頁';
     }
-    // 獲取SEO設定
+    // 獲取 SEO 設定
     $pk_custom_seo_title = pk_get_custom_seo()['title'] ?? '';
     // 輸出內容
     $pk_title = '';
@@ -479,11 +479,11 @@ function pk_get_seo_title() {
     } else if (is_single() || is_page()) {
         $pk_title .= single_post_title('', false) . $pk_common_end;
     } else if (is_year()) {
-        $pk_title .= get_the_time('Y年') . '的所有文章' . $pk_common_end;
+        $pk_title .= get_the_time('Y 年') . '的所有文章' . $pk_common_end;
     } else if (is_month()) {
         $pk_title .= get_the_time('m') . '的所有文章' . $pk_common_end;
     } else if (is_day()) {
-        $pk_title .= get_the_time('Y年m月d日') . '的所有文章' . $pk_common_end;
+        $pk_title .= get_the_time('Y 年 m 月 d 日') . '的所有文章' . $pk_common_end;
     } else if (is_author()) {
         $pk_title .= '作者：' . get_the_author() . $pk_common_end;
     } else if (is_category()) {
@@ -530,7 +530,7 @@ function light_box_text_replace($content)
 add_filter('the_content', 'light_box_text_replace', 99);
 
 
-//給圖片加上alt/title
+//給圖片加上 alt/title
 function content_img_add_alt_title($content)
 {
     global $post;
@@ -548,7 +548,7 @@ function content_img_add_alt_title($content)
 
 add_filter('the_content', 'content_img_add_alt_title', 99);
 
-//加上bootstrap的表格class
+//加上 bootstrap 的表格 class
 function pk_bootstrap_table_class($content)
 {
     global $post;
@@ -564,7 +564,7 @@ function pk_bootstrap_table_class($content)
 
 add_filter('the_content', 'pk_bootstrap_table_class', 99);
 
-//初始化wp_style函式，以防止出現Invalid argument supplied for foreach()錯誤
+//初始化 wp_style 函式，以防止出現 Invalid argument supplied for foreach() 錯誤
 function pk_init_wp_empty_style()
 {
     wp_enqueue_style('');
@@ -640,13 +640,13 @@ function pk_update()
 //                                    您在 <a style="text-decoration:none; color:#409eff;font-weight:600;" href="' . home_url() . '">' . $blogname . '</a> 的留言有回覆啦！
 //                           </h2>
 //                           <div style="font-size: 14px; color: #777; padding: 0 10px; margin-top: 18px;">
-//                                    <p><b>' . trim(get_comment($parent_id)->comment_author) . '</b> 同學，您曾在文章<b>《' . get_the_title($comment->comment_post_ID) . '》</b>上發表評論:</p>
+//                                    <p><b>' . trim(get_comment($parent_id)->comment_author) . '</b> 同學，您曾在文章<b>《' . get_the_title($comment->comment_post_ID) . '》</b>上發表評論：</p>
 //                                    <p style="background: #F5F5F5; padding: 10px 15px; margin: 18px 0;">' . nl2br(strip_tags(get_comment($parent_id)->comment_content)) . '</p>
-//                                    <p>' . '<b>' . trim($comment->comment_author) . '</b>' . ' 給您的回覆如下:</p>
+//                                    <p>' . '<b>' . trim($comment->comment_author) . '</b>' . ' 給您的回覆如下：</p>
 //                                    <p style="background: #F5F5F5; padding: 10px 15px; margin: 18px 0;">' . nl2br(strip_tags($comment->comment_content)) . '</p>
 //                                    <p>您可以點選 <a style="text-decoration:none; color:#409eff" href="' . htmlspecialchars(get_comment_link($parent_id)) . '">檢視完整的回覆內容</a>，也歡迎再次光臨 <a style="text-decoration:none; color:#409eff"
 //                                    href="' . home_url() . '">' . $blogname . '</a>。祝您生活愉快！</p>
-//                                    <p style="padding-bottom: 15px;">(此 E-mail 由系統自動發出,請勿直接回覆!)</p>
+//                                    <p style="padding-bottom: 15px;">（此 E-mail 由系統自動發出，請勿直接回覆！）</p>
 //                           </div>
 //                  </div>';
 //        $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
@@ -664,7 +664,7 @@ function pk_update()
 //                              <a style="text-decoration:none;color: #409eff;" href="' . home_url() . '">' . $blogname . '</a> 部落格有新的評論啦！
 //                     </h2>
 //                     <div style="padding:0 12px 0 12px;margin-top:18px;">
-//                              <p><b>' . $comment->comment_author . '</b> 同學在文章<b>《' . get_the_title($comment->comment_post_ID) . '》</b>上發表評論:</p>
+//                              <p><b>' . $comment->comment_author . '</b> 同學在文章<b>《' . get_the_title($comment->comment_post_ID) . '》</b>上發表評論：</p>
 //                              <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0;">' . $comment->comment_content . '</p>
 //                              <p>您可以點選 <a style="text-decoration:none; color:#409eff" href="' . htmlspecialchars(get_comment_link($parent_id)) . '">檢視完整的回覆內容</a>，也歡迎再次光臨 <a style="text-decoration:none; color:#409eff" href="' . home_url() . '">' . $blogname . '</a>。祝您生活愉快！</p>
 //                     </div>
@@ -683,7 +683,7 @@ function pk_update()
 //                              <a style="text-decoration:none;color: #409eff;" href="' . home_url() . '">' . $blogname . '」</a> 中有一條評論等待您的審核
 //                     </h2>
 //                     <div style="padding:0 12px 0 12px;margin-top:18px;">
-//                              <p><b>' . $comment->comment_author . '</b> 同學在文章<b><a style="text-decoration:none;color: #409eff;" href="' . get_permalink($comment->comment_post_ID) . '">《' . get_the_title($comment->comment_post_ID) . '》</a></b>上發表評論:</p>
+//                              <p><b>' . $comment->comment_author . '</b> 同學在文章<b><a style="text-decoration:none;color: #409eff;" href="' . get_permalink($comment->comment_post_ID) . '">《' . get_the_title($comment->comment_post_ID) . '》</a></b>上發表評論：</p>
 //                              <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0;">' . $comment->comment_content . '</p>
 //                              <p><a style="text-decoration:none;color: #007017;" href="' . admin_url("comment.php?action=approve&c={$comment_id}#wpbody-content") . '">[批準評論]</a> | <a style="text-decoration:none;color: #b32d2e;" href="' . admin_url("comment.php?action=trash&c={$comment_id}#wpbody-content") . '">[移至回收站]</a>。您還可以：<a style="text-decoration:none; color:#b32d2e" href="' . admin_url("comment.php?action=delete&c={$comment_id}#wpbody-content") . '">永久刪除評論</a> | <a style="text-decoration:none;color: #b32d2e;" href="' . admin_url("comment.php?action=spam&c={$comment_id}#wpbody-content") . '">標記為垃圾評論</a>
 //                              <p>目前有 ' . $comments_waiting . ' 條評論等待審核。請移步<a style="text-decoration:none;color: #409eff;" href="' . admin_url('edit-comments.php?comment_status=moderated#wpbody-content') . '">審核頁面</a>來檢視。</p>也歡迎再次光臨 <a style="text-decoration:none; color:#409eff" href="' . home_url() . '">' . $blogname . '</a>。祝您生活愉快！</p>

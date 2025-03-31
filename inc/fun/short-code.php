@@ -1,5 +1,5 @@
 <?php
-/*短程式碼*/
+/* 短程式碼 */
 $shortCodeColors = array('primary', 'danger', 'warning', 'info', 'success', 'dark');
 
 function pk_shortcode_register()
@@ -10,7 +10,7 @@ function pk_shortcode_register()
         'pre' => array('name' => '程式碼嵌入', 'content' => '輸入程式碼'),
         'reply' => array('name' => '回覆可見', 'content' => '輸入內容'),
         'login' => array('name' => '登入可見', 'content' => '輸入內容'),
-        'github' => array('name' => 'Github倉庫卡片', 'content' => 'Licoy/wordpress-theme-puock'),
+        'github' => array('name' => 'Github 倉庫卡片', 'content' => 'Licoy/wordpress-theme-puock'),
         'login_email' => array('name' => '登入並驗證 E-mail 可見', 'content' => '輸入內容'),
         'video' => array('name' => '視訊播放', 'content' => '視訊地址', 'attr' => array(
             'autoplay' => false, 'type' => 'auto',
@@ -37,7 +37,7 @@ function pk_shortcode_register()
     }
     return $list;
 }
-// 解析pre標籤 感謝阿雲。小恐龍太好拉注。
+// 解析 pre 標籤 感謝阿雲。小恐龍太好拉注。
 function pk_pre($atts, $content = null) {
     $content = '<pre>' . htmlspecialchars($content) . '</pre>';
     return $content;
@@ -143,7 +143,7 @@ function pk_download($attr, $content = null)
     $size = isset($attr['size']) ? $attr['size'] : '';
     $down_tips = pk_get_option('down_tips');
     return "<div class=\"p-block p-down-box\">
-        <div class='mb15'><i class='fa fa-file-zipper'></i>&nbsp;<span>檔名稱：$filename</span></div>
+        <div class='mb15'><i class='fa fa-file-zipper'></i>&nbsp;<span>檔案名稱：$filename</span></div>
         <div class='mb15'><i class='fa fa-download'></i>&nbsp;<span>檔案大小：$size</span></div>
         <div class='mb15'><i class='fa-regular fa-bell'></i>&nbsp;<span>下載聲明：$down_tips</span></div>
         <div><i class='fa fa-link'></i><span>下載地址：$content</span></div>
@@ -267,7 +267,7 @@ function pk_sc_collapse($attr, $content = null)
 
 add_shortcode('collapse', 'pk_sc_collapse');
 
-//github專案展示
+//github 專案展示
 function pk_sc_github($attr, $content = null)
 {
     return '<div class="github-card text-center" data-repo="' . $content . '"><div class="spinner-grow text-primary"></div></div>';

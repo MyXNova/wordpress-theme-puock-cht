@@ -81,7 +81,7 @@ class PuockUserCenter implements IPuockClassLoad
                             <?php if (current_user_can('administrator')): ?>
                                 <a data-no-instant href="<?php echo get_admin_url() ?>" type="button" class="btn btn-ssm btn-primary me-1">
                                     <i class="fa fa-magic"></i>
-                                    <span><?php _e('WP後臺', PUOCK) ?></span>
+                                    <span><?php _e('WP 後臺', PUOCK) ?></span>
                                 </a>
                             <?php endif; ?>
                             <button type="button"

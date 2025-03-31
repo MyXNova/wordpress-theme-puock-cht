@@ -381,11 +381,11 @@ class Puock {
         const isOpen = menuButton.hasClass(className);
         
         if (isOpen) {
-            // 关闭菜单
+            // 關閉選單
             menuContainer.removeClass("show");
             menuButton.removeClass(className);
         } else {
-            // 打开菜单
+            // 打開選單
             menuContainer.addClass("show");
             menuButton.addClass(className);
         }
@@ -1089,7 +1089,7 @@ class Puock {
                 `);
                     el.addClass("loaded");
                 }, 'json').fail((err) => {
-                    el.html(`<div class="alert alert-danger"><i class="fa fa-warning"></i>&nbsp;請求Github專案詳情異常：${repo}</div>`)
+                    el.html(`<div class="alert alert-danger"><i class="fa fa-warning"></i>&nbsp;請求 Github 專案詳情異常：${repo}</div>`)
                 });
             }
         })

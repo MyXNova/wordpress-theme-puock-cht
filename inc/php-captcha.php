@@ -122,7 +122,7 @@ class CaptchaBuilder
         }
         $this->isDrawCurve && $this->drawSineLine();
 
-        $codeNX = 0; // 驗證碼第N個字元的左邊距
+        $codeNX = 0; // 驗證碼第 N 個字元的左邊距
         $code = [];
 
         for ($i = 0; $i < $this->number; $i++) {
@@ -183,8 +183,8 @@ class CaptchaBuilder
 
         // 曲線前部分
         $A = mt_rand(1, $this->height/2);                  // 振幅
-        $b = mt_rand(-$this->height/4, $this->height/4);   // Y軸方向偏移量
-        $f = mt_rand(-$this->height/4, $this->height/4);   // X軸方向偏移量
+        $b = mt_rand(-$this->height/4, $this->height/4);   // Y 軸方向偏移量
+        $f = mt_rand(-$this->height/4, $this->height/4);   // X 軸方向偏移量
         $T = mt_rand($this->height, $this->width*2);  // 週期
         $w = (2* M_PI)/$T;
 
@@ -198,7 +198,7 @@ class CaptchaBuilder
                 $py = $A * sin($w*$px + $f)+ $b + $this->height/2;  // y = Asin(ωx+φ) + b
                 $i = (int) ($this->fontSize/5);
                 while ($i > 0) {
-                    imagesetpixel($this->image, $px + $i , $py + $i, $color);  // 這裡(while)循環畫畫素點比imagettftext和imagestring用字型大小一次畫出（不用這while循環）效能要好很多
+                    imagesetpixel($this->image, $px + $i , $py + $i, $color);  // 這裡 (while) 循環畫畫素點比 imagettftext 和 imagestring 用字型大小一次畫出（不用這 while 循環）效能要好很多
                     $i--;
                 }
             }
@@ -206,7 +206,7 @@ class CaptchaBuilder
 
         // 曲線後部分
         $A = mt_rand(1, $this->height/2);                  // 振幅
-        $f = mt_rand(-$this->height/4, $this->height/4);   // X軸方向偏移量
+        $f = mt_rand(-$this->height/4, $this->height/4);   // X 軸方向偏移量
         $T = mt_rand($this->height, $this->width*2);  // 週期
         $w = (2* M_PI)/$T;
         $b = $py - $A * sin($w*$px + $f) - $this->height/2;

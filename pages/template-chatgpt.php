@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: AI助手
+Template Name: AI 助手
 */
 wp_enqueue_script('puock-md', pk_get_static_url() . '/assets/libs/marked.js', ['puock-libs'], PUOCK_CUR_VER_STR, true);
 wp_enqueue_script('puock-page-ai', pk_get_static_url() . '/assets/dist/js/page-ai.min.js', ['puock-md'], PUOCK_CUR_VER_STR, true);
@@ -71,7 +71,7 @@ $gc_ai_chat_models = pk_get_option('ai_chat_models', []);
                                     <?php if (pk_is_checked('ai_draw_dall_e')): ?>
                                         <input class="form-check-input" name="remember" type="checkbox" role="switch"
                                                id="chat-use-img-mode">
-                                        <label class="form-check-label fs14" for="chat-use-img-mode">AI繪畫</label>
+                                        <label class="form-check-label fs14" for="chat-use-img-mode">AI 繪畫</label>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ $gc_ai_chat_models = pk_get_option('ai_chat_models', []);
                                             class="fa-regular fa-paper-plane me-1"></i>立即提問
                                 </button>
                                 <button class="btn btn-dark btn-sm chat-clear-history"><i
-                                            class="fa-solid fa-broom me-1"></i>清屏
+                                            class="fa-solid fa-broom me-1"></i>清除畫面
                                 </button>
                             </div>
                         </div>

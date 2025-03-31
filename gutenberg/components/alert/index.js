@@ -158,7 +158,7 @@ module.exports = window["wp"]["element"];
   \******************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"puock/alert","version":"0.1.0","title":"Puock提示框","category":"widgets","icon":"smiley","description":"一個提示框","supports":{"html":false},"attributes":{"color":{"type":"string","default":"#007bff"},"text":{"type":"string","default":"Hello World"},"iconClass":{"type":"string","default":""},"position":{"type":"string","default":"left"}},"textdomain":"alert","editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"puock/alert","version":"0.1.0","title":"Puock 提示框","category":"widgets","icon":"smiley","description":"一個提示框","supports":{"html":false},"attributes":{"color":{"type":"string","default":"#007bff"},"text":{"type":"string","default":"Hello World"},"iconClass":{"type":"string","default":""},"position":{"type":"string","default":"left"}},"textdomain":"alert","editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

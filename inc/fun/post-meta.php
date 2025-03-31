@@ -3,18 +3,18 @@
 use Puock\Theme\classes\meta\PuockAbsMeta;
 
 PuockAbsMeta::newPostMeta('pk-post-seo', [
-    'title' => 'SEO設定',
+    'title' => 'SEO 設定',
     'options' => [
         array(
             "id" => "seo_keywords",
-            "title" => "自定義SEO關鍵詞",
-            'desc' => '多個關鍵詞之間使用", "分隔，預設為設定的標籤',
+            "title" => "自定義 SEO 關鍵詞",
+            'desc' => '多個關鍵詞之間使用「,」分隔，預設為設定的標籤',
             "type" => "text"
         ),
         array(
             "id" => "seo_desc",
-            "title" => "自定義SEO描述",
-            'desc' => '預設為文章前150個字元（推薦不超過150個字元）',
+            "title" => "自定義 SEO 描述",
+            'desc' => '預設為文章前 150 個字元（推薦不超過 150 個字元）',
             "type" => "text"
         )
     ]
@@ -73,7 +73,7 @@ function pk_page_meta_basic()
             array(
                 "id" => "page_links_id",
                 "std" => "",
-                "title" => "連結顯示分類目錄ID列表",
+                "title" => "連結顯示分類目錄 ID 列表",
                 'desc' => "（僅為<b>友情連結</b>及<b>網址導航</b>模板時有效，為空則不顯示，可多選）",
                 "type" => "select",
                 'multiple'=>true,
@@ -82,7 +82,7 @@ function pk_page_meta_basic()
             array(
                 "id" => "page_books_id",
                 "std" => "",
-                "title" => "書籍顯示分類目錄ID列表",
+                "title" => "書籍顯示分類目錄 ID 列表",
                 "desc" => "（僅為<b>書籍推薦</b>模板時有效，為空則不顯示，可多選）",
                 "type" => "select",
                 'multiple'=>true,

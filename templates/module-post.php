@@ -1,4 +1,4 @@
-<!--文章ID：<?php the_ID() ?> -->
+<!--文章 ID：<?php the_ID() ?> -->
 <?php if (pk_post_style_list()): ?>
     <article class="block card-plain post-item p-block post-item-list">
         <div class="thumbnail">

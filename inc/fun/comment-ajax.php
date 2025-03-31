@@ -130,7 +130,7 @@ function pk_comment_ajax()
         if (empty($comment_author) || empty($comment_author_email))
             pk_comment_err('評論之前必須填寫昵稱及 E-mail 地址');
         elseif (!is_email($comment_author_email))
-            pk_comment_err('電子信箱格式不正確');
+            pk_comment_err('E-mail 格式不正確');
     }
 
     if (empty($comment_content)) pk_comment_err('評論內容不能為空');

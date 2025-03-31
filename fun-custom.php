@@ -5,7 +5,7 @@
  */
 
 /**
- * 給外鏈加上nofollow及新視窗打開
+ * 給外鏈加上 nofollow 及新視窗打開
  * from: https://cn.wordpress.org/plugins/nofollow-for-external-link/
  * license: GPL-2.0
  */

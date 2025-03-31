@@ -13,7 +13,7 @@ function deel_setup()
     remove_action('wp_head', 'start_post_rel_link');//清除前後文資訊
     remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
     remove_action('wp_head', 'rel_canonical');//本頁連結
-    remove_action('wp_head', 'wp_generator');//移除WordPress版本號
+    remove_action('wp_head', 'wp_generator');//移除 WordPress 版本號
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);//本頁短連結
 
     add_filter('embed_oembed_discover', '__return_false');
@@ -26,7 +26,7 @@ function deel_setup()
         add_filter('rest_enabled', '__return_false');
         add_filter('rest_jsonp_enabled', '__return_false');
         add_filter('rest_authentication_errors', function ($access) {
-            return new WP_Error('rest_cannot_access', 'REST API已經被關閉，請打開後再進行嘗試', array('status' => 403));
+            return new WP_Error('rest_cannot_access', 'REST API 已經被關閉，請打開後再進行嘗試', array('status' => 403));
         });
     }
 
@@ -38,7 +38,7 @@ function deel_setup()
     remove_action('wp_head', 'rest_output_link_wp_head', 10);
     remove_action('template_redirect', 'rest_output_link_header', 11);
 
-    //清除wp_footer帶入的embed.min.js
+    //清除 wp_footer 帶入的 embed.min.js
     function git_deregister_embed_script()
     {
         wp_deregister_script('wp-embed');
@@ -146,7 +146,7 @@ function pk_env_check()
     $last_version = '7.4';
     $content = [];
     if (version_compare($php_version, $last_version, '<')) {
-        $content[] = '<p>您正在使用過時的PHP版本<code>' . $php_version . '</code>，Puock主題需要PHP版本大於<code>' . $last_version . '</code>才能完整使用全部功能，請升級PHP版本。</p>';
+        $content[] = '<p>您正在使用過時的 PHP 版本<code>' . $php_version . '</code>，Puock 主題需要 PHP 版本大於<code>' . $last_version . '</code>才能完整使用全部功能，請升級 PHP 版本。</p>';
     }
     $need_ext = ['gd'];
     $not_ext = [];
@@ -156,7 +156,7 @@ function pk_env_check()
         }
     }
     if (count($not_ext) > 0) {
-        $content[] = '<p>您的PHP缺少擴充套件' . implode(', ', $not_ext) . '，缺少這些擴充套件可能導致部分功能無法使用，請及時安裝這些擴充套件。</p>';
+        $content[] = '<p>您的 PHP 缺少擴充套件' . implode(', ', $not_ext) . '，缺少這些擴充套件可能導致部分功能無法使用，請及時安裝這些擴充套件。</p>';
     }
     if (!empty($content)) {
         echo '<div class="error">' . (join('', $content)) . '</div>';

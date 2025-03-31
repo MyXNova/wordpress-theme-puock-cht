@@ -140,7 +140,7 @@ class ChineseTypesetting
      * 有限度的全形轉半形（英文、數字、空格以及某些特殊字元等使用半形字元）
      * Limited full-width to half-width transformer.
      *
-     * @link https://github.com/mzlogin/chinese-copywriting-guidelines#全形和半形
+     * @link https://github.com/mzlogin/chinese-copywriting-guidelines #全形和半形
      *
      * @param string $text
      *
@@ -176,7 +176,7 @@ class ChineseTypesetting
      *
      * update base on @link https://github.com/Rakume/pangu.php/blob/master/pangu.php
      *
-     * @link https://github.com/mzlogin/chinese-copywriting-guidelines#空格
+     * @link https://github.com/mzlogin/chinese-copywriting-guidelines #空格
      *
      * @param string $text
      *

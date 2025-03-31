@@ -12,7 +12,7 @@
                 ><i class="fa-regular fa-images"></i></div>
             <?php endif; ?>
             <?php if (pk_is_checked('post_reward')): ?>
-                <div class="circle-button puock-bg text-center pk-modal-toggle" title="讚賞" data-once-load="true"
+                <div class="circle-button puock-bg text-center pk-modal-toggle" title="打賞" data-once-load="true"
                      data-url="<?php echo pk_ajax_url('pk_ajax_dialog_reward') ?>">
                     <i class="fa fa-sack-dollar"></i></div>
             <?php endif; ?>

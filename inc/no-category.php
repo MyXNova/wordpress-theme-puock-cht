@@ -1,6 +1,6 @@
 <?php
 
-//去除分類中的category
+//去除分類中的 category
 
 add_action('load-themes.php', 'no_category_base_refresh_rules');
 add_action('created_category', 'no_category_base_refresh_rules');

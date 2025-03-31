@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "puock/alert",
   "version": "0.1.0",
-  "title": "Puock提示框",
+  "title": "Puock 提示框",
   "category": "widgets",
   "icon": "smiley",
   "description": "一個提示框",

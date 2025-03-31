@@ -150,7 +150,7 @@ function pk_front_forget_password_exec()
     $url = pk_ajax_url('pk_front_forget_password_reset_exec', [
         'code' => $code,
     ]);
-    if (wp_mail($data['email'], '密碼重置 - ' . pk_get_web_title(), "您的密碼重置連結為：{$url}，請在5分鐘內點選連結重置密碼")) {
+    if (wp_mail($data['email'], '密碼重置 - ' . pk_get_web_title(), "您的密碼重置連結為：{$url}，請在 5 分鐘內點選連結重置密碼")) {
         echo pk_ajax_resp(null, '重置密碼連結已發送至 E-mail 信箱');
     } else {
         echo pk_ajax_resp_error('重置密碼連結 E-mail 發送失敗');
@@ -209,7 +209,7 @@ function pk_front_login_page_callback()
             <form id="front-login-form" action="<?php echo pk_ajax_url('pk_front_login_exec'); ?>" method="post"
                   class="ajax-form" data-validate="<?php echo $validate_type; ?>">
                 <div class="mb15">
-                    <label for="_front_login_username" class="form-label">使用者名稱/E-mail</label>
+                    <label for="_front_login_username" class="form-label">使用者名稱 / E-mail</label>
                     <input type="text" name="username" class="form-control form-control-sm" id="_front_login_username"
                            data-required
                            placeholder="請輸入使用者名稱或 E-mail">
@@ -267,7 +267,7 @@ function pk_front_login_page_callback()
                 <div class="mb15">
                     <label for="_front_register_username" class="form-label">使用者名稱</label>
                     <input type="text" name="username" class="form-control form-control-sm" data-required
-                           id="_front_register_username" placeholder="請輸入最少5～10位的使用者名稱">
+                           id="_front_register_username" placeholder="請輸入最少 5～10 位字元的使用者名稱">
                 </div>
                 <div class="mb15">
                     <label for="_front_register_email" class="form-label">E-mail</label>
@@ -277,7 +277,7 @@ function pk_front_login_page_callback()
                 <div class="mb15">
                     <label for="_front_register_password" class="form-label">密碼</label>
                     <input type="password" name="password" class="form-control form-control-sm" data-required
-                           id="_front_register_password" placeholder="請輸入6～18位字元的密碼">
+                           id="_front_register_password" placeholder="請輸入 6～18 位字元的密碼">
                 </div>
                 <?php if ($validate_type === 'img'): ?>
                     <div class="mb15">
@@ -320,12 +320,12 @@ function pk_front_login_page_callback()
                 <div class="mb15">
                     <label for="_front_forget_password_password" class="form-label">新密碼</label>
                     <input type="password" name="password" class="form-control form-control-sm" data-required
-                           id="_front_forget_password_password" placeholder="請輸入6～18位字元的新密碼">
+                           id="_front_forget_password_password" placeholder="請輸入 6～18 位字元的新密碼">
                 </div>
                 <div class="mb15">
                     <label for="_front_forget_password_password_re" class="form-label">重複新密碼</label>
                     <input type="password" name="re-password" class="form-control form-control-sm" data-required
-                           id="_front_forget_password_password_re" placeholder="請重複輸入6～18位字元的新密碼">
+                           id="_front_forget_password_password_re" placeholder="請重複輸入 6～18 位字元的新密碼">
                 </div>
                 <?php if ($validate_type === 'img'): ?>
                     <div class="mb15">

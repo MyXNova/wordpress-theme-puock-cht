@@ -27,7 +27,7 @@ function puock_post_like()
 add_action('wp_ajax_nopriv_puock_like', 'puock_post_like');
 add_action('wp_ajax_puock_like', 'puock_post_like');
 
-// 獲取目前瀏覽cookie是否點讚
+// 獲取目前瀏覽 cookie 是否點讚
 function puock_post_is_like()
 {
     global $post;
@@ -42,15 +42,15 @@ function puock_post_like_num(int $id)
         $number = 0;
     }
     if ($number < 1000) {
-        return $number; // 小於1000直接返回
+        return $number; // 小於 1000 直接返回
     } elseif ($number < 1000000) {
-        return round($number / 1000, 0) . 'k'; // 1000到999999之間返回「k」格式
+        return round($number / 1000, 0) . 'k'; // 1000 到 999999 之間返回「k」格式
     } else {
-        return round($number / 1000000, 0) . 'M'; // 大於等於1000000返回「M」格式
+        return round($number / 1000000, 0) . 'M'; // 大於等於 1000000 返回「M」格式
     }
 }
 
-//移除wp自帶的widget
+//移除 wp 自帶的 widget
 function init_unregister_widgets()
 {
     unregister_widget('WP_Widget_Recent_Comments');
@@ -73,7 +73,7 @@ function init_unregister_widgets()
 
 add_action('widgets_init', 'init_unregister_widgets');
 
-// 頁面新增html後綴
+// 頁面新增 html 後綴
 function html_page_permalink()
 {
     global $wp_rewrite;
@@ -90,7 +90,7 @@ function add_init_trailingslashit($string, $type_of_url)
     return $string;
 }
 
-//解析get參數
+//解析 get 參數
 function get_path_query($query)
 {
     $querys = explode('&', $query);
@@ -114,7 +114,7 @@ function pk_theme_footer_copyright($content)
 
 add_filter('pk_footer_info', 'pk_theme_footer_copyright', 10, 1);
 
-//GrAvatar頭像源
+//GrAvatar 頭像源
 $gravatar_urls = array('www.gravatar.com', '0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 'secure.gravatar.com', 'cn.gravatar.com');
 function cn_avatar($avatar)
 {
@@ -183,7 +183,7 @@ function comment_mail_notify($comment_id)
     }
 }
 
-//評論新增@
+//評論新增 @
 function pk_comment_add_at($text, $comment = '')
 {
     if ($comment->comment_parent > 0) {
@@ -211,11 +211,11 @@ function pk_shortcode_box_init()
         </a><div id="insert-shortcode-wrap" class="pk-media-wrap" style="display: none">' . $output . '</div>';
 }
 
-//壓縮HTML
+//壓縮 HTML
 function wp_compress_html()
 {
 
-    //禁止pre標籤壓縮
+    //禁止 pre 標籤壓縮
     function pre_no_compress($content)
     {
         if (preg_match_all('/<\/pre>/i', $content, $matches)) {
@@ -253,7 +253,7 @@ function wp_compress_html()
         $final = strlen($out);
         $savings = ($initial - $final) / $initial * 100;
         $savings = round($savings, 2);
-        $info = "<!--壓縮前為:{$initial}bytes;壓縮後為:{$final}bytes;節約:{$savings}%-->";
+        $info = "<!--壓縮前為：{$initial}bytes;壓縮後為：{$final}bytes;節約：{$savings}％-->";
         return $out . $info;
     }
 
@@ -390,7 +390,7 @@ function pk_get_comment_ua_os_icon($name)
     return $prefix . $res_class;
 }
 
-// 二維碼產生
+// QRCode 產生
 function pk_post_qrcode($url, $base_dir = '/cache/qrcode')
 {
     $file = $base_dir . '/qr-' . md5($url) . '.png';
@@ -486,7 +486,7 @@ function pk_get_web_title()
     return $title;
 }
 
-// 獲取連結的target屬性
+// 獲取連結的 target 屬性
 function pk_link_target($echo = true)
 {
     $target = "";

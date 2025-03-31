@@ -252,40 +252,40 @@ class OptionBasic extends BaseOptionItem
                 ],
                 [
                     'id' => 'post_reward',
-                    'label' => __('文章讚賞', PUOCK),
+                    'label' => __('文章打賞', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                 ],
                 [
                     'id' => 'post_reward_alipay',
-                    'label' => __('文章讚賞支付寶二維碼', PUOCK),
+                    'label' => __('文章打賞支付寶 QRCode', PUOCK),
                     'type' => 'img',
                     'showRefId' => 'post_reward',
                     'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_reward_wx',
-                    'label' => __('文章讚賞微信二維碼', PUOCK),
+                    'label' => __('文章打賞微信 QRCode', PUOCK),
                     'type' => 'img',
                     'showRefId' => 'post_reward',
                     'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_foot_qrcode_open',
-                    'label' => __('文章正文底部二維碼', PUOCK),
+                    'label' => __('文章正文底部 QRCode', PUOCK),
                     'type' => 'switch',
                     'sdt' => 'false',
                     'tips' => __('請選擇寬高比例為 1:1 的圖片', PUOCK)
                 ],
                 [
                     'id' => 'post_foot_qrcode_title',
-                    'label' => __('文章正文底部二維碼標題', PUOCK),
+                    'label' => __('文章正文底部 QRCode 標題', PUOCK),
                     'sdt' => '',
                     'showRefId' => 'post_foot_qrcode_open',
                 ],
                 [
                     'id' => 'post_foot_qrcode_img',
-                    'label' => __('文章正文底部二維碼', PUOCK),
+                    'label' => __('文章正文底部 QRCode', PUOCK),
                     'type' => 'img',
                     'showRefId' => 'post_foot_qrcode_open',
                 ],

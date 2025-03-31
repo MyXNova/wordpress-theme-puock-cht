@@ -9,11 +9,11 @@ function genShortCodeForColor(title,colors,prefix){
         }
     }
 }
-QTags.addButton( 'h2', 'H2標籤', "<h2>", "</h2>\n" );
-QTags.addButton( 'h3', 'H3標籤', "<h3>", "</h3>\n" );
+QTags.addButton( 'h2', 'H2 標籤', "<h2>", "</h2>\n" );
+QTags.addButton( 'h3', 'H3 標籤', "<h3>", "</h3>\n" );
 QTags.addButton( 'zyy', '引用',  "<blockquote>", "</blockquote>\n" );
 QTags.addButton( 'hr', '橫線', "<hr />\n" );
-QTags.addButton( 'hc', 'Enter', "<br />" );
+QTags.addButton( 'hc', '換行', "<br />" );
 QTags.addButton( 'jz', '居中', "<center>","</center>" );
 QTags.addButton( 'nextpage', '換頁', '<!--nextpage-->', "" );
 QTags.addButton( 'collapse', '隱藏收縮', "[collapse title='']", '[/collapse]' );

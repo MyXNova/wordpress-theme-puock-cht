@@ -4,14 +4,14 @@
 function category_seo_field()
 {
     echo '<div class="form-field">  
-            <label for="seo-cat-keywords">SEO關鍵字</label>  
+            <label for="seo-cat-keywords">SEO 關鍵字</label>  
             <input name="seo-cat-keywords" id="seo-cat-keywords" type="text" value="" size="40">  
-            <p>SEO關鍵字，多個關鍵字之間使用","分隔，預設顯示該分類名稱</p>  
+            <p>SEO 關鍵字，多個關鍵字之間使用「,」分隔，預設顯示該分類名稱</p>  
           </div>';
     echo '<div class="form-field">  
-            <label for="seo-cat-desc">SEO描述</label>  
+            <label for="seo-cat-desc">SEO 描述</label>  
             <input name="seo-cat-desc" id="seo-cat-desc" type="text" value="" size="40">  
-            <p>SEO描述，預設顯示該分類名稱</p>
+            <p>SEO 描述，預設顯示該分類名稱</p>
           </div>';
 
 }
@@ -22,19 +22,19 @@ add_action('category_add_form_fields', 'category_seo_field', 10, 2);
 function edit_category_seo_field($tag)
 {
     echo '<tr class="form-field">  
-            <th scope="row"><label for="seo-cat-keywords">SEO關鍵字</label></th>  
+            <th scope="row"><label for="seo-cat-keywords">SEO 關鍵字</label></th>  
             <td>  
                 <input name="seo-cat-keywords" id="seo-cat-keywords" type="text" value="';
     echo get_option('seo-cat-keywords-' . $tag->term_id) . '" size="40"/><br>  
-                <span class="seo-cat-keywords">SEO關鍵字，多個關鍵字之間使用","分隔，預設顯示該分類名稱</span>  
+                <span class="seo-cat-keywords">SEO 關鍵字，多個關鍵字之間使用「,」分隔，預設顯示該分類名稱</span>  
             </td>  
         </tr>';
     echo '<tr class="form-field">  
-            <th scope="row"><label for="seo-cat-desc">SEO描述</label></th>  
+            <th scope="row"><label for="seo-cat-desc">SEO 描述</label></th>  
             <td>  
                 <input name="seo-cat-desc" id="seo-cat-desc" type="text" value="';
     echo get_option('seo-cat-desc-' . $tag->term_id) . '" size="40"/><br>  
-                <span class="seo-cat-desc">SEO描述，預設顯示該分類名稱</span>  
+                <span class="seo-cat-desc">SEO 描述，預設顯示該分類名稱</span>  
             </td>  
         </tr>';
 }

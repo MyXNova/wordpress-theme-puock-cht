@@ -99,7 +99,7 @@ var random = function () {
     return parseInt(Math.random() * 10000) + (new Date()).valueOf();
 };
 
-// bind 函式polify, 不帶new功能的bind
+// bind 函式 polify, 不帶 new 功能的 bind
 
 var bind = function(target,context){
     if(typeof target !== 'function'){
@@ -174,7 +174,7 @@ var loadScript = function (url, cb, timeout) {
     script.charset = "UTF-8";
     script.async = true;
 
-    // 對geetest的靜態資源新增 crossOrigin
+    // 對 geetest 的靜態資源新增 crossOrigin
     if ( /static\.geetest\.com/g.test(url)) {
         script.crossOrigin = "anonymous";
     }
@@ -250,10 +250,10 @@ var makeURL = function (protocol, domain, path, query) {
 var load = function (config, protocol, domains, path, query, cb, handleCb) {
     var tryRequest = function (at) {
 
-        // 處理jsonp回撥，這裡爲了保證每個不同jsonp都有唯一的回撥函式
+        // 處理 jsonp 回撥，這裡爲了保證每個不同 jsonp 都有唯一的回撥函式
         if(handleCb){
             var cbName = "geetest_" + random();
-            // 需要與預先定義好cbname參數，刪除對像
+            // 需要與預先定義好 cbname 參數，刪除對像
             window[cbName] = bind(handleCb, null, cbName);
             query.callback = cbName;
         }
@@ -340,7 +340,7 @@ var reportError = function (config, url) {
 var throwError = function (errorType, config, errObj) {
     var errors = {
         networkError: '網路錯誤',
-        gtTypeError: 'gt欄位不是字串型別'
+        gtTypeError: 'gt 欄位不是字串型別'
     };
     if (typeof config.onError === 'function') {
         config.onError({
@@ -391,7 +391,7 @@ window.initGeetest4 = function (userConfig,callback) {
 
     jsonp(config.apiServers , config.typePath, config, function (newConfig) {
             
-            //錯誤捕獲，第一個load請求可能直接報錯
+            //錯誤捕獲，第一個 load 請求可能直接報錯
             var newConfig = camelizeKeys(newConfig);
 
             if(newConfig.status === 'error'){
@@ -454,7 +454,7 @@ window.initGeetest4 = function (userConfig,callback) {
                     }
                 });
             } else if (s === "loaded") {
-                // 判斷gct是否需要重新載入
+                // 判斷 gct 是否需要重新載入
                 if(!GeetestIsLoad(newConfig.gctPath)){
                   load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
                       if(err){
