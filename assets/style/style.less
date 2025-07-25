@@ -453,9 +453,9 @@ body.pre-mac pre {
 #post-menus {
   user-select: none;
   position: fixed;
-  right: auto;
-  left: 10px;
-  bottom: 100px;
+  left: auto;
+  right: 47px;
+  bottom: 170px;
   top: auto;
   z-index: 999;
   
@@ -467,7 +467,7 @@ body.pre-mac pre {
     }
     
     #post-menu-state {
-      border-radius: 10px 0 0 10px; // 展開時改變按鈕圓角，只保留左側圓角
+      border-radius: 0 10px 10px 0; // 展開時改變按鈕圓角，只保留左側圓角
       border-right: none; // 去掉右邊框
       left: 0; // 保持在左側
       box-shadow: none; // 去掉陰影
@@ -508,13 +508,13 @@ body.pre-mac pre {
   #post-menu-content {
     position: absolute;
     bottom: 0; // 底部對齊
-    left: 40px; // 位於按鈕右側
+    left: -260px; // 位於按鈕右側
     width: 260px;
     max-height: 400px;
     height: auto;
     padding: 15px;
     overflow-y: auto;
-    border-radius: 10px 10px 10px 0;
+    border-radius: 10px 10px 0 10px;
     background-color: var(--pk-bg-box);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transform: translateX(-20px) scale(0.9);

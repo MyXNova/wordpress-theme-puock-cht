@@ -12,9 +12,10 @@ function pk_shortcode_register()
         'login' => array('name' => '登入可見', 'content' => '輸入內容'),
         'github' => array('name' => 'Github 倉庫卡片', 'content' => 'Licoy/wordpress-theme-puock'),
         'login_email' => array('name' => '登入並驗證 E-mail 可見', 'content' => '輸入內容'),
-        'video' => array('name' => '視訊播放', 'content' => '視訊地址', 'attr' => array(
+        'video' => array('name' => '視訊播放', 'attr' => array(
+            'url'=>'example.com/test.mp4',
             'autoplay' => false, 'type' => 'auto',
-            'pic' => 'https://xxx.com/cover.jpg', 'class' => ''
+            'pic' => '', 'class' => ''
         )),
         'download' => array('name' => '檔案下載', 'content' => '檔案地址', 'attr' => array(
             'file' => 'xxx.zip', 'size' => '12MB'
@@ -106,13 +107,12 @@ function pk_sc_video($attr, $content = null)
     if (pk_is_checked('dplayer')) {
         $id = mt_rand(0, 9) . mt_rand(0, 9) . mt_rand(0, 9) . mt_rand(0, 9);
         $out = "<div id='dplayer-{$id}' class='{$class}'></div>";
-        $out .= "<script>$(function() {
+        $out .= "<script>jQuery(function() {
             new DPlayer({
                 container: document.getElementById('dplayer-{$id}'),
                 autoplay: {$auto},
                 video: {
                     url: '{$url}',
-                    pic: '{$pic}',
                     type: '{$type}'
                 },
             });
